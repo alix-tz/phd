@@ -7,26 +7,18 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
-  <lastmod>2022-03-05T02:09:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://alix-tz.github.io/phd/fr/galleries/rss.xml</loc>
-  <lastmod>2022-03-05T01:51:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://alix-tz.github.io/phd/fr/rss.xml</loc>
-  <lastmod>2022-03-05T01:19:00Z</lastmod>
+  <lastmod>2022-03-06T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/galleries/rss.xml</loc>
-  <lastmod>2022-03-05T03:00:00Z</lastmod>
+  <lastmod>2022-03-06T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2022-03-05T02:25:00Z</lastmod>
+  <lastmod>2022-03-06T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2022-03-05T03:00:00Z</lastmod>
+  <lastmod>2022-03-06T19:54:00Z</lastmod>
  </sitemap>
 </sitemapindex>
