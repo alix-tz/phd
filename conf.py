@@ -94,7 +94,7 @@ BLOG_DESCRIPTION = "My reseach log for my phD in Digital Humanities."  # (transl
 # in the default language will be shown instead.
 
 # What is the default language?
-DEFAULT_LANG = "fr"
+DEFAULT_LANG = "en"
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
