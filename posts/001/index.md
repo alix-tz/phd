@@ -9,8 +9,6 @@
 .. type: text
 -->
 
-001 - Motivations
-
 I feel like I should start this research diary, or "research log" as I have decided to call it, with an explanation on why I have decided to keep one. The truth, though, is that up until [Antoine Fauchié](https://www.quaternum.net/phd/) brought the idea to me, I hadn't thought of a opening a blog specifically dedicated to my phD research.  
 
 I am not a stranger to [personnal blogging](https://alixontheroute.tumblr.com/) or to blogging in the context of research: I've contributed to the [TIME US Hypotheses blog](https://timeus.hypotheses.org/), I made opening and contributing to [one for LECTAUREP](https://lectaurep.hypotheses.org/) a set of missions for the interns I mentored over the past couple of years, and at the beginning of the pandemic, I opened [one for a side project on my family archives](https://vieuxpap.hypotheses.org/).  
