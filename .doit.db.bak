@@ -82,3 +82,5 @@
 'render_taxonomies:output\\categories\\init.xml', (167424, 462)
 'copy_assets:output\\assets\\css\\hack-custom.css', (167936, 292)
 'copy_assets:output\\assets\\css\\custom.css', (168448, 284)
+'render_taxonomies:output\\categories\\manifesto.xml', (177152, 464)
+'render_taxonomies:output\\categories\\manifesto\\index.html', (177664, 3212)
