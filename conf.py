@@ -984,7 +984,7 @@ LICENSE = """<a rel="license" href="https://creativecommons.org/licenses/by/4.0/
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="{BASE_URL}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="{base_url}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        {license}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1006,14 +1006,15 @@ CONTENT_FOOTER_FORMATS = {
             "email": BLOG_EMAIL,
             "author": BLOG_AUTHOR,
             "date": time.gmtime().tm_year,
-            "license": LICENSE
+            "license": "CC-BY",
+            "base_url": BASE_URL
         }
     )
 }
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
-RSS_COPYRIGHT = 'Contents © {date} <a href="{BASE_URL}">{author}</a> {license}'
+RSS_COPYRIGHT = 'Contents © {date} <a href="{base_url}">{author}</a> {license}'
 RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
 RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
