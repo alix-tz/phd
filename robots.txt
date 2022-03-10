@@ -1,4 +1,4 @@
-Sitemap: https://alix-tz.github.io/phd/sitemapindex.xml
+Sitemap: https://alix-tz.github.io/sitemapindex.xml
 
 User-Agent: *
 Host: alix-tz.github.io

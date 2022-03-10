@@ -6,35 +6,35 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://alix-tz.github.io/phd/</loc>
+  <loc>https://alix-tz.github.io/</loc>
   <lastmod>2022-03-05T02:05:00Z</lastmod>
  </url>
  <url>
-  <loc>https://alix-tz.github.io/phd/2022/</loc>
+  <loc>https://alix-tz.github.io/2022/</loc>
   <lastmod>2022-03-05T02:05:00Z</lastmod>
  </url>
  <url>
-  <loc>https://alix-tz.github.io/phd/archive.html</loc>
+  <loc>https://alix-tz.github.io/archive.html</loc>
+  <lastmod>2022-03-10T03:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/categories/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2022-03-09T22:17:00Z</lastmod>
- </url>
- <url>
-  <loc>https://alix-tz.github.io/phd/categories/init/</loc>
+  <loc>https://alix-tz.github.io/categories/init/</loc>
   <lastmod>2022-03-05T02:09:00Z</lastmod>
  </url>
  <url>
-  <loc>https://alix-tz.github.io/phd/categories/manifesto/</loc>
+  <loc>https://alix-tz.github.io/categories/manifesto/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://alix-tz.github.io/phd/posts/000/</loc>
+  <loc>https://alix-tz.github.io/posts/000/</loc>
   <lastmod>2022-03-05T02:09:00Z</lastmod>
  </url>
  <url>
-  <loc>https://alix-tz.github.io/phd/posts/001/</loc>
+  <loc>https://alix-tz.github.io/posts/001/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
  </url>
 </urlset>
