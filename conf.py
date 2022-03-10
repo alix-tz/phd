@@ -23,7 +23,7 @@ BLOG_TITLE = "My Research Log"  # (translatable)
 SITE_URL = "https://alix-tz.github.io/phd/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://example.com/"
+BASE_URL = "https://alix-tz.github.io/"
 BLOG_EMAIL = "alix.chague@umontreal.ca"
 BLOG_DESCRIPTION = "My reseach log for my phD in Digital Humanities."  # (translatable)
 
@@ -984,7 +984,7 @@ LICENSE = """<a rel="license" href="https://creativecommons.org/licenses/by/4.0/
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="{BASE_URL}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        {license}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1013,7 +1013,7 @@ CONTENT_FOOTER_FORMATS = {
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
-RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
+RSS_COPYRIGHT = 'Contents © {date} <a href="{BASE_URL}">{author}</a> {license}'
 RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
 RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
