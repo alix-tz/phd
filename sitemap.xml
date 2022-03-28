@@ -15,11 +15,15 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/archive.html</loc>
-  <lastmod>2022-03-10T03:05:00Z</lastmod>
+  <lastmod>2022-03-28T04:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/categories/</loc>
-  <lastmod>2022-03-09T22:17:00Z</lastmod>
+  <lastmod>2022-03-28T04:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/categories/genesis/</loc>
+  <lastmod>2022-03-28T04:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/categories/init/</loc>
@@ -36,5 +40,9 @@
  <url>
   <loc>https://alix-tz.github.io/posts/001/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/posts/002/</loc>
+  <lastmod>2022-03-28T04:07:00Z</lastmod>
  </url>
 </urlset>
