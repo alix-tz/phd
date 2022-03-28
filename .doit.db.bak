@@ -84,3 +84,8 @@
 'copy_assets:output\\assets\\css\\custom.css', (168448, 284)
 'render_taxonomies:output\\categories\\manifesto.xml', (177152, 465)
 'render_taxonomies:output\\categories\\manifesto\\index.html', (177664, 3213)
+'render_pages:output\\posts\\002\\index.html', (181248, 4565)
+'render_posts:cache\\posts\\002.html', (185856, 340)
+'render_sources:output\\posts\\002\\index.md', (186368, 233)
+'render_taxonomies:output\\categories\\genesis.xml', (189952, 464)
+'render_taxonomies:output\\categories\\genesis\\index.html', (196096, 3212)
