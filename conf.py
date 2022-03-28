@@ -935,10 +935,10 @@ IMAGE_FOLDERS = {'images': 'images'}
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
+FAVICONS = (
+     ("icon", "/images/favicon.ico", "32x32"),
 #     ("icon", "/icon_128x128.png", "128x128"),
-# )
+)
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 # INDEX_TEASERS = False
@@ -982,9 +982,27 @@ LICENSE = """<a rel="license" href="https://creativecommons.org/licenses/by/4.0/
 # style="border-width:0; margin-bottom:0px;"
 # src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>"""
 
+CONTACT = """<div>
+<h3>Contact me</h3>
+<form name="contact" action="https://formspree.io/mdozpzwz" method="POST">
+<div>
+<!--<label class="sr-only" for="inputName">Name</label>-->
+<input type="text" name="name" id="inputName" placeholder="Your name" required="" style="width: 150px;">
+&nbsp;&nbsp;&nbsp;
+<!--<label class="sr-only" for="inputEmail">E-mail</label>-->
+<input type="email" name="email" id="inputEmail" placeholder="Your e-mail address" required="" style="width: 150px;">
+</div>
+<div>
+<!--<label class="sr-only" for="inputMessage">Message</label>-->
+<textarea name="message" id="inputMessage" rows="3" placeholder="Your message" required="" style="width: 50%;"></textarea>
+</div>
+<button type="submit" style="width: 60px;">Send</button>
+</form>
+</div>"""
+
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="{base_url}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="{base_url}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        {license}<br/>{contact}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1006,8 +1024,9 @@ CONTENT_FOOTER_FORMATS = {
             "email": BLOG_EMAIL,
             "author": BLOG_AUTHOR,
             "date": time.gmtime().tm_year,
-            "license": "CC-BY",
-            "base_url": BASE_URL
+            "license": "CC-BY", # LICENSE
+            "base_url": BASE_URL,
+            "contact": CONTACT
         }
     )
 }
