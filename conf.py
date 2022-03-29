@@ -618,7 +618,7 @@ ARCHIVE_FILENAME = "archive.html"
 # rel_path: a relative URL to the current page/post (default)
 # full_path: a URL with the full path from the root
 # absolute: a complete URL (that includes the SITE_URL)
-URL_TYPE = 'rel_path'
+URL_TYPE = 'absolute'
 
 # Extension for RSS feed files
 RSS_EXTENSION = ".xml"
@@ -1412,12 +1412,12 @@ GENERATE_RSS = True
 
 # If set to True, the tags 'draft', 'mathjax' and 'private' have special
 # meaning. If set to False, these tags are handled like regular tags.
-USE_TAG_METADATA = False
+USE_TAG_METADATA = True
 
 # If set to True, a warning is issued if one of the 'draft', 'mathjax'
 # and 'private' tags are found in a post. Useful for checking that
 # migration was successful.
-WARN_ABOUT_TAG_METADATA = False
+WARN_ABOUT_TAG_METADATA = True
 
 # Templates will use those filters, along with the defaults.
 # Consult your engine's documentation on filters if you need help defining
