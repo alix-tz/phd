@@ -6,23 +6,23 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://alix-tz.github.io/categories/genesis.xml</loc>
+  <loc>https://alix-tz.github.io/phd/categories/genesis.xml</loc>
   <lastmod>2022-03-28T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://alix-tz.github.io/categories/init.xml</loc>
+  <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
   <lastmod>2022-03-06T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://alix-tz.github.io/categories/manifesto.xml</loc>
+  <loc>https://alix-tz.github.io/phd/categories/manifesto.xml</loc>
   <lastmod>2022-03-28T04:07:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://alix-tz.github.io/rss.xml</loc>
+  <loc>https://alix-tz.github.io/phd/rss.xml</loc>
   <lastmod>2022-03-28T04:54:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://alix-tz.github.io/sitemap.xml</loc>
-  <lastmod>2022-03-28T05:24:00Z</lastmod>
+  <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
+  <lastmod>2022-03-29T14:31:00Z</lastmod>
  </sitemap>
 </sitemapindex>
