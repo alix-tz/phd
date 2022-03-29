@@ -23,7 +23,7 @@ BLOG_TITLE = "My Research Log"  # (translatable)
 SITE_URL = "https://alix-tz.github.io/phd/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "https://alix-tz.github.io/"
+BASE_URL = "https://alix-tz.github.io/phd/"
 BLOG_EMAIL = "alix.chague@umontreal.ca"
 BLOG_DESCRIPTION = "My reseach log for my phD in Digital Humanities."  # (translatable)
 
