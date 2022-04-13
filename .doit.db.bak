@@ -96,3 +96,6 @@
 'render_posts:cache\\posts\\004.html', (205824, 339)
 'render_sources:output\\posts\\004\\index.md', (206336, 232)
 'render_pages:output\\posts\\004\\index.html', (206848, 4564)
+'render_pages:output\\posts\\005\\index.html', (211456, 4563)
+'render_posts:cache\\posts\\005.html', (216064, 339)
+'render_sources:output\\posts\\005\\index.md', (216576, 232)
