@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2022-06-08T14:26:00Z</lastmod>
+  <lastmod>2022-06-08T17:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2022-06-08T14:26:00Z</lastmod>
+  <lastmod>2022-06-08T17:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/genesis/</loc>
@@ -38,6 +38,10 @@
   <lastmod>2022-06-08T14:26:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/paperworking/</loc>
+  <lastmod>2022-06-08T17:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/posts/000/</loc>
   <lastmod>2022-03-05T02:09:00Z</lastmod>
  </url>
@@ -52,5 +56,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/003/</loc>
   <lastmod>2022-06-08T14:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/004/</loc>
+  <lastmod>2022-06-08T17:04:00Z</lastmod>
  </url>
 </urlset>
