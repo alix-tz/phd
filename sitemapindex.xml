@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/genesis.xml</loc>
-  <lastmod>2022-03-28T04:55:00Z</lastmod>
+  <lastmod>2022-03-30T05:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
@@ -18,11 +18,15 @@
   <lastmod>2022-03-28T04:07:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/mood.xml</loc>
+  <lastmod>2022-06-08T12:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2022-03-28T04:54:00Z</lastmod>
+  <lastmod>2022-06-08T12:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2022-03-29T20:06:00Z</lastmod>
+  <lastmod>2022-06-08T12:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>
