@@ -1,5 +1,5 @@
 <!--
-.. title: 004: Cotutelle 101
+.. title: 004 - Cotutelle 101
 .. slug: 004
 .. date: 2022-06-08 12:13:01 UTC-04:00
 .. tags: paperworking
@@ -15,7 +15,7 @@ I'll start with detailing the obligations which come with a *cotutelle* (by that
 
 ---
 
-First of all, a *cotutelle* means being enrolled in two institutions. In other words, it means maintaining, at all time, a valid student status in two universities.  
+First of all, a *cotutelle* means signing up in two institutions. In other words, it means maintaining, at all time, a valid student status in two universities.  
 
 At the EPHE, enrollment happens once a year, usually in Fall, like in most French universities. Last year, I officially enrolled in November 2021, when my PhD contract started at Inria. It was my understanding that for PhD, at the EPHE, the deadlines are slightly looser than for a Licence or a Master's program. At UdeM, enrollment happens every 4 months, at the beginning of each period (*Hiver*, *Eté*, *Automne*, or *Winter*, Summer, Fall), as is the case in most north American universities. A yearly enrolment at EPHE costs about 475 € (380 for tuitions and 95 for [CVEC](https://www.etudiant.gouv.fr/fr/cvec-une-demarche-de-rentree-incontournable-955)). At UdeM, it costs a little bit over 6,000 $CA (between 4,500 and 4,200 €, depending on the exchange rate), which corresponds to 3 periods where tuitions and other unwaivable fees are added up.  
 
