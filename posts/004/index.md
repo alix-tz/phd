@@ -37,6 +37,6 @@ These two limitations implied that I had to distribute my time between Montreal 
 
 This might seem complicated, but if you are interested in going for a *cotutelle*, you must understand that my process is more complicated than it has to be. I could have made it simpler by staying 1 year in Paris, then 1 year in Montreal, then splitting the remaining year between Montreal and Paris. Or, had Inria been able to pay me for a longer period of time, I could have simply spent my second year in Montreal and the rest of the time in Paris.  
 
-If you're still hanging in there, let's talk about immigration, housing and insurance... in the next post! 
+If you're still hanging in there, let's talk about immigration, housing and insurance... in the next post!  
 
-EDIT: UdeM offers a very detailed roadmap on how to set up a *cotutelle*, it can be reached through this link: https://esp.umontreal.ca/fileadmin/esp/documents/Cotutelles/TableauRepere_cotutelleDeThese.pdf 
+EDIT: UdeM offers a very detailed roadmap on how to set up a *cotutelle*, it can be reached through [this link](https://esp.umontreal.ca/fileadmin/esp/documents/Cotutelles/TableauRepere_cotutelleDeThese.pdf)!
