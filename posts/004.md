@@ -39,4 +39,4 @@ This might seem complicated, but if you are interested in going for a *cotutelle
 
 If you're still hanging in there, let's talk about immigration, housing and insurance... in the next post!  
 
-EDIT: UdeM offers a very detailed roadmap on how to set up a *cotutelle*, it can be reached through [this link](https://esp.umontreal.ca/fileadmin/esp/documents/Cotutelles/TableauRepere_cotutelleDeThese.pdf)!
+***EDIT:*** *UdeM offers a very detailed roadmap on how to set up a *cotutelle*, it can be reached through [this link](https://esp.umontreal.ca/fileadmin/esp/documents/Cotutelles/TableauRepere_cotutelleDeThese.pdf)!*
