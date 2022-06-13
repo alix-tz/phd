@@ -17,7 +17,7 @@ I'll start with detailing the obligations which come with a *cotutelle* (by that
 
 First of all, doing a PhD in *cotutelle* means signing up in two institutions. In other words, it means maintaining, at all times, a valid student status in two universities.  
 
-At the EPHE, enrollment happens once a year, usually in Fall, like in most French universities. Last year, I officially enrolled in November 2021, when my PhD contract started at [Inria](https://www.inria.fr/en). It was my understanding that for a PhD, at the EPHE, the deadlines are slightly less stringent than for a Licence or a Master's program. At UdeM, enrollment happens every 4 months, at the beginning of each period (*Hiver*, *Eté*, *Automne*, or *Winter*, Summer, Fall), as is the case in most North American universities.  
+At the EPHE, enrollment happens once a year, usually in Fall, like in most French universities. Last year, I officially enrolled in November 2021, when my PhD contract started at [Inria](https://www.inria.fr/en). It was my understanding that for a PhD, at the EPHE, the deadlines are slightly less stringent than for a Licence or a Master's program. At UdeM, enrollment happens every 4 months, at the beginning of each period (*Hiver*, *Eté*, *Automne*, or Winter, Summer, Fall), as is the case in most North American universities.  
 
 A yearly enrollment at EPHE costs about 475€ (380€ for tuition and 95€ for [CVEC](https://www.etudiant.gouv.fr/fr/cvec-une-demarche-de-rentree-incontournable-955)). At UdeM, it costs a little bit over 6,000 $CA (between 4,650€ and 4,200€, depending on the exchange rate), which corresponds to 3 periods where tuition and other non-waivable fees are added up.  
 
@@ -38,3 +38,5 @@ These two limitations implied that I had to distribute my time between Montreal 
 This might seem complicated, but if you are interested in going for a *cotutelle*, you must understand that my process is more complicated than it has to be. I could have made it simpler by staying 1 year in Paris, then 1 year in Montreal, then splitting the remaining year between Montreal and Paris. Or, had Inria been able to pay me for a longer period of time, I could have simply spent my second year in Montreal and the rest of the time in Paris.  
 
 If you're still hanging in there, let's talk about immigration, housing and insurance... in the next post! 
+
+EDIT: UdeM offers a very detailed roadmap on how to set up a *cotutelle*, it can be reached through this link: https://esp.umontreal.ca/fileadmin/esp/documents/Cotutelles/TableauRepere_cotutelleDeThese.pdf 
