@@ -1427,7 +1427,7 @@ WARN_ABOUT_TAG_METADATA = True
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
-GLOBAL_CONTEXT['HACK_VARIANT'] = 'dark-grey'
+GLOBAL_CONTEXT['HACK_VARIANT'] = 'solarized-grey' #'dark-grey'
 #4hack: dark, dark-grey, solarized-dark, solarized-grey
 
 # Add functions here and they will be called with template
