@@ -1,0 +1,43 @@
+<!--
+.. title: 006 - Health Insurance from France to Canada
+.. slug: 006
+.. date: 2022-07-28 11:52:15 UTC-04:00
+.. tags: draft paperworking
+.. category: draft
+.. link: 
+.. description: 
+.. type: text
+-->
+
+In Canada, health insurance is part of the tuitions required each semester. At the University of Montreal, they cost 300$CA per semester (more details [here](http://www.bei.umontreal.ca/bei/ass_couverture.htm)). There is also an additional plan specific to dental insurance. By default, students are signed up for these two plans and the fees are included in the tuitions. However, it is possible to waive them if a student already has another insurance. A little warning here: saving on health insurance plans is cool on the paper, but you should make sure you do have a working alternative heatlh insurance before you do so because medical fees in Canada can add up very quickly!
+
+French citizens covered by the French Health Insurance ([Assurance Maladie](https://www.ameli.fr/paris/assure)) can beneficiate from an agreement between Québec and France in order to sign up for free for the [RAMQ](https://www.ramq.gouv.qc.ca/fr), the Québec Health Insurance (*Régie de l'Assurance Maladie du Québec*). This is not an automatic process: it is not because you are French that you can immediately revoke the Health Insurance fees from the university. You must first sign up for the RAMQ, then, proving a proof of affiliation to the RAMQ, you can ask for the fees to be removed. There are deadlines to do so and the process is slow because both the RAMQ and the Assurance Maladie are public services. During the very first semester in Canada, it can be hard to finish the process in time to avoid having to pay for the University's default health plan.
+ramdd
+Overall, the process is the following: one must get a form signed by the Health Insurance in France, then send it to the RAMQ along with a few other papers, and then, once they receive (by mail!) the confirmation that the RAMQ accepted the application, they must submit such proof to the University in order to waive the health insurance fees. It takes a few days to receive the confirmation that your health plan is valid to waive off the fees.  
+
+Health insurance wise, several deadlines were applicable:
+
+- by the 14th of February, I had to have fully paid my tuitions
+- which meant I had until the 13th of February to remove the fees from my bill
+- if not, I had to pay, and then I had until the 15th of March to finish the paperwork and request a refund
+
+First things first, I may have mentioned it already, but there is a series of fees that are automatically added to a student's bill even if they are not mandatory. At the University of Montreal, they are called the "CANO" (*cotisations automatiques non obligatoires*). There is ([here](https://ombudsman.umontreal.ca/foire-aux-questions/faq/news/detail/News/comment-me-desister-des-assurances-ou-dautres-frais-non-obligatoires/)) a rather complete documentation on which fees belong to this category, how much money they represent, what they pay for and the various process to waive them. The docmentation also include health insurance related fees. Way before February, I got most of these fees taken off my bills, including the dental insurance.
+
+Now I was left with 600$CA for the main health insurance which I knew I could also get removed. I found it difficult to find information about the agreement between Frace and Québec on the Assurance Maladie's website, because they dedicate only one small portion of text to ["insurance and studies abroad"](https://www.ameli.fr/paris/assure/droits-demarches/europe-international/protection-sociale-etranger/etudes-etranger), mixing studies inside Europe and outside of Europe, which are very different.  
+
+For studies in Quebec, it is said that:
+
+- students traveling to Québec within the frame of a university exchange should use the form [**SE Q-401-106**](https://www.ramq.gouv.qc.ca/fr/media/2516);
+- and that students enrolled in the Québec university should instead use the form **SE Q-401-102**.
+
+They say nothing about what which situation is applicable to a student in cotutelle: is it considered a university exchange or is it considered to be an enrolling in a Québec university? For most of my paperwork with Canada, aside from the *convention de cotutelle*, my paperwork was essentially the same as someone enrolling only to a Canadian university. Additionally, SE 401-Q-106 required the French university to sign the form, whereas SE 401-Q-102 only required a signature from the Assurance Maladie. SE 401-Q-102 seemed applicable and faster, so I opted for it.  
+
+Let's say it right away: I should have opted for SE 401-Q-106. On both situations, you cannot simultaneously be enrolled in the French Assurance Maladie and the RAMQ. But, the main difference between the two form is actually that SE 401-Q-102 will have you struck off from the Assurance Maladie (and asked to destroy your Carte Vitale) until you come back to France and go through the process (and paperwork) to be reintegrated into the system, whereas SE 401-Q-106 while have your rights temporarily deactivated: SE 401-Q-106 ask you to provide the precise dates of your stay in Québec. Upon your return, your rights are simply (and normally automatically) reactivated.  
+
+So, to make it short, both form work. But if you are enrolled in a French university and going to Québec for a short period of time, you should go for the SE 401-Q-106!
+
+By the time I realised my mistake, I submitted the SE 401-Q-106 form to my university (who signed and returned within one day). I received the original SE 401-Q-102 from the Assurance Maladie the same, so I simply didn't transfer it to the RAMQ and instead sent the new SE 401-Q-106 to the Assurance Maladie, explaing my mistake. Unfortunately, this mishap delayed my ability to waive the 600$CA before I had to pay my tuitions. However, I was able to finish the process before mid-March, therefore the 600$CA were recredited and are waiting to be substracted from my Fall tuitions.  
+
+Before closing this rather long post, I want to mention another mistake I made. Whichever form you opt for, 102 or 106, they are impossible to find on Ameli, the Assurance Maladie website. I found both form via a Google request. Unfortunately, the SE 401-Q-106 that I found was an old version which was refused by the RAMQ when I sent it to them. I had to go through the signature process a third time, with the right version of the document. Speak of unnecessary paperwork... In order to avoid this, I strongly recommend using the forms provided on the RAMQ website: they are common to both the French and the Québec administration and actually findable on the RAMQ's website.  
+ 
+A final warning: upon discussion with some of my fellow French students also enrolled in a French-Québec cotutelle, I realised that my university has been particularly flexible (has they should have been) regarding signing my form. Other university may ask you to first finish setting the *convention de cotutelle* before they accept to sign the SE 401-Q-106 form. As I mentioned in post 004, as of today, I still don't have this document because it is still in progress. 
