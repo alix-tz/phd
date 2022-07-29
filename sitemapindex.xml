@@ -6,14 +6,6 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://alix-tz.github.io/phd/categories/cat_draft.xml</loc>
-  <lastmod>2022-07-28T17:22:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://alix-tz.github.io/phd/categories/draft-paperworking.xml</loc>
-  <lastmod>2022-07-28T17:22:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/genesis.xml</loc>
   <lastmod>2022-03-30T05:16:00Z</lastmod>
  </sitemap>
@@ -39,6 +31,6 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2022-07-28T17:24:00Z</lastmod>
+  <lastmod>2022-07-29T09:46:00Z</lastmod>
  </sitemap>
 </sitemapindex>
