@@ -2,8 +2,8 @@
 .. title: 003 - The Zen of PhD
 .. slug: 003
 .. date: 2022-06-07 13:32:05 UTC+01:00
-.. tags: mood
-.. category: 
+.. tags: 
+.. category: mood
 .. link: 
 .. description: 
 .. type: text

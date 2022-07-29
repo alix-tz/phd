@@ -2,8 +2,8 @@
 .. title: 002 - The Big Bang
 .. slug: 002
 .. date: 2022-03-27 21:16:13 UTC-04:00
-.. tags: genesis
-.. category: 
+.. tags: 
+.. category: genesis
 .. link: 
 .. description: 
 .. type: text
