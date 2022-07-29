@@ -3,7 +3,7 @@
 .. slug: 001
 .. date: 2022-03-07 10:33:16 UTC-05:00
 .. tags: manifesto
-.. category: 
+.. category: genesis
 .. link: 
 .. description: 
 .. type: text
