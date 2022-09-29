@@ -2,7 +2,7 @@
 .. title: 004 - Cotutelle 101
 .. slug: 004
 .. date: 2022-06-08 12:13:01 UTC-04:00
-.. tags: cotutelle, univerisity, tuitions
+.. tags: cotutelle, univerisity, tuition
 .. category: paperworking
 .. link: 
 .. description: 
