@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Alix Chagué"  # (translatable)
-BLOG_TITLE = "My Research Log"  # (translatable)
+BLOG_TITLE = "A research (b)log"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://alix-tz.github.io/phd/"
@@ -25,7 +25,7 @@ SITE_URL = "https://alix-tz.github.io/phd/"
 # If not set, defaults to SITE_URL
 BASE_URL = "https://alix-tz.github.io/phd/"
 BLOG_EMAIL = "alix.chague@umontreal.ca"
-BLOG_DESCRIPTION = "My reseach log for my phD in Digital Humanities."  # (translatable)
+BLOG_DESCRIPTION = "A research (b)log created during my phD in Digital Humanities."  # (translatable)
 
 # Nikola is multilingual!
 #
