@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://alix-tz.github.io/phd/</loc>
-  <lastmod>2022-03-29T17:43:00Z</lastmod>
+  <lastmod>2022-10-18T17:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/2022/</loc>
@@ -60,6 +60,10 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/visa/</loc>
   <lastmod>2022-07-29T09:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
+  <lastmod>2022-10-18T17:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/posts/000/</loc>
