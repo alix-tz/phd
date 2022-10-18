@@ -16,6 +16,6 @@ I gather here the definitions of key concepts and words that came across my way.
 
 
 | Word                | Definition                          |
-| :-----------------: | ----------------------------------: |
+| ------------------- | ----------------------------------: |
 | A word or a concept | It's definition with several words. |
 
