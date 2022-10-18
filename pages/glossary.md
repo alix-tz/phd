@@ -21,8 +21,13 @@ I gather here the definitions of key concepts and words that came across my way.
 
 This is a definition...
 
----
 
+| Word                | Definition                          |
+|---------------------|-------------------------------------|
+| A word or a concept | It's definition with several words. |
+
+<!-- ReStructuredText -->
+<!--
 +---------------------+-------------------------------------+
 | Concept             | Definition                          |
 +=====================+=====================================+
@@ -30,7 +35,7 @@ This is a definition...
 +---------------------+-------------------------------------+
 |                     |                                     |
 +---------------------+-------------------------------------+
-
+-->
 
 
 
