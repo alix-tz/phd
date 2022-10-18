@@ -131,6 +131,6 @@
 'render_taxonomies:output\\categories\\health-insurance.xml', (354304, 464)
 'render_taxonomies:output\\categories\\health-insurance\\index.html', (354816, 3212)
 'render_taxonomies:output\\categories\\tuition\\index.html', (365568, 3535)
-'render_sources:output\\pages\\glossary\\index.md', (375808, 243)
-'render_posts:cache\\pages\\glossary.html', (376320, 355)
+'render_sources:output\\pages\\glossary\\index.md', (375808, 242)
+'render_posts:cache\\pages\\glossary.html', (376320, 354)
 'render_pages:output\\pages\\glossary\\index.html', (376832, 5339)
