@@ -26,3 +26,7 @@ Some words for the definition of the term.
 | A word or a concept: | It's definition with several words. |
 
 -->
+
+## Testing the insertion of images (thumbnail)
+
+{{% thumbnail "https://htr-united.github.io/assets/images/logo_htr-united.png" alt="Foo Image" title="Insert title-text joke here" align="right" %}}<p class="caption">Foo Image (right-aligned) caption</p>{{% /thumbnail %}}
