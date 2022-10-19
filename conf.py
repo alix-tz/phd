@@ -144,7 +144,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
-        ("/pages/glossary", "Glossary"),
+        #("/pages/glossary", "Glossary"),
         ("/rss.xml", "RSS feed"),
     ),
 }
