@@ -33,8 +33,8 @@ As of Fall 2022, more than 135 people took part in the experiment and we collect
 
 On top of the images and the transcription, I proposed to add a series of metadata. They would allow potential users of the dataset to sort the files according to several criterias. They include the writing hand, the color of the ink or else the type of tool used to write (pencil/marker/ink pen/etc).
 
-We were already able to use part of this dataset since it was included in the train set of [Manu McFrench](https://zenodo.org/record/6657809#.Y1BEtEyZOuU), an HTR model for modern and contemporary French!
+We were already able to use part of this dataset since it was included in the TrainSet of [Manu McFrench](https://zenodo.org/record/6657809#.Y1BEtEyZOuU), an HTR model for modern and contemporary French!
 
 I have lots of ideas for future usages and developments for this dataset so it will be back in other posts of this blog!
 
-[^1]: They can all be found via the [HTR-United catalog!](https://htr-united.github.io/catalog.html).
+[^1]: They can all be found via the [HTR-United catalog!](https://htr-united.github.io/catalog.html)
