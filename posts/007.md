@@ -11,7 +11,7 @@
 
 "WikiCREMMA" (or CREMMA-Wiki, or CREMMA-Wikipedia) is (are?) the name(s) Thibault Clérice and I gave to a dataset created within the perimeter of the CREMMA funding. In 2022, we were able to use this funding to hire several students from the [École nationale des chartes](https://www.chartes.psl.eu/) to produce entirely new transcriptions of documents from various periods (from Medieval times to 21st century), or to align already existing transcriptions with the corresponding images. We will hopefully have occasions to present this experiment further in the months to come, but today I would like to talk about the specific case of WikiCREMMA.  
 
-Unlike the other CREMMA datasets[^They can all be found via the [HTR-United catalog!](https://htr-united.github.io/catalog.html)], WikiCREMMA also consisted in creating new images. Using exerpts from [randomly selected](https://github.com/PonteIneptique/wikicremma) Wikipedia articles (in French), we created forms which were then printed before we asked volunteers to copy the text by hand using the tools of their choice, thus collecting examples of nowadays handwritings.  
+Unlike the other CREMMA datasets[^1], WikiCREMMA also consisted in creating new images. Using exerpts from [randomly selected](https://github.com/PonteIneptique/wikicremma) Wikipedia articles (in French), we created forms which were then printed before we asked volunteers to copy the text by hand using the tools of their choice, thus collecting examples of nowadays handwritings.  
 
 The form mostly consists in:
 
@@ -29,11 +29,12 @@ Since we asked volunteers to copy a text, it is impossible to avoid crossed out 
 
 We created several batches of forms in order to test out the success (or failure) of our project. They don't always have the same size: Batch-01 contains 10 images whereas Batch-04 has 96 of them. Initially, we imagined leaving stacks of these forms in different spots, giving volunters the possibility to send us their form after they filled it. However, even if we dream big, it seemed safer to start with asking people around us. I've asked friends, colleagues, classmates, but also very random people to participate in this experiment -- maybe you, reader, also contributed! Overall, as far as I am concerned, this has been a lot of fun! 
 
-As of Fall 2022, more than 135 people took part in the experiment and we collected more than 250 pages. Not everything was transcribed yet, but we were already able to publish 215 files in the [CREMMA-WIKIPEDIA](https://github.com/HTR-United/cremma-wikipedia) repository. It adds up to a total of 1~181 lines and 57~490 characters for contemporary handwritings in French. 
+As of Fall 2022, more than 135 people took part in the experiment and we collected more than 250 pages. Not everything was transcribed yet, but we were already able to publish 215 files in the [CREMMA-WIKIPEDIA](https://github.com/HTR-United/cremma-wikipedia) repository. It adds up to a total of 1181 lines and 57490 characters for contemporary handwritings in French. 
 
-On top of the images and the transcription, I proposed to add a series of metadata. They would allow potential users of the dataset to sort the files according to several criterias. They include the writing hand, the color of the ink or else the type of tool used to write (pencil / marker / ink pen / etc).
+On top of the images and the transcription, I proposed to add a series of metadata. They would allow potential users of the dataset to sort the files according to several criterias. They include the writing hand, the color of the ink or else the type of tool used to write (pencil/marker/ink pen/etc).
 
 We were already able to use part of this dataset since it was included in the train set of [Manu McFrench](https://zenodo.org/record/6657809#.Y1BEtEyZOuU), an HTR model for modern and contemporary French!
 
-I have lots of ideas of future usages and developments for this dataset so it will be back in other posts of this blog!
+I have lots of ideas for future usages and developments for this dataset so it will be back in other posts of this blog!
 
+[^1]: They can all be found via the [HTR-United catalog!](https://htr-united.github.io/catalog.html).
