@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/cat_dataset.xml</loc>
+  <lastmod>2022-10-19T18:50:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_genesis.xml</loc>
   <lastmod>2022-09-30T03:12:00Z</lastmod>
  </sitemap>
@@ -20,6 +24,10 @@
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cotutelle.xml</loc>
   <lastmod>2022-09-30T03:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/experiment.xml</loc>
+  <lastmod>2022-10-19T18:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/health-insurance.xml</loc>
@@ -46,11 +54,15 @@
   <lastmod>2022-09-30T03:12:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/wikicremma.xml</loc>
+  <lastmod>2022-10-19T18:50:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2022-09-30T03:12:00Z</lastmod>
+  <lastmod>2022-10-19T18:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2022-10-19T17:29:00Z</lastmod>
+  <lastmod>2022-10-19T18:50:00Z</lastmod>
  </sitemap>
 </sitemapindex>
