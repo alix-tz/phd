@@ -9,19 +9,19 @@
 .. type: text
 -->
 
-"WikiCREMMA" (or CREMMA-Wiki, or CREMMA-Wikipedia) is (are?) the name(s) Thibault Clérice and I gave to a dataset created within the perimeter of the CREMMA funding. In 2022, we were able to use this funding to hire several students from the [École nationale des chartes](https://www.chartes.psl.eu/) to produce entirely new transcriptions of documents from various periods (from Medieval times to 21st century), or to align already existing transcriptions with the corresponding images. We will hopefully have occasions to present this experiment further in the months to come, but today I would like to talk about the specific case of WikiCREMMA.  
+"WikiCREMMA" (or CREMMA-Wiki, or CREMMA-Wikipedia) is (are?) the name(s) Thibault Clérice and I gave to a dataset created within the perimeter of the CREMMA funding. In 2022, we were able to use this funding to hire several students from the [École nationale des chartes](https://www.chartes.psl.eu/) to produce entirely new transcriptions of documents from various periods (from Medieval times to 21st century), as well as to align already existing transcriptions with the corresponding images. We will hopefully have occasions to present this experiment further in the months to come, but today I would like to talk about the specific case of WikiCREMMA.  
 
-Unlike the other CREMMA datasets[^1], WikiCREMMA also consisted in creating new images. Using exerpts from [randomly selected](https://github.com/PonteIneptique/wikicremma) Wikipedia articles (in French), we created forms which were then printed before we asked volunteers to copy the text by hand using the tools of their choice, thus collecting examples of nowadays handwritings.  
+Unlike the other CREMMA datasets[^1], WikiCREMMA also consisted of creating new images. Using exerpts from [randomly selected](https://github.com/PonteIneptique/wikicremma) Wikipedia articles (in French), we created forms which were then printed before we asked volunteers to copy the text by hand using the tools of their choice, thus collecting examples of nowadays handwritings.  
 
-The form mostly consists in:
+The form is mostly composed with the following:
 
 - explanations regarding the context of the experiment,
 - instructions on how to fill the form,
 - a short section where contributors can add their names, their writing hand (left or right) and their gender,
-- the excerpt to copy,
-- and a blank space where contributors ought to write.
+- the extract to copy,
+- and a blank space where contributors ought to be writing.
 
-Each form offer a different excerpt to copy: it is thus possible for volunteers to contribute many forms. The excerpts were collected by sending requests to the "[Page au hasard](https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Page_au_hasard)" feature available in Wikipedia (in English, see "[random article](https://en.wikipedia.org/wiki/Special:Random)").  
+Each form offers a different short text to copy: it is thus possible for volunteers to contribute many forms. The exerpts were collected by sending requests to the "[Page au hasard](https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Page_au_hasard)" feature available in Wikipedia (in English, see "[random article](https://en.wikipedia.org/wiki/Special:Random)").  
 
 Once the forms were filled, we automatically [anonymized them](https://github.com/alix-tz/cremmawiki-anonymizer) and then uploaded them on eScriptorium. This anonymization mostly meant adding a big black rectangle over the part of the page where contributors are invited to give us details about who they are. Once in eScriptorium, the images are segmented (aka lines of text are detected on the image) and then transcribed. We ignore all the printed text and only focus on the handwritten elements.  
 
