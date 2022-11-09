@@ -51,7 +51,7 @@ I had no idea how long it would take. Did that fax even reach the operator?
 
 I was ready to give up on my 300$CA. I was losing hope that I would ever get an answer on time. I was cursing the University of Montréal for making it so stupidly complicated to remove an illegitimate amount from my bill, cursing the RAMQ and the Assurance Maladie for being so slow and not having automatized such a process with a shared plateform, cursing La Poste for being unreliable and losing my letters, cursing myself for not starting the process sooner, had I known! Raaaah!  
 
-But on November 4, suddenly, unexpectedly, there is was. My Canadian Grail. The letter of acceptation into the RAMQ.  
+But on November 4, suddenly, unexpectedly, there it was. My Canadian Grail. The letter of acceptation into the RAMQ.  
 
 With trembling hands, unable to erase a smile from my face, blinking once or twice, I captured it with my phone. And uploaded it on the Task Manager from the University of Montréal website.  
 
