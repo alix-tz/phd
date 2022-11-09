@@ -43,9 +43,11 @@ Was it possible I used the wrong form again? No, it wasn't that... Did I forget 
 
 I'll skip the hour-long wait on the phone with (or without) music and, boom! Here is the answer: somehow, they only received the last page of the PDF I uploaded on their website. But twice. Twice the last page. The first page, nowhere to be seen!  
 
-I refused to let a bug cost me 300$CA, so I begged the operator to let me have a way to send them the missing page faster than the Post Office, and safer than their glitching upload platform. This is how I found myself (with my visiting partner) at the nearest Uniprix, playing with their public printer and sending my form... by fax!  
+I refused to let a bug cost me 300$CA, so I begged the operator to let me have a way to send the missing page faster than the Post Office, and safer than their glitching upload platform. This is how I found myself (with my visiting partner) at the nearest Uniprix, playing with their public printer and sending my form... by fax!  
 
-The wait resumed.
+The waiting resumed.
+
+I had no idea how long it would take. Did that fax even reach the operator?
 
 I was ready to give up on my 300$CA. I was losing hope that I would ever get an answer on time. I was cursing the University of Montréal for making it so stupidly complicated to remove an illegitimate amount from my bill, cursing the RAMQ and the Assurance Maladie for being so slow and not having automatized such a process with a shared plateform, cursing La Poste for being unreliable and loosing my letters, cursing myself for not starting the process sooner! Raaaah!  
 
