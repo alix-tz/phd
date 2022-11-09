@@ -73,7 +73,7 @@ I'll pay this time.
 
 [^investigation_outcome]: The investigation took less than 2 weeks if I remember correctly. But I was right to make another envoy in parallel because they never found the letter and eventually sent me a refund.  
 
-[^second_failure]: Yes! It is the second time La Poste loses my SE-401-Q-106... How much bad luck is that?  
+[^second_failure]: Yes! It is the second time La Poste loses my SE-401-Q-106... How unlucky is that?  
 
 [^credit]: As I explained in my the post n°006, this amount is not directly refunded to you. It only appears as a debt to you from the University and will only be deducted from your next bill. It's unconvenient for two reasons: 1) it's a credit you end up giving the University and given the amount, you could really use that money for something else (like buying food for a month or paying rent), 2) when you don't pay tuition every semester (as is my case), you have to wait a really long time for that money to make it back to you!
 
