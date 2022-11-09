@@ -23,7 +23,7 @@ How glad (and despairing) was I! Thanks to this tracking number, I was able to s
 
 Phew! The letter finally made it to the Assurance Maladie. But the time frame was narrowing down quickly! I had to contact the Assurance Maladie via the mobile app to try to politely urge then to send it back to me quickly. Eventually, I received it duly signed on September 27. I had two weeks left to send it to the RAMQ and get an acceptation letter to be able to reduce my bill.  
 
-Waisting no time, I praised the RAMQ for allowing me to upload the file(s) on their website, but cursed them when I received a confirmation telling me that they would take up to 60 days to process it. 60 days! I only had 17 left!
+Wasting no time, I praised the RAMQ for allowing me to upload the file(s) on their website, but cursed them when I received a confirmation telling me that they would take up to 60 days to process it. 60 days! I only had 17 left!
 
 At this point, as far as my bill was concerned, I had two options:
 
