@@ -23,7 +23,7 @@ How glad (and despairing) was I! Thanks to this tracking number, I was able to s
 
 Phew! The letter finally made it to the Assurance Maladie. But the time frame was narrowing down quickly! I had to contact the Assurance Maladie via the mobile app to try to politely urge then to send it back to me quickly. Eventually, I received it duly signed on September 27. I had two weeks left to send it to the RAMQ and get an acceptation letter to be able to reduce my bill.  
 
-Wasting no time, I praised the RAMQ for allowing me to upload the file(s) on their website, but cursed them when I received a confirmation telling me that they would take up to 60 days to process it. 60 days! I only had 17 left!
+Wasting no time, I praised the RAMQ for allowing me to upload the file(s) on their website, but cursed them when I received a confirmation notice telling me that they would take up to 60 days to process it. 60 days! I only had 17 left!
 
 At this point, as far as my bill was concerned, I had two options:
 
@@ -31,17 +31,17 @@ At this point, as far as my bill was concerned, I had two options:
 
 2. Or refuse to pay that part of the bill and begin having a debt of 300$CA towards the University, potentially pay interests on it and hope for the process to be over by the 15th of November (to have it retroacctively removed from the bill).
 
-This semester, I was only finally getting my 600$CA from Winter, because in Fabruary I had chosen the first and safest option. This time, I took a gamble and went for the second scenario. I wasn't sure of the actual consequences of contracting a debt with the University, but I was holding on the hope that the RAMQ wouldn't take as long as they announced.
+This semester, I was only finally getting my 600$CA from Winter, because in February I had chosen the first and safest option. This time, I took a gamble and went for the second scenario. I wasn't sure of the actual consequences of contracting a debt with the University, but I was holding on the hope that the RAMQ wouldn't take as long as they announced.
 
 October seemed to go by really slowly.
 
 The first sign of life from the RAMQ reached me on the 26th of October. Unfortunately, in a letter dated from the 14th, they listed all the items they expected to find in the form and rejected my request until I sent a complete form ASAP.  
 
-Wait, what? My form, not complete?  
+> "Wait, what? My form, not complete?!" 
 
 Was it possible I used the wrong form again? No, it wasn't that... Did I forget to check a box somewhere? No... Did the Assurance Maladie not correctly fill their part? No, still not that. What was wrong then? The only way to find out at that point was to call the RAMQ. I did so the following day.  
 
-I won't describe the hour-long wait on the phone with (or without) music and, boom! Here is the answer: somehow, they only received the last page of the PDF I uploaded it on their website. But twice. Twice the last page. The first page, nowhere to be seen!  
+I'll skip the hour-long wait on the phone with (or without) music and, boom! Here is the answer: somehow, they only received the last page of the PDF I uploaded on their website. But twice. Twice the last page. The first page, nowhere to be seen!  
 
 I refused to let a bug cost me 300$CA, so I begged the operator to let me have a way to send them the missing page faster than the Post Office, and safer than their glitching upload platform. This is how I found myself (with my visiting partner) at the nearest Uniprix, playing with their public printer and sending my form... by fax!  
 
