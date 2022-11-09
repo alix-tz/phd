@@ -13,7 +13,7 @@
  
 Building from my experience (and mistakes) during Winter 2022, I thought that the process would be a piece of cake from then on. Uh-uh, not so fast, not so much. 
 
-- "At least, I started right from the beginning with the correct form!"[^right]
+> "At least, I started right from the beginning with the correct form!"[^right]
 
 True. However, I got too confident in the speed of the process and forgot to take into account the French Summer vacations. I didn't send the signature request to my university before the 1st of August (a little over a month before my departure). The people in charge of signature were already on vacation. While this step add been very quick in Winter, this time it took almost a month: I only got the form with its signature back on the 30th of August, less than a week before my departure.
 
