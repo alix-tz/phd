@@ -53,7 +53,7 @@ I was ready to give up on my 300$CA. I was losing hope that I would ever get an 
 
 But on November 4, suddenly, unexpectedly, there it was. My Canadian Grail. The letter of acceptation into the RAMQ.  
 
-With trembling hands, unable to erase a smile from my face, blinking once or twice, I captured it with my phone. And uploaded it on the Task Manager from the University of Montréal website.  
+With trembling hands, unable to erase a smile from my face, blinking once or twice, I captured it with my phone, and connected to the Task Manager on the University of Montréal website.  
 
 Upload
 
