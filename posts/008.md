@@ -11,7 +11,7 @@
 
 [June 2022 witnessed a pretty cool planet alignment](https://starwalk.space/en/news/what-is-planet-parade), but it seems this omen wasn't about my [registration to the RAMQ](../006/) for my second semester in Canada. I didn't mean to post again about Health Insurance in Canada, but I can't resist telling this story.  
  
-Building from my experience (and mistakes) during Winter 2022, I thought that the process would be a piece of cake from then on. Uh-uh, not so fast, not so much. 
+Building from my experience (and mistakes) during Winter 2022, I thought that the process would be a piece of cake from then on. Uh-uh, not so fast. 
 
 > "At least, I started right from the beginning with the correct form!"[^right]
 
