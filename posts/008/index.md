@@ -61,7 +61,7 @@ Press "Confirm"
 
 And, a few days later poof! gone, my 300$CA debt.  
 
-Only remained, the 2,56$CA of interest generated durign this period.  
+Only remained, the 2,56$CA of interests generated during these three weeks.  
 
 But I surounder, I won't fight any longer.  
 
