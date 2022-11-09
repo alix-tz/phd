@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-[June 2022 witnessed a pretty cool planet alignment](https://starwalk.space/en/news/what-is-planet-parade), but it seems this omen wasn't about my [registration to the RAMQ](../posts/006/) for my second semester in Canada. I didn't mean to post again about Health Insurance in Canada, but I can't resist telling this story.  
+[June 2022 witnessed a pretty cool planet alignment](https://starwalk.space/en/news/what-is-planet-parade), but it seems this omen wasn't about my [registration to the RAMQ](../006/) for my second semester in Canada. I didn't mean to post again about Health Insurance in Canada, but I can't resist telling this story.  
  
 Building from my experience (and mistakes) during Winter 2022, I thought that the process would be a piece of cake from then on. Uh-uh, not so fast, not so much. 
 
@@ -29,7 +29,7 @@ At this point, as far as my bill was concerned, I had two options:
 
 1. Pay the 300$CA and hope for the process to be over by the 15th of November (to have it refunded to me as a credit from UdeM on my next tuition[^credit]);
 
-2. Or refuse to pay them and begin having a debt of 300$CA towards the University, potentially pay interests on it and hope for the process to be over by the 15th of November (to have it retroacctively removed from the bill).
+2. Or refuse to pay that part of the bill and begin having a debt of 300$CA towards the University, potentially pay interests on it and hope for the process to be over by the 15th of November (to have it retroacctively removed from the bill).
 
 This semester, I was only finally getting my 600$CA from Winter, because in Fabruary I had chosen the first and safest option. This time, I took a gamble and went for the second scenario. I wasn't sure of the actual consequences of contracting a debt with the University, but I was holding on the hope that the RAMQ wouldn't take as long as they announced.
 
@@ -64,8 +64,6 @@ Only remained, the 2,56$CA of interest generated durign this period.
 But I surounder, I won't fight any longer.  
 
 I'll pay this time.
-
----
 
 [^right]: Aka, I didn't use SE-401-Q-104, nor used the outdated version of SE-401-Q-106.
 
