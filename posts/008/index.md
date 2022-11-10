@@ -15,7 +15,7 @@ Building from my experience (and mistakes) during Winter 2022, I thought that th
 
 > "At least, I started right from the beginning with the correct form!"[^right]
 
-True. However, I got too confident in the speed of the process and forgot to take into account the French Summer vacations. I didn't send the signature request to my university before the 1st of August (a little over a month before my departure). The people in charge of signature were already on vacation. While this step add been very quick in Winter, this time it took almost a month: I only got the form with its signature back on the 30th of August, less than a week before my departure.
+True. However, I got too confident in the speed of the process and forgot to take into account the French Summer vacations. I didn't send the signature request to my university before the 1st of August (a little over a month before my departure). The people in charge of signing were already on vacation. While this step had been very quick in Winter, this time it took almost a month: I only got the form with its signature back on the 30th of August, less than a week before my departure.
 
 I immediately printed the document and rushed to the Post office to send it to the [Assurance Maladie](https://www.ameli.fr/paris/assure). I still had one month and two weeks to finish the full process in order to remove some 300$CA fees from the bill at the University of Montréal. It seemed feasible. In December, my initial envoy to the Assurance Maladie had seemingly never made it to the Assurance Maladie, so this time I decided to play it safe: I printed the document myself[^posting_online] and sent it as a registered letter, with a tracking number and a return receipt request.  
 
