@@ -61,7 +61,7 @@ Press "Confirm"
 
 And, a few days later poof! gone, my 300$CA debt.  
 
-Only remained, the 2,56$CA of interests generated during these three weeks, on a debt that have never existed.  
+Only remained, the 2,56$CA of interests generated during these three weeks, on a debt that should have never existed.  
 
 But I surrender, I won't fight any longer.  
 
