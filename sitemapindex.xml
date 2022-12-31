@@ -14,16 +14,20 @@
   <lastmod>2022-09-30T03:12:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/cat_milestone.xml</loc>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_mood.xml</loc>
   <lastmod>2022-09-30T03:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_paperworking.xml</loc>
-  <lastmod>2022-09-30T03:12:00Z</lastmod>
+  <lastmod>2022-11-09T23:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_story-time.xml</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-11-10T20:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cotutelle.xml</loc>
@@ -35,7 +39,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/health-insurance.xml</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-11-10T20:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
@@ -47,7 +51,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/tuition.xml</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-11-10T20:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/univerisity.xml</loc>
@@ -63,10 +67,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
  </sitemap>
 </sitemapindex>

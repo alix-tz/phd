@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2022-11-09T23:01:00Z</lastmod>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_dataset/</loc>
@@ -28,6 +28,10 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_genesis/</loc>
   <lastmod>2022-07-29T09:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/cat_milestone/</loc>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_mood/</loc>
@@ -116,5 +120,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/008/</loc>
   <lastmod>2022-11-09T23:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/009/</loc>
+  <lastmod>2022-12-31T20:20:00Z</lastmod>
  </url>
 </urlset>
