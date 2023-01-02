@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-Over the past decade, I've started a tradition of taking a sort-of-day-long hike on the 1st of January. There is always a chance that the whether won't be on my side, but I like the idea of starting the year peacefully and embracing nature.  
+Over the past decade, I've started a tradition of taking a sort-of-day-long hike on the 1st of January. There is always a chance that the weather won't be on my side, but I like the idea of starting the year peacefully and embracing nature.  
 
 Before starting 2023 though, and without much originality, I wanted to dedicate a last post for 2022 to looking back to my first full year of phD and focus on its biggest highlights as far as my phD project is concerned.  
 
