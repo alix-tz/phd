@@ -29,4 +29,7 @@ Some words for the definition of the term.
 
 ## Testing the insertion of images (thumbnail)
 
-{{% thumbnail "https://htr-united.github.io/assets/images/logo_htr-united.png" alt="Foo Image" title="Insert title-text joke here" align="right" %}}<p class="caption">Foo Image (right-aligned) caption</p>{{% /thumbnail %}}
+cf. https://getnikola.com/handbook.html#images-and-galleries 
+
+
+{{% thumbnail "https://htr-united.github.io/assets/images/logo_htr-united.png" alt="Foo Image" title="Insert title-text joke here" align="center" %}}<p class="caption">Foo Image (right-aligned) caption</p>{{% /thumbnail %}}
