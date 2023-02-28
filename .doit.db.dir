@@ -153,3 +153,6 @@
 'render_posts:cache\\posts\\010.html', (481280, 339)
 'render_pages:output\\posts\\010\\index.html', (481792, 4565)
 'render_sources:output\\posts\\010\\index.md', (486400, 232)
+'render_posts:cache\\posts\\011.html', (486912, 339)
+'render_sources:output\\posts\\011\\index.md', (487424, 232)
+'render_pages:output\\posts\\011\\index.html', (487936, 4563)
