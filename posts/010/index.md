@@ -41,4 +41,4 @@ I really hope that the transparency and simplicity brought by Mkdocs and Markdow
 
 [^1]: Also when I got more free time after [my classes were over](https://alix-tz.github.io/phd/posts/009/)!  
 
-[^2]: It is not necessary to use readthedocs to deploy a website built with Mkdocs. In the case of the tutorial, it simple allows us to have a domain name more meaningful than ".github.io".  
+[^2]: It is not necessary to use readthedocs to deploy a website built with Mkdocs. In the case of the tutorial, it simply allows us to have a domain name more meaningful than ".github.io".  
