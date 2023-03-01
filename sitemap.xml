@@ -7,19 +7,23 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://alix-tz.github.io/phd/</loc>
-  <lastmod>2022-10-18T17:51:00Z</lastmod>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/2022/</loc>
   <lastmod>2022-03-05T02:05:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/2023/</loc>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2023-01-02T08:04:00Z</lastmod>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2022-12-31T20:20:00Z</lastmod>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_dataset/</loc>
@@ -58,12 +62,20 @@
   <lastmod>2022-07-29T13:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/house-cleaning/</loc>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/init/</loc>
   <lastmod>2022-03-05T02:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/manifesto/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/static-website/</loc>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/tuition/</loc>
@@ -80,6 +92,10 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/wikicremma/</loc>
   <lastmod>2022-10-19T18:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/index-1.html</loc>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -124,5 +140,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/009/</loc>
   <lastmod>2022-12-31T20:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/010/</loc>
+  <lastmod>2023-03-01T10:44:00Z</lastmod>
  </url>
 </urlset>
