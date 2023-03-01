@@ -39,6 +39,6 @@ Over the past month, I have spent a lot of time working on this new tutorial for
 
 I really hope that the transparency and simplicity brought by Mkdocs and Markdown will allow many people to add their contributions to the documentation of eScriptorium! Who knows, maybe you will too!
 
-[^1]: Also when I got more free time after my classes were over!  
+[^1]: Also when I got more free time after [my classes were over](https://alix-tz.github.io/phd/posts/009/)!  
 
 [^2]: It is not necessary to use readthedocs to deploy a website built with Mkdocs. In the case of the tutorial, it simple allows us to have a domain name more meaningful than ".github.io".  
