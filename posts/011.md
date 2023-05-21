@@ -71,7 +71,7 @@ As way of a conclusion, I would say that even though I was disappointed with wha
 
 [^icfhr]: It is possible to find [here](https://youtu.be/Tuw8uQonW7E?t=145) a recording of the talk given on this tool at ICFHR 2020.
 
-[^online]: In the context of handwritten text recognition, as distinction is made between "online" data and "offline" data. Offline data are based on a matrix of pixels containing the image of a text (they are static), whereas online data are vectors containing information about the speed, the points through which a line passes to form a letter, end of stroke points, etc. Online HTR uses data generated with an e-pen and a screen while offline HTR uses images created with a scanner or a camera.
+[^online]: In the context of handwritten text recognition, a distinction is made between "online" data and "offline" data. Offline data are based on a matrix of pixels containing the image of a text (they are static), whereas online data are vectors containing information about the speed, the points through which a line passes to form a letter, end of stroke points, etc. Online HTR uses data generated with an e-pen and a screen while offline HTR uses images created with a scanner or a camera.
 
 [^customization]: One of the customizations consisted in removing non-ASCII characters or characters not supported by the model. It was easy to apply this transformation because in pytorch-handwriting-synthesis-toolkit, each model comes with a little metadata file which contains the character set handled by the model.
 
