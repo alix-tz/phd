@@ -23,7 +23,7 @@ I have been thinking of finding a better solution since at least 2020, but it wa
 
 Github is a platform designed for sharing and opening codes to external contributors. Relying on it solves a major issue with the current tutorial: if anyone can suggest the correction, edition or translation of eScriptorium's documentation, then it is more likely to keep up with the evolutions of the application!  
 
-In August, I created a new Github repository called [escriptorium-tutorial](https://github.com/alix-tz/escriptorium-tutorial). I [set a basic configuration and connected it to Readthedocs](https://docs.readthedocs.io/en/stable/tutorial/#getting-started). As soon as this was done, the website became available at [online](https://escriptorium-tutorial.readthedocs.io/) with a URL based on the following structure: `{gh_repo_name}.readthedocs.io`. Then, I started rewriting the content of the tutorial... following [Sphinx' syntax](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html).  
+In August, I created a new Github repository called [escriptorium-documentation](https://github.com/alix-tz/escriptorium-documentation). I [set a basic configuration and connected it to Readthedocs](https://docs.readthedocs.io/en/stable/tutorial/#getting-started). As soon as this was done, the website became available at [online](https://escriptorium.readthedocs.io/) with a URL based on the following structure: `{gh_repo_name}.readthedocs.io`. Then, I started rewriting the content of the tutorial... following [Sphinx' syntax](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html).  
 
 It was so painful that I never got back to it after I came back from my own vacations.  
 
@@ -35,10 +35,12 @@ The only non-sphinx-based option available with readthedocs is [Mkdocs](https://
 
 > I liked Mkdocs so much that I also used it to rebuild [my personal website](https://alix-tz.github.io/)![^2]
 
-Over the past month, I have spent a lot of time working on this new tutorial for eScriptorium. I designed a basic structure, breaking down the features into different categories. Now the pages are progressively being filled and I am very happy to have been joined in my efforts by my colleagues Hugo Scheithauer and Floriane Chiffoleau. As we progressively merge the content of new pages to the main branch, the [escriptorium-tutorial](https://escriptorium-tutorial.readthedocs.io/en/latest/) website expands. It will be ready soon for an official release!  
+Over the past month, I have spent a lot of time working on this new tutorial for eScriptorium. I designed a basic structure, breaking down the features into different categories. Now the pages are progressively being filled and I am very happy to have been joined in my efforts by my colleagues Hugo Scheithauer and Floriane Chiffoleau. As we progressively merge the content of new pages to the main branch, the [escriptorium-tutorial](https://escriptorium.readthedocs.io/en/latest/) website expands. It will be ready soon for an official release!  
 
 I really hope that the transparency and simplicity brought by Mkdocs and Markdown will allow many people to add their contributions to the documentation of eScriptorium! Who knows, maybe you will too!
 
 [^1]: Also when I got more free time after [my classes were over](https://alix-tz.github.io/phd/posts/009/)!  
 
 [^2]: It is not necessary to use readthedocs to deploy a website built with Mkdocs. In the case of the tutorial, it simply allows us to have a domain name more meaningful than ".github.io".  
+
+*EDIT: we changed the name of the repository to escriptorium-documentation instead of escriptorium-tutorial (all links and mentions were changed in this post). The decision was motivated by the fact the "tutorial" felt like an inexact description of the actual scope/ambition of the project.*
