@@ -3,7 +3,7 @@
 .. slug: 011
 .. date: 2023-05-21 14:12:26 UTC-04:00
 .. tags: experiment, synthetic, HTR
-.. category: datasets 
+.. category: dataset
 .. link: 
 .. description: 
 .. status:
