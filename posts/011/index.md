@@ -49,7 +49,7 @@ Eventually, I settled for a solution based on a [Diffusion model](https://en.wik
 
 A great advantage with DHG compared to the LSTM approach was that it was possible to easily fix the priming line and almost always obtain a convincing output. This was essential to create a dataset with a consistent handwriting over hundred of lines. As visible in the following image, even if the diffusion model is not capable of perfectly imitating the handwriting contained in the priming line, it usually successfully captures elements of style such as the slant, or the cursive nature of the text.
 
-<img src="/images/DHG_generated.png" alt="five pairs of priming lines with the resulting generated lines." width="600px">
+<img src="/images/DHG_generated.png" alt="five pairs of priming lines with the resulting generated lines." width="800px">
 
 After several tests, I found that the third priming line gave the best results when associated with different text prompts, so I decided to use it along with excerpts from [Moby Dick](https://www.gutenberg.org/files/2701/2701-0.txt) to create a completely artificially generated dataset. In a few days, I created more than 8,000 images (PNG) associated with a text file (TXT) containing the prompts used to generate them.
 
