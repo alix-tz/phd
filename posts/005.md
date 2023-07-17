@@ -9,11 +9,11 @@
 .. type: text
 -->
 
-In the previous post, I introduced the functioning of an international cotutelle and focused on the administrative details from the universities' point of view. Now, I would like to take the time to list and explain other administrative requirements, which are not always foreseen. 
+In the previous post, I introduced the functioning of an international *cotutelle* and focused on the administrative details from the universities' point of view. Now, I would like to take the time to list and explain other administrative requirements, which are not always foreseen. 
 
-Let's start with immigration: unless you are a citizen of both the countries involved in the cotutelle, you will need at least one visa. Maybe two if you are a citizen of neither.  
+Let's start with immigration: unless you are a citizen of both the countries involved in the *cotutelle*, you will need at least one visa. Maybe two if you are a citizen of neither.  
 
-I only needed a visa for Canada since I am already a French citizen. So, as soon as I got my letter of acceptance from the University of Montreal, I started the paperwork in order to obtain a Student Visa (*Permis d'Études*) covering the full duration of my studies. There is a lot of documentation available on the main steps, both from the Univerisy of Montreal (http://www.bei.umontreal.ca/bei/form_info.htm) and from the [canadian immigration services](https://www.canada.ca/fr/immigration-refugies-citoyennete/services/etudier-canada/permis-etudes/presenter-demande.html).
+I only needed a visa for Canada since I am already a French citizen. So, as soon as I got my letter of acceptance from the University of Montreal, I started the paperwork in order to obtain a Student Visa (*Permis d'Études*) covering the full duration of my studies. There is a lot of documentation available on the main steps, both from the University of Montreal (http://www.bei.umontreal.ca/bei/form_info.htm) and from the [canadian immigration services](https://www.canada.ca/fr/immigration-refugies-citoyennete/services/etudier-canada/permis-etudes/presenter-demande.html).
 
 Here is the list of documents I had to provide the Canadian administration with:
 

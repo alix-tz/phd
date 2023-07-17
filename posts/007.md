@@ -2,7 +2,7 @@
 .. title: 007 - WikiCREMMA
 .. slug: 007
 .. date: 2022-10-19 14:49:00 UTC-04:00
-.. tags: wikicremma, experiment
+.. tags: wikicremma, experiment, HTR
 .. category: dataset
 .. link: 
 .. description: 
