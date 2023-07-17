@@ -30,7 +30,7 @@ In [Hodel et al., (2021)](https://openhumanitiesdata.metajnl.com/articles/10.533
 - CER < 5% == very good (errors are usually focused on rare or unknown words)
 - CER < 2.5% == excellent (but it is usually only reached when the handwriting is very regular)
 
-Personally, I think this grid should also include 20% and 0%. 20% as a threshold, because at 80% of accuracy, the transcription is supposedly good enough for fuzzy search and keyword spotting (missing reference here...); and 0% because it should be reminded that an accuracy of 100% is virtually impossible.
+Personally, I think this grid should also include 20% and 0%. 20% as a threshold, because at 80% of accuracy, the transcription is supposedly good enough for fuzzy search and keyword spotting (I should add a reference here, but I can't find it anymore...); and 0% because it should be reminded that an accuracy of 100% is virtually impossible.
 
 To complement this, I would like to mention another possible approach to get an interpretable score: during the DH2023 conference, Thibault Clérice and I [presented an experiment](https://inria.hal.science/hal-04094241) where we trained a model using the same data in the train set and the test set. Our model reached an accuracy close to 90%, which we were able to use as a baseline to define the highest accuracy score possible for the data we had. Thus we were able to consider that a model approaching 90% of accuracy would be an excellent model, as far as that dataset was concerned.
 
