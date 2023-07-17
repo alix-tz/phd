@@ -3,7 +3,7 @@
 .. slug: 008
 .. date: 2022-11-09 16:20:50 UTC-05:00
 .. tags: health insurance, tuition
-.. category: story time, paperworking
+.. category: story time
 .. link: 
 .. description: 
 .. type: text
