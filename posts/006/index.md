@@ -20,7 +20,7 @@ Overall, the main steps are the following: you must get a form signed by the Hea
 Health insurance wise, several deadlines were applicable. For Winter 2022, mine were:
 
 - by the 14th of February, I had to have fully paid my tuition;
-- which meant I had until the 13th of February to remove the any fee I did not want to pay;
+- which meant I had until the 13th of February to remove any fee I did not want to pay;
 - if not, I had to pay the full bill. Then I had until the 15th of March to finish the paperwork and request a refund.
 
 First things first, I may have mentioned it already, but there is a series of fees that are automatically added to a student's bill even if they are not mandatory. At the University of Montreal, they are called the "CANO" (*cotisations automatiques non obligatoires*). There is ([here](https://ombudsman.umontreal.ca/foire-aux-questions/faq/news/detail/News/comment-me-desister-des-assurances-ou-dautres-frais-non-obligatoires/)) a rather complete documentation on which fees belong to this category, how much money they represent, what they pay for and the various processes to waive them. There are generally not related to health insurance, but the documentation also explains how to sign off from the dental and regular health insurance. Following these explanations, I got most of the CANO fees taken off my bill, as well as the fees related to the dental insurance.  
@@ -34,14 +34,14 @@ For studies in Québec, it is said that:
 - students traveling to Québec within the frame of a university exchange should use the form [**SE Q-401-106**](https://www.ramq.gouv.qc.ca/fr/media/2516);
 - and that students enrolled in the Québec university should instead use the form **SE Q-401-102**.
 
-They say nothing about which situation applies to a PhD student in cotutelle: is it considered a university exchange since you are enrolled in a French university or is it considered to be an enrolling in a Québec university? For most of my paperwork with Canada, aside from the *convention de cotutelle*, my paperwork was essentially the same as someone enrolling only to a Canadian university. Additionally, SE 401-Q-106 required the French university to sign the form, whereas SE 401-Q-102 only required a signature from the Assurance Maladie. SE 401-Q-102 seemed applicable and faster, so I opted for it. Let's say it right away: it was a mistake. I should have opted for SE 401-Q-106 from the beginning.  
+They say nothing about which situation applies to a PhD student in *cotutelle*: is it considered a university exchange since you are enrolled in a French university or is it considered to be like enrolling in a Québec university? For most of my paperwork with Canada, aside from the *convention de cotutelle*, my paperwork was essentially the same as someone enrolling only to a Canadian university. Additionally, SE 401-Q-106 required the French university to sign the form, whereas SE 401-Q-102 only required a signature from the Assurance Maladie. SE 401-Q-102 seemed applicable and faster, so I opted for it. Let's say it right away: it was a mistake. I should have opted for SE 401-Q-106 from the beginning.  
 
-In whichever situation you are in, you cannot simultaneously be enrolled in the French Assurance Maladie and the RAMQ. So both of the form will suspend your enrolling to the Assurance Maladie in order to get you into the RAMQ syste. The main difference between the two forms is actually that:
+In whichever situation you are in, you cannot simultaneously be enrolled in the French Assurance Maladie and the RAMQ. So both of the form will suspend your enrolling to the Assurance Maladie in order to get you into the RAMQ system. The main difference between the two forms is actually that:
 
 - SE 401-Q-102 will have you struck off from the Assurance Maladie (and likely asked to destroy your Carte Vitale), until you come back to France and go through the process (and paperwork) to be reintegrated into the system,
 - whereas SE 401-Q-106 will have your rights temporarily deactivated: with SE 401-Q-106 you must provide the precise dates of your travel to Québec. Upon your return, your rights are simply (and normally automatically) reactivated.  
 
-To make it short, both forms work for a cotutelle. But if you are going to Canada for only one semester, you should go for the SE 401-Q-106!
+To make it short, both forms work for a *cotutelle*. But if you are going to Canada for only one semester, you should go for the SE 401-Q-106!
 
 I realized my mistake after arriving to Québec and talking with other French people having recently moved to Montreal. At the end of January, when it was clear I had made a mistake, I was still waiting for the Assurance Maladie to return the signed SE 401-Q-102 form. I decided to start over and sent the SE 401-Q-106 form to my university. They signed returned it within one day. I sent it to the Assurance Maladie explaining my mistake and asked to start over. Because of this error, I wasn't able to waive the 600$CA from my bill before the February deadline: I had to pay the tuition along with the 600$CA. Then I focused on finishing the paperwork on time to be able to ask for a refund. Luckily, it played out pretty well and I now have a 600$CA credit line with the University of Montreal, waiting to be deduced from my next tuition in September.  
 
@@ -51,6 +51,6 @@ Before closing this rather long post, I want to mention another mistake I made. 
 
 I strongly recommend using the forms provided on the RAMQ website: they are common to both the French and the Québec administration and actually findable on the RAMQ's website.  
  
-A final warning: upon talking with some of my fellow French students at the University of Montreal, I realized that not every university will be quick when it comes to signing the SE 401-Q-106 form. Other universities may ask student to first finish the writing and signature of the *convention de cotutelle*. This is particularly unfaire because completing this process can take a whole year and you may start traveling during this period, as is my case.
+A final warning: upon talking with some of my fellow French students at the University of Montreal, I realized that not every university will be quick when it comes to signing the SE 401-Q-106 form. Other universities may ask student to first finish the writing and signature of the *convention de cotutelle*. This is particularly unfair because completing this process can take a whole year and you may start traveling during this period, as is my case.
 
 Ok, so now you have your visa and a health insurance? Let's go look for a bank and a roof!

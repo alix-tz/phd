@@ -2,7 +2,7 @@
 .. title: 010 - Make and Read the docs
 .. slug: 010
 .. date: 2023-02-28 05:41:40 UTC-05:00
-.. tags: house cleaning, static website
+.. tags: house cleaning, static website, eScriptorium, HTR, software documentation
 .. category: story time
 .. link: 
 .. description: 
