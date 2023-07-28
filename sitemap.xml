@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2023-07-15T17:17:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -90,6 +90,10 @@
   <lastmod>2022-03-05T02:09:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/kraken/</loc>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/manifesto/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
  </url>
@@ -123,7 +127,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-1.html</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -180,5 +184,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/012/</loc>
   <lastmod>2023-07-15T17:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/013/</loc>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </url>
 </urlset>

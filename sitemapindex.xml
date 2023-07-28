@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_dataset.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_genesis.xml</loc>
@@ -51,7 +51,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/experiment.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/health-insurance.xml</loc>
@@ -63,11 +63,15 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/htr.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
   <lastmod>2022-09-30T03:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/kraken.xml</loc>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/manifesto.xml</loc>
@@ -103,10 +107,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2023-07-28T21:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>
