@@ -35,7 +35,7 @@ The dataset is versioned and published applying the principles and tools we deve
 
 As I mentioned before, the goal of these datasets was to create transcription models. Taking the opportunity of the recent update of the dataset, I tried different scenarios.
 
-I never trained the model from scratch because the dataset is too small to get any sort of usable model. Instead, I used [`Manu McFrench`](https://zenodo.org/record/6657809) as a base model, fine-tuned with the Peraire dataset. (We were actually able to use Peraire as an example during the [DH2023](https://www.conftool.pro/dh2023/index.php?page=browseSessions&form_session=76#paperID690) conference[^3] earlier this month to show the usefulness of having this kind of base model). I tested fine-tuning only on the B series, only on the D series or on both the B and the D series. Then I used a B-series-only test set, a D-series-only test set and the full test set to see how the models performed.
+I never trained the model from scratch because the dataset is too small to get any sort of usable model. Instead, I used [**Manu McFrench**](https://zenodo.org/record/6657809) as a base model, fine-tuned with the Peraire dataset. (We were actually able to use Peraire as an example during the [DH2023](https://www.conftool.pro/dh2023/index.php?page=browseSessions&form_session=76#paperID690) conference[^3] earlier this month to show the usefulness of having this kind of base model). I tested fine-tuning only on the B series, only on the D series or on both the B and the D series. Then I used a B-series-only test set, a D-series-only test set and the full test set to see how the models performed.
 
 Since I wanted to try it after discovering it during DH2023, I used [CERberus 🐶🐶🐶](https://github.com/WHaverals/CERberus) (I talked about it in my [last post](../012/)) to measure the accuracy of the models on the test sets listed above.
 
@@ -44,20 +44,20 @@ Like [KaMI](https://huggingface.co/spaces/lterriel/kami-app), CERberus takes two
 Here are the results:
 
 <!-- TODO: add the initial score from Manu McFrench alone -->
-- `peraire_both`, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.
-- `peraire_B`, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.
-- `peraire_D`, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. I skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.
+- **peraire_both**, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.
+- **peraire_B**, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.
+- **peraire_D**, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. I skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.
 
 All of this makes sense, though.
 
-1. `peraire_both` is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series since it performs better on the B series, compared to `peraire_B`.
-2. `peraire_B` which was trained on the more difficult dataset seems to use the knowledge inherited from `Manu McFrench` and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. *Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.*
-3. `peraire_D` on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train `Manu McFrench` and in the D series.
+1. **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series since it performs better on the B series, compared to **peraire_B**.
+2. **peraire_B** which was trained on the more difficult dataset seems to use the knowledge inherited from **Manu McFrench** and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. *Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.*
+3. **peraire_D** on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train **Manu McFrench** and in the D series.
 
-What happens with `peraire_D` is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!
+What happens with **peraire_D** is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!
 
 [^1]: I used 2 images from B2 because one of them was extremely faded and I wanted to include some of these extreme cases in the dataset, and 2 images from B30 because it consisted of shorter lines (table of contents) which I found was interesting to include.
 
-[^2]: As described in the documents, I only used the "InterlineaLine" and "DefaultLine" for the lines, and the "MainZone" and "NumberingZone" for the regions.
+[^2]: As described in the documents, I only used the "InterlinearLine" and "DefaultLine" for the lines, and the "MainZone" and "NumberingZone" for the regions.
 
 [^3]: See the submission and the slides on HAL: [https://inria.hal.science/hal-04094241](https://inria.hal.science/hal-04094241).
