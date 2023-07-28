@@ -68,30 +68,30 @@
 <p>The dataset is versioned and published applying the principles and tools we developed withing the frame of <a href="https://htr-united.github.io/">HTR-United</a>. I also added illustrated segmentation and transcription guidelines.</p>
 <h3>Testing different dataset configurations to train transcription models</h3>
 <p>As I mentioned before, the goal of these datasets was to create transcription models. Taking the opportunity of the recent update of the dataset, I tried different scenarios.</p>
-<p>I never trained the model from scratch because the dataset is too small to get any sort of usable model. Instead, I used <a href="https://zenodo.org/record/6657809"><code>Manu McFrench</code></a> as a base model, fine-tuned with the Peraire dataset. (We were actually able to use Peraire as an example during the <a href="https://www.conftool.pro/dh2023/index.php?page=browseSessions&amp;form_session=76#paperID690">DH2023</a> conference<sup id="fnref:3"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/013/#fn:3">3</a></sup> earlier this month to show the usefulness of having this kind of base model). I tested fine-tuning only on the B series, only on the D series or on both the B and the D series. Then I used a B-series-only test set, a D-series-only test set and the full test set to see how the models performed.</p>
+<p>I never trained the model from scratch because the dataset is too small to get any sort of usable model. Instead, I used <a href="https://zenodo.org/record/6657809"><strong>Manu McFrench</strong></a> as a base model, fine-tuned with the Peraire dataset. (We were actually able to use Peraire as an example during the <a href="https://www.conftool.pro/dh2023/index.php?page=browseSessions&amp;form_session=76#paperID690">DH2023</a> conference<sup id="fnref:3"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/013/#fn:3">3</a></sup> earlier this month to show the usefulness of having this kind of base model). I tested fine-tuning only on the B series, only on the D series or on both the B and the D series. Then I used a B-series-only test set, a D-series-only test set and the full test set to see how the models performed.</p>
 <p>Since I wanted to try it after discovering it during DH2023, I used <a href="https://github.com/WHaverals/CERberus">CERberus 🐶🐶🐶</a> (I talked about it in my <a href="https://alix-tz.github.io/phd/posts/012/">last post</a>) to measure the accuracy of the models on the test sets listed above.</p>
 <p>Like <a href="https://huggingface.co/spaces/lterriel/kami-app">KaMI</a>, CERberus takes two text input: the reference (aka the ground truth) and the prediction (or the hypothesis made by the model). In order to get the prediction, I loaded my models on eScriptorium, as well as the images and transcription of the test set before applying each model to the documents. This way, all the transcription are predicted with the same segmentation, which comes from the ground truth.</p>
 <p>Here are the results:</p>
 <!-- TODO: add the initial score from Manu McFrench alone -->
 <ul>
 <li>
-<code>peraire_both</code>, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.</li>
+<strong>peraire_both</strong>, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.</li>
 <li>
-<code>peraire_B</code>, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.</li>
+<strong>peraire_B</strong>, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.</li>
 <li>
-<code>peraire_D</code>, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. I skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.</li>
+<strong>peraire_D</strong>, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. I skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.</li>
 </ul>
 <p>All of this makes sense, though.</p>
 <ol>
 <li>
-<code>peraire_both</code> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series since it performs better on the B series, compared to <code>peraire_B</code>.</li>
+<strong>peraire_both</strong> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series since it performs better on the B series, compared to <strong>peraire_B</strong>.</li>
 <li>
-<code>peraire_B</code> which was trained on the more difficult dataset seems to use the knowledge inherited from <code>Manu McFrench</code> and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. <em>Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.</em>
+<strong>peraire_B</strong> which was trained on the more difficult dataset seems to use the knowledge inherited from <strong>Manu McFrench</strong> and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. <em>Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.</em>
 </li>
 <li>
-<code>peraire_D</code> on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train <code>Manu McFrench</code> and in the D series.</li>
+<strong>peraire_D</strong> on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train <strong>Manu McFrench</strong> and in the D series.</li>
 </ol>
-<p>What happens with <code>peraire_D</code> is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!</p>
+<p>What happens with <strong>peraire_D</strong> is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!</p>
 <div class="footnote">
 <hr>
 <ol>
@@ -99,7 +99,7 @@
 <p>I used 2 images from B2 because one of them was extremely faded and I wanted to include some of these extreme cases in the dataset, and 2 images from B30 because it consisted of shorter lines (table of contents) which I found was interesting to include. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>As described in the documents, I only used the "InterlineaLine" and "DefaultLine" for the lines, and the "MainZone" and "NumberingZone" for the regions. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>As described in the documents, I only used the "InterlinearLine" and "DefaultLine" for the lines, and the "MainZone" and "NumberingZone" for the regions. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
 <p>See the submission and the slides on HAL: <a href="https://inria.hal.science/hal-04094241">https://inria.hal.science/hal-04094241</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
