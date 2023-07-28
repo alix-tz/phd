@@ -83,7 +83,7 @@
 <p>As I mentioned before, the goal of these datasets was to create transcription models. Taking the opportunity of the recent update of the dataset, I tried different scenarios.</p>
 <p>I never trained the model from scratch because the dataset is too small to get any sort of usable model. Instead, I used <a href="https://zenodo.org/record/6657809"><strong>Manu McFrench</strong></a> as a base model, fine-tuned with the Peraire dataset. (We were actually able to use Peraire as an example during the <a href="https://www.conftool.pro/dh2023/index.php?page=browseSessions&amp;form_session=76#paperID690">DH2023</a> conference<sup id="fnref:3"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/013/#fn:3">3</a></sup> earlier this month to show the usefulness of having this kind of base model). I tested fine-tuning only on the B series, only on the D series or on both the B and the D series. Then I used a B-series-only test set, a D-series-only test set and the full test set to see how the models performed.</p>
 <p>Since I wanted to try it after discovering it during DH2023, I used <a href="https://github.com/WHaverals/CERberus">CERberus 🐶🐶🐶</a> (I talked about it in my <a href="https://alix-tz.github.io/phd/posts/012/">last post</a>) to measure the accuracy of the models on the test sets listed above.</p>
-<p>Like <a href="https://huggingface.co/spaces/lterriel/kami-app">KaMI</a>, CERberus takes two text input: the reference (aka the ground truth) and the prediction (or the hypothesis made by the model). In order to get the prediction, I loaded my models on eScriptorium, as well as the images and transcription of the test set before applying each model to the documents. This way, all the transcription are predicted with the same segmentation, which comes from the ground truth.</p>
+<p>Like <a href="https://huggingface.co/spaces/lterriel/kami-app">KaMI</a>, CERberus takes 2 categories of text input: the reference (aka the ground truth) and the prediction (or the hypothesis made by the model). In order to get the prediction, I loaded my models on eScriptorium, as well as the images and transcription of the test set before applying each model to the documents. This way, all the transcription are predicted with the same segmentation, which comes from the ground truth.</p>
 <p>Here are the results:</p>
 <!-- TODO: add the initial score from Manu McFrench alone -->
 <ul>
@@ -97,9 +97,9 @@
 <p>All of this makes sense, though.</p>
 <ol>
 <li>
-<strong>peraire_both</strong> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series since it performs better on the B series, compared to <strong>peraire_B</strong>.</li>
+<strong>peraire_both</strong> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to <strong>peraire_B</strong>.</li>
 <li>
-<strong>peraire_B</strong> which was trained on the more difficult dataset seems to use the knowledge inherited from <strong>Manu McFrench</strong> and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. <em>Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.</em>
+<strong>peraire_B</strong> which was trained on the more difficult dataset seems to use the knowledge inherited from <strong>Manu McFrench</strong> and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. <!--*Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.*-->
 </li>
 <li>
 <strong>peraire_D</strong> on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train <strong>Manu McFrench</strong> and in the D series.</li>

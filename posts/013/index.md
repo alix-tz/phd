@@ -39,7 +39,7 @@ I never trained the model from scratch because the dataset is too small to get a
 
 Since I wanted to try it after discovering it during DH2023, I used [CERberus 🐶🐶🐶](https://github.com/WHaverals/CERberus) (I talked about it in my [last post](../012/)) to measure the accuracy of the models on the test sets listed above.
 
-Like [KaMI](https://huggingface.co/spaces/lterriel/kami-app), CERberus takes two text input: the reference (aka the ground truth) and the prediction (or the hypothesis made by the model). In order to get the prediction, I loaded my models on eScriptorium, as well as the images and transcription of the test set before applying each model to the documents. This way, all the transcription are predicted with the same segmentation, which comes from the ground truth.
+Like [KaMI](https://huggingface.co/spaces/lterriel/kami-app), CERberus takes 2 categories of text input: the reference (aka the ground truth) and the prediction (or the hypothesis made by the model). In order to get the prediction, I loaded my models on eScriptorium, as well as the images and transcription of the test set before applying each model to the documents. This way, all the transcription are predicted with the same segmentation, which comes from the ground truth.
 
 Here are the results:
 
@@ -50,8 +50,8 @@ Here are the results:
 
 All of this makes sense, though.
 
-1. **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series since it performs better on the B series, compared to **peraire_B**.
-2. **peraire_B** which was trained on the more difficult dataset seems to use the knowledge inherited from **Manu McFrench** and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. *Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.*
+1. **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to **peraire_B**.
+2. **peraire_B** which was trained on the more difficult dataset seems to use the knowledge inherited from **Manu McFrench** and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. <!--*Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.*-->
 3. **peraire_D** on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train **Manu McFrench** and in the D series.
 
 What happens with **peraire_D** is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!
