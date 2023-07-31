@@ -25,7 +25,7 @@ The first version of the dataset was solely focused on the B series. I selected 
 
 I pre-segmented the images with Kraken's default model before correcting the result manually. At this point, I also applied the [segmOnto](https://segmonto.github.io/) ontology for the lines and regions[^2]. Because of the [fading ink](https://raw.githubusercontent.com/alix-tz/peraire-ground-truth/master/data/train/B.2.europe-orientale_0007.jpg), some words could not be transcribed. In order to avoid complicating the transcription rules, I decided to simply segment out the passages that couldn't be read. On the one hand it simplifies the transcription, but on the other hand, it means that a small portion of my segmented documents cannot be re-used by others to train a segmentation model. Since we were not training a segmentation model, it was an easy decision.
 
-<!-- add an illustration when eScriptorium is back online -->
+<img src="/images/peraire_faded.png" alt="screenshot showing the segmentation and the transcription panels from eScriptorium where we can see that some lines are broken down into several segments and that some segments were left blank" widht="400px">
 
 More recently, it was decided to augment the dataset with examples from the D series because the model trained on the B series was not good enough. This time, Gilles Pérez, a member of the project, took charge of the transcription. I recommended to create a new sample of 30 to 40 images, so he randomly selected series of 4 continuous pages from each ensemble. The transcription of the corresponding 36 pages was sent to me as a Word document. Therefore, on top of taking care of the segmentation of the images, I also went through an alignment phase during which I verified the order of the lines and copy-pasted the transcription. It took longer than I expected but it allowed me to align the transcription with the rules I had followed when creating the first set. I also picked 4 of the 36 pages to add to the test set.
 
@@ -43,16 +43,17 @@ Like [KaMI](https://huggingface.co/spaces/lterriel/kami-app), CERberus takes 2 c
 
 Here are the results:
 
-<!-- TODO: add the initial score from Manu McFrench alone -->
+- **Manu McFrench**, before fine-tuning, gets a CER of 26.16% when tested on the whole test set, and a score of 27.19% on the documents from the B series, 25.29% on the D series.
 - **peraire_both**, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.
 - **peraire_B**, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.
 - **peraire_D**, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. I skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.
 
 All of this makes sense, though.
 
-1. **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to **peraire_B**.
-2. **peraire_B** which was trained on the more difficult dataset seems to use the knowledge inherited from **Manu McFrench** and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series. <!--*Nota: I should include the initial scores from Manu McFrench on the test set to confirm this analysis.*-->
-3. **peraire_D** on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train **Manu McFrench** and in the D series.
+1. **ManuMcFrench** could not be used without fine-tuning, its error rate on both documents is too high.
+2. **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to **peraire_B**.
+3. **peraire_B** which was trained on the more difficult dataset seems to use the knowledge inherited from **Manu McFrench** and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series (it gains 16 points of accuracy compared to **Manu McFrench**).
+4. **peraire_D** on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train **Manu McFrench** and in the D series. **peraire_D** even loses 11 points of accuracy to **Manu McFrench**!
 
 What happens with **peraire_D** is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!
 
