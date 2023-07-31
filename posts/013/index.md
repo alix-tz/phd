@@ -57,6 +57,8 @@ All of this makes sense, though.
 
 What happens with **peraire_D** is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!
 
+*EDIT: I added the scores obtained by Manu McFrench alone.*
+
 [^1]: I used 2 images from B2 because one of them was extremely faded and I wanted to include some of these extreme cases in the dataset, and 2 images from B30 because it consisted of shorter lines (table of contents) which I found was interesting to include.
 
 [^2]: As described in the documents, I only used the "InterlinearLine" and "DefaultLine" for the lines, and the "MainZone" and "NumberingZone" for the regions.
