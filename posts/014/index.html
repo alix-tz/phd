@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>014 - RT(F)M for the Peraire Experiment | A research (b)log</title>
+<link href="https://alix-tz.github.io/phd/assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="https://alix-tz.github.io/phd/assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="https://alix-tz.github.io/phd/assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<!-- custom font --><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Goldman&amp;family=JetBrains+Mono:wght@200&amp;family=Ubuntu+Mono&amp;display=swap" rel="stylesheet">
+<!-- end of custom font --><link href="https://alix-tz.github.io/phd/assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://alix-tz.github.io/phd/rss.xml">
+<link rel="canonical" href="https://alix-tz.github.io/phd/posts/014/">
+<link rel="icon" href="https://alix-tz.github.io/phd/posts/014/favicon.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><meta name="author" content="Alix Chagué">
+<link rel="prev" href="https://alix-tz.github.io/phd/posts/013/" title="013 - The Peraire experiment" type="text/html">
+<meta property="og:site_name" content="A research (b)log">
+<meta property="og:title" content="014 - RT(F)M for the Peraire Experiment">
+<meta property="og:url" content="https://alix-tz.github.io/phd/posts/014/">
+<meta property="og:description" content="Turns out, there is more to say on last week's experiments on the Peraire dataset! And I found out while I was working on a completely different dataset. Let me explain!
+This morning, I helped my coll">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-08-04T13:51:14-04:00">
+<meta property="article:tag" content="experiment">
+<meta property="article:tag" content="HTR">
+<meta property="article:tag" content="kraken">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+         
+    <header id="header"><h1 id="brand"><a href="https://alix-tz.github.io/phd/" title="A research (b)log" rel="home">
+
+        <span id="blog-title">A research (b)log</span>
+    </a></h1>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="https://alix-tz.github.io/phd/archive.html">Archive</a></li>
+                <li><a href="https://alix-tz.github.io/phd/categories/">Tags</a></li>
+                <li><a href="https://alix-tz.github.io/phd/rss.xml">RSS feed</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="https://alix-tz.github.io/phd/posts/014/" class="u-url">014 - RT(F)M for the Peraire Experiment</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Alix Chagué
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/014/" rel="bookmark">
+            <time class="published dt-published" datetime="2023-08-04T13:51:14-04:00" itemprop="datePublished" title="2023-08-04">2023-08-04</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="https://alix-tz.github.io/phd/posts/014/index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Turns out, there is more to say on last week's <a href="https://alix-tz.github.io/phd/posts/012/">experiments on the Peraire dataset</a>! And I found out while I was working on a completely different dataset. Let me explain!</p>
+<p>This morning, I helped my colleague train a Kraken transcription model for <a href="https://ecrituresnumeriques.ca/fr/Activites/Projets/2016/1/19/Anthologie-grecque">Greek manuscripts</a>. They gave me the ground truth and I set and executed the training from the command line. It gave me an opportunity to try fine-tuning a model like <a href="https://zenodo.org/record/7234166">CREMMA Medieval</a>, in stead of only training from scratch. <strong>CREMMA Medieval</strong> was trained on manuscripts written in Latin, whereas the Greek manuscripts were written only, well, in Ancient Greek. I didn't want the resulting model to add Latin letters in the transcription when applied to other Greek documents, so I used Kraken's option to allow the model to forget previously learned characters and to force it to only remember the characters contained in the new training data. This option is called <strong><code>--resize</code></strong> (check the documentation <a href="https://github.com/mittagessen/kraken/blob/4.3.7/docs/ketos.rst#fine-tuning">here</a>).</p>
+<p>When I fine-tune a model, I usually follow Kraken's recommendations and keep both the previously learned characters and the new ones coming from the new set of ground truth. When this morning I checked what is the keyword to use to keep only the characters from the new dataset, I realized that I didn't correctly set the training on Peraire last week. I had set it to only keep the new characters!</p>
+<p>Up until Kraken v. 4.3.10, <strong><code>--resize</code></strong> can take the keywords <strong><code>both</code></strong> or <strong><code>add</code></strong>. The ambiguity of these keywords <a href="https://github.com/mittagessen/kraken/issues/478">has been discussed</a> in the past, which is the reason why starting from Kraken v. 4.3.10, the keywords respectively become <strong><code>new</code></strong> or <strong><code>union</code></strong>.</p>
+<p>Let's quote the manual:</p>
+<blockquote>
+<p>There are two modes dealing with mismatching alphabets, <strong>add</strong> and <strong>both</strong>. <strong>add</strong> resizes the output layer and codec of the loaded model to include all characters in the new training set without removing any characters. <strong>both</strong> will make the resulting model an exact match with the new training set by both removing unused characters from the model and adding new ones.</p>
+</blockquote>
+<p>I fell for this trap of ambiguity and used <strong>both</strong> instead of <strong>add</strong>, thinking <strong>both</strong> meant I was keep <em>both</em> character sets. (Again this is the very reason why the keywords were recently changed).</p>
+<p><em>Side note: you should really read <a href="https://alix-tz.github.io/phd/posts/012/">last week's post</a> to fully understand the rest of this post!</em></p>
+<p>At the end of my post last week, I wrote:</p>
+<blockquote>
+<p><strong>peraire_D</strong> on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train <strong>Manu McFrench</strong> and in the D series. <strong>peraire_D</strong> even loses 11 points of accuracy to <strong>Manu McFrench</strong>!</p>
+</blockquote>
+<p>But how could I be sure that it was not actually due to the fact that the model had unlearned some precious characters?</p>
+<p>The only way to know, I thought, was to re-train the models! I used this opportunity to also train the models from scratch because I was curious to see how much noise/improvement was brought by the base model.</p>
+<p>I tried 4 types of models and, like last week, used <a href="https://github.com/WHaverals/CERberus">CERberus 🐶🐶🐶</a> to measure the character error rates on the predictions made on the test sets:</p>
+<ol>
+<li>Models trained "from scratch"</li>
+<li>A model not trained on any data coming from the Peraire dataset (aka <a href="https://zenodo.org/record/6657809"><strong>Manu McFrench</strong></a>)</li>
+<li>Models obtained from finetuning <strong>Manu McFrench</strong> using the <strong>add</strong> resize mode</li>
+<li>Models obtained from finetuning <strong>Manu McFrench</strong> using the <strong>both</strong> resize mode</li>
+</ol>
+<p>For each model trained on the Peraire dataset, I used 3 compositions:</p>
+<ol>
+<li>the full dataset ("ALL")</li>
+<li>only data coming from the B series ("B")</li>
+<li>only data coming from the D series ("D")</li>
+</ol>
+<p>I used the same composition system for the test sets.</p>
+<p>Here are my results in the form of a table:</p>
+<p><img src="https://alix-tz.github.io/phd/images/peraire_scores.png" alt="a table of the scored obtained on the different train set, test set and resize configurations" widht="400px"></p>
+<p>Fortunately, it seems that my previous interpretation is not contradicted by the results I obtain with this second series of training. Let's focus on two observations:</p>
+<ol>
+<li>
+<p>Whenever a model is trained only on the D series, and tested only on the B series, it appears to be completely incapable of predicting anything but gibberish, losing between 32 and 35 points of accuracy. It confirms that the aspect of the documents from the two series are too different. On the other hand, when the model is fine-tuned on the B series only, it maintains a fairly good accuracy when applied to the D series, whichever resize mode is used. I think it confirms that the B series is enough for the model to learn some sort of formal features from Peraire's handwriting, which the models can transfer to documents written with a different writing instrument.</p>
+</li>
+<li>
+<p>What is very interesting is the difference between the models trained on the whole datasets and tested on the B series: when we use the <strong>both</strong> resize mode (meaning we only keep the characters from the new dataset), the model is very good. On the contrary, the performance of the model trained with the <strong>add</strong> resize mode (meaning we keep the output layer and the codec from the base model and add the new characters) is as bad as with a model trained only on the D series.</p>
+</li>
+</ol>
+<p>In my previous post, I wrote:</p>
+<blockquote>
+<p><strong>peraire_both</strong> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to <strong>peraire_B</strong>.</p>
+</blockquote>
+<p>In the light of my experiment with the <strong>resize</strong> option, I think this is not correct. Instead, it appears that resetting the output layer by using <strong>both</strong> on accident, allowed the model to better integrate the data from the B series (pencil). The model trained on the whole dataset but with the <strong>add</strong> resize mode doesn't benefit from seeing more data compared to the model trained only on the B series. Keeping the output layer from the base model in the <strong>add</strong> mode probably drowns the specificity of the pencil-written documents into a base knowledge tailored to handle documents with a high contrast (like the ones in the D series <em>and</em> in <strong>Manu McFrench</strong>'s training set).</p>
+<p>I am extremely curious to see how I can investigate this further, or if any of you, readers, would understand these results differently!</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/experiment/" rel="tag">experiment</a></li>
+            <li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/htr/" rel="tag">HTR</a></li>
+            <li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/kraken/" rel="tag">kraken</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://alix-tz.github.io/phd/posts/013/" rel="prev" title="013 - The Peraire experiment">Previous post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p>Contents © 2023         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
+<div>
+<h3>Contact me</h3>
+<form name="contact" action="https://formspree.io/mdozpzwz" method="POST">
+<div>
+<!--<label class="sr-only" for="inputName">Name</label>-->
+<input type="text" name="name" id="inputName" placeholder="Your name" required="" style="width: 150px;">
+   
+<!--<label class="sr-only" for="inputEmail">E-mail</label>-->
+<input type="email" name="email" id="inputEmail" placeholder="Your e-mail address" required="" style="width: 150px;">
+</div>
+<div>
+<!--<label class="sr-only" for="inputMessage">Message</label>-->
+<textarea name="message" id="inputMessage" rows="3" placeholder="Your message" required="" style="width: 50%;"></textarea>
+</div>
+<button type="submit" style="width: 60px;">Send</button>
+</form>
+</div>
+            
+        </footer>
+</div>
+    
+    
+
+    
+    
+    
+</body>
+</html>

@@ -46,7 +46,7 @@ Here are the results:
 - **Manu McFrench**, before fine-tuning, gets a CER of 26.16% when tested on the whole test set, and a score of 27.19% on the documents from the B series, 25.29% on the D series.
 - **peraire_both**, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.
 - **peraire_B**, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.
-- **peraire_D**, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. I skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.
+- **peraire_D**, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. It skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.
 
 All of this makes sense, though.
 
