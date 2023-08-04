@@ -2,7 +2,7 @@
 'copy_assets:output\\assets\\css\\bootblog.css', (4608, 567)
 'copy_assets:output\\assets\\js\\bootstrap.min.js', (5632, 575)
 'copy_files', (6656, 56)
-'sitemap:output\\sitemap.xml', (725504, 13454)
+'sitemap:output\\sitemap.xml', (725504, 13458)
 'copy_assets:output\\assets\\js\\gallery.js', (8192, 551)
 'sitemap', (9216, 56)
 '_scan_locs:sitemap', (660480, 5567)
