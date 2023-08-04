@@ -9,6 +9,8 @@
 .. type: text
 -->
 
+*WARNING: in my [next post](../014/), I nuance the conclusions drawn in this post, because of a parameter I didn't correctly set during the training of the models described below. You should really read it after reading this post, to get the full picture!*
+
 As a small side project during my phD, I have been sharing my expertise (and a bit of my workforce) with the members of the [DIM SPE-VLP](https://www.pamir.fr/projets-soutenus/spe-vlp/) project. The acronym stands for "Sauver le patrimoine espérantiste : le voyage de Lucien Péraire (1928-1932)." The project revolves around the digitization, transcription and edition/valorization of [Lucien Peraire](https://fr.wikipedia.org/wiki/Lucien_P%C3%A9raire)'s archives. He was a French citizen who, in the late 1920s, travelled across the European and the Asian continents, mostly by bike and using [Esperanto](https://en.wikipedia.org/wiki/Esperanto) to communicate. He kept a diary during his journey (and later published a book about his adventures). His notes are written both in French and in Esperanto and in some documents, he also used [stenography](https://en.wikipedia.org/wiki/Shorthand).
 
 My contribution to the project has mostly consisted in helping developing transcription models for the French diaries (although I'm also interested in the shorthand and the esperanto). This meant both helping with the production of ground truth and training [Kraken](https://kraken.re/) models. This post will briefly explain how the ground truth was created and published, as well as present the models that were trained with it.
@@ -57,7 +59,9 @@ All of this makes sense, though.
 
 What happens with **peraire_D** is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!
 
-*EDIT: I added the scores obtained by Manu McFrench alone.*
+*EDIT #1: I added the scores obtained by Manu McFrench alone.*
+
+*EDIT #2: I added a disclaimer at the beginning of the post.*
 
 [^1]: I used 2 images from B2 because one of them was extremely faded and I wanted to include some of these extreme cases in the dataset, and 2 images from B30 because it consisted of shorter lines (table of contents) which I found was interesting to include.
 
