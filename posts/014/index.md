@@ -52,7 +52,7 @@ Here are my results in the form of a table:
 
 <img src="/images/peraire_scores.png" alt="a table of the scored obtained on the different train set, test set and resize configurations" widht="400px">
 
-Fortunately, it seems that my previous interpretation is not contradicted by the results I obtain with this second series of training. Let's focus on two observations:
+Fortunately, it seems that my previous interpretation is not fully contradicted by the results I obtain with this second series of training. Let's focus on two observations:
 
 1. Whenever a model is trained only on the D series, and tested only on the B series, it appears to be completely incapable of predicting anything but gibberish, losing between 32 and 35 points of accuracy. It confirms that the aspect of the documents from the two series are too different. On the other hand, when the model is fine-tuned on the B series only, it maintains a fairly good accuracy when applied to the D series, whichever resize mode is used. I think it confirms that the B series is enough for the model to learn some sort of formal features from Peraire's handwriting, which the models can transfer to documents written with a different writing instrument.
 
@@ -62,7 +62,7 @@ In my previous post, I wrote:
 
 > **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to **peraire_B**.
 
-In the light of my experiment with the **resize** option, I think this is not correct. Instead, it appears that resetting the output layer by using **both** (or **new**) on accident, allowed the model to better take into account the data from the B series (pencil). Contrary to what I observed last week, the model trained on the whole dataset but this time with the **add** resize mode (or **union**) doesn't benefit from seeing more data compared to the model trained only on the B series.
+However, in the light of my experiment with the **resize** option, I think this is not correct. Instead, it appears that resetting the output layer by using **both** (or **new**) on accident, allowed the model to better take into account the data from the B series (pencil). Contrary to what I observed last week, the model trained on the whole dataset but this time with the **add** resize mode (or **union**) doesn't benefit from seeing more data compared to the model trained only on the B series.
 
 My understanding is that keeping the output layer from the base model with **add** (or **union**) probably drowns the specificity of the pencil-written documents into a base knowledge tailored to handle documents with a high contrast (like the ones in the D series *and* in **Manu McFrench**'s training set). Or, to put it differently, when we use **both** (or **new**), more attention is given to the pencil written documents, meaning that the model actually gets better at handling this category of data.
 
