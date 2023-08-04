@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-Turns out, there is more to say on last week's [experiments on the Peraire dataset](../012/)! And I found out while I was working on a completely different dataset. Let me explain!
+Turns out, there is more to say on last week's [experiments on the Peraire dataset](../013/)! And I found out while I was working on a completely different dataset. Let me explain!
 
 This morning, I helped my colleague train a Kraken transcription model for [Greek manuscripts](https://ecrituresnumeriques.ca/fr/Activites/Projets/2016/1/19/Anthologie-grecque). They gave me the ground truth and I set and executed the training from the command line. It gave me an opportunity to try fine-tuning a model like [CREMMA Medieval](https://zenodo.org/record/7234166), in stead of only training from scratch. **CREMMA Medieval** was trained on manuscripts written in Latin, whereas the Greek manuscripts were written only, well, in Ancient Greek. I didn't want the resulting model to add Latin letters in the transcription when applied to other Greek documents, so I used Kraken's option to allow the model to forget previously learned characters and to force it to only remember the characters contained in the new training data. This option is called **`--resize`** (check the documentation [here](https://github.com/mittagessen/kraken/blob/4.3.7/docs/ketos.rst#fine-tuning)).
 
@@ -23,7 +23,7 @@ Let's quote the manual:
 
 I fell for this trap of ambiguity and used **both** instead of **add**, thinking **both** meant I was keep *both* character sets. (Again this is the very reason why the keywords were recently changed).
 
-*Side note: you should really read [last week's post](../012/) to fully understand the rest of this post!*
+*Side note: you should really read [last week's post](../013/) to fully understand the rest of this post!*
 
 At the end of my post last week, I wrote:
 
