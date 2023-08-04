@@ -62,13 +62,8 @@ In my previous post, I wrote:
 
 > **peraire_both** is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to **peraire_B**.
 
-In the light of my experiment with the **resize** option, I think this is not correct. Instead, it appears that resetting the output layer by using **both** on accident, allowed the model to better integrate the data from the B series (pencil). The model trained on the whole dataset but with the **add** resize mode doesn't benefit from seeing more data compared to the model trained only on the B series. Keeping the output layer from the base model in the **add** mode probably drowns the specificity of the pencil-written documents into a base knowledge tailored to handle documents with a high contrast (like the ones in the D series *and* in **Manu McFrench**'s training set).
+In the light of my experiment with the **resize** option, I think this is not correct. Instead, it appears that resetting the output layer by using **both** (or **new**) on accident, allowed the model to better take into account the data from the B series (pencil). Contrary to what I observed last week, the model trained on the whole dataset but this time with the **add** resize mode (or **union**) doesn't benefit from seeing more data compared to the model trained only on the B series.
+
+My understanding is that keeping the output layer from the base model with **add** (or **union**) probably drowns the specificity of the pencil-written documents into a base knowledge tailored to handle documents with a high contrast (like the ones in the D series *and* in **Manu McFrench**'s training set). Or, to put it differently, when we use **both** (or **new**), more attention is given to the pencil written documents, meaning that the model actually gets better at handling this category of data.
 
 I am extremely curious to see how I can investigate this further, or if any of you, readers, would understand these results differently!
-
-
-
-
-
-
-
