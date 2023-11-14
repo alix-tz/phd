@@ -28,9 +28,9 @@ So, once the jury is composed, and once a calendar has been agreed on (I think *
 - a 30-reference long bibliography on the field of the Digital Humanities; and
 - a short presentation of a proposed "practical" analysis.
 
-Then a week later, the jury sent a question[^question]. I was given 1 week (168h exactly) to think about this question and write a response in the form of a 10-15 page-long essay. The jury had between a week and two weeks to read the response before an oral examination took place.[^remote]
+Then a week later, the jury sent a question.[^question] I was given 1 week (168h exactly) to think about this question and write a response in the form of a 10-15 page-long essay. The jury had between a week and two weeks to read the response before an oral examination took place (on Zoom).
 
-The oral examination has some similarities with a PhD defense. It started with a 20 minute long presentation that I gave where I summarized my research project (10 minutes) and presented a technical analysis (10 minutes). I chose to focus my technical presentation on an experiment I have been conducting and on which I hope to communicate more in the near future. Then, after my presentation, there were two rounds of questions about my research project, my experiment or about the answer I formulated in my essay[^more].
+The oral examination has some similarities with a PhD defense. It started with a 20 minute long presentation that I gave where I summarized my research project (10 minutes) and presented a technical analysis (10 minutes). I chose to focus my technical presentation on an experiment I have been conducting and on which I hope to communicate more in the near future. Then, after my presentation, there were two rounds of questions about my research project, my experiment or about the answer I formulated in my essay.[^more]
 
 I am very happy that such an examination exists in the North American program. It may seem like a lot of stress (and it is), but I found that it is also a very good milestone to progress a lot towards the formalization of a research project. The oral examination is a great opportunity to present a project to people who don't necessarily know what you have been up to before, and it's a really really great occasion to get feedback.
 
@@ -40,11 +40,9 @@ The comprehensive exam is a pass/no pass type of examination. There is no grade 
 
 The comprehensive exam also marks the end of the phase during which I had to take courses. Now, with this new status, I am invited to focus solely on the redaction of my thesis, which opens up a whole new chapter for my PhD curriculum.[^pun]
 
-[^CSI]: I want to take this occasion to also thank Ariane Pinche and Joana Casenave, who were willing to be the members of my committee for the CSI, for their precious feedback! :)
+[^CSI]: I want to take this occasion to also thank [Ariane Pinche](https://ciham.cnrs.fr/annuaire/membres_statutaires/ariane-pinche/) and [Joana Casenave](https://pro.univ-lille.fr/joana-casenave), who were willing to be the members of my committee for the CSI, for their precious feedback! :)
 
-[^question]: The question was the following: "Dans votre projet de recherche apparaît une tension importante: celle entre la spécificité des besoins particuliers de chaque projet et la volonté -- et la nécessité -- de produire des approches généralisables, qui puissent être employées dans le cadre de plusieurs projets. En vous appuyant sur votre bibliographie, et en vous concentrant notamment sur le cas du HTR, pourriez-vous analyser cette tension en soulevant en particulier la question de la littératie demandée (notamment dans la gestion des données) pour pouvoir personnaliser des approches computationnelles aussi complexes que les technologies HTR?
-
-[^remote]: Funnily enough, we had to organize this examination remotely by combining 3 timezones: Montréal's, Paris' and Tokyo's. It's not that easy!
+[^question]: The question was the following: "*Dans votre projet de recherche apparaît une tension importante: celle entre la spécificité des besoins particuliers de chaque projet et la volonté -- et la nécessité -- de produire des approches généralisables, qui puissent être employées dans le cadre de plusieurs projets. En vous appuyant sur votre bibliographie, et en vous concentrant notamment sur le cas du HTR, pourriez-vous analyser cette tension en soulevant en particulier la question de la littératie demandée (notamment dans la gestion des données) pour pouvoir personnaliser des approches computationnelles aussi complexes que les technologies HTR?*"
 
 [^more]: I want publish on my blog the documents I created for the comprehensive exam, but I need to find the best way to do it. I'll post an announcement when it will be available.
 
