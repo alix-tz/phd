@@ -4,11 +4,11 @@
 
 .code, .hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack strong
 {
-	font-family: 'JetBrains Mono', 'Ubuntu Mono', monospace;
+	font-family: 'Source Code Pro', 'JetBrains Mono', 'Ubuntu Mono', monospace;
 }
 
 #blog-title {
-    font-family: 'Goldman', 'Bungee', 'Share Tech Mono', monospace;
+    font-family: 'Syne', 'Goldman', 'Bungee', 'Source Code Pro', 'Share Tech Mono' monospace;
 }
 
 a:visited {
@@ -17,4 +17,19 @@ a:visited {
 
 .tag a {
     color:rgb(67, 207, 74);
+}
+
+body {
+    font-family: 'Source Code Pro', 'JetBrains Mono', 'Ubuntu Mono', monospace;
+    font-size: 16px;
+}
+
+.entry-title {
+    font-family: 'Share Tech Mono', 'Source Code Pro', monospace;
+}
+
+.metadata {
+    font-weight: bold;
+    padding-bottom: 15px;
+
 }
