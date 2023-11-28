@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-Since the boom around ChatGPT almost a year ago, I've heard several people wondering if "tools like ChatGPT" were more efficient than HTR models trained with [Kraken](https://kraken.re) and the like. The glimmer of hope in their eyes was most likely lit by their own struggle to set successful and/or efficient HTR campaigns with more traditional tools. The capacity of Large Language Models (LLMs) to reformulate a text[^spina] or, more specifically, of Large Multimodal Models (LMMs) to generate text based on a visual input may indeed lead people to believe that HTR technologies, built on [CNNs](https://poloclub.github.io/cnn-explainer/), are on the verge to be flipped upside-down[^multimodal_turn].
+Since the boom around ChatGPT almost a year ago, I've heard several people wondering if "tools like ChatGPT" were more efficient than HTR models trained with [Kraken](https://kraken.re) and the like. The glimmer of hope in their eyes was most likely lit by their own struggle to set successful and/or efficient HTR campaigns with more traditional tools. The capacity of Large Language Models (LLMs) to reformulate a text[^spina] or, more specifically, of Large Multimodal Models (LMMs) to generate text based on a visual input may indeed lead people to believe that HTR technologies, built on [CNNs](https://poloclub.github.io/cnn-explainer/), are on the verge of being flipped upside-down[^multimodal_turn].
 
 Annika Rockenberger recently conducted a series of small experiments on the matter and wrote [an interesting blog post](https://greflinger.hypotheses.org/739) about it. Let's summarize it!
 
