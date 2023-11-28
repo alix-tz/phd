@@ -1,5 +1,5 @@
 <!--
-.. title: 016 - 
+.. title: 016 - Text Recognition, Large Models and Expectations
 .. slug: 016
 .. date: 2023-11-28 05:28:15 UTC-05:00
 .. tags: OCR, Large Language Models
