@@ -71,8 +71,8 @@
 <p>Annika Rockenberger recently conducted a series of small experiments on the matter and wrote <a href="https://greflinger.hypotheses.org/739">an interesting blog post</a> about it. Let's summarize it!</p>
 <p>She signed up for a premium subscription (25$/mo) to be able to chat with <a href="https://openai.com/gpt-4">GPT4</a>, which allows users to upload images. Then she submitted printed or handwritten documents she would normally transcribe with <a href="https://readcoop.eu/transkribus">Transkribus</a> and assessed the results. She found that GPT4 was fairly good on ancient print (German Fraktur) and that it was even able to follow transcription guidelines if provided with an example. However on a letter bearing handwritten cursive, the model completely hallucinated the content and attempted a transcription in the wrong language. This didn't change when she provided more context on the document. Rockenberger concludes that there is a potential for using ChatGPT for HTR but that the capacity of scaling it up is completely unsure and that learning how to provide good prompts to get the appropriate results is a challenge. I would also add that in the end, Rockenberger paid 25$ to get 10 lines of raw text, whereas with software like Transkribus or eScriptorium, she would also get a standard structured output.</p>
 <p>So, in other words, after reading Rockenberger's post, one can conclude that GPT4 (or, better, similar free and open source models) does have a potential for "quick and dirty-ish" OCR. However, I would argue that users tempted by this strategy might still miss an important point: even LMM-based tools will requires a little bit of organization and precision from the users, which I find often lacks in unsuccessful HTR campaigns. LMMs could generate a good output, but you will likely have to pay a counterpart one way or the other(s): with lower text recognition quality, with hallucinated text content, with impoverished non-structured output, with premium fees, etc.</p>
-<p>Earlier this year, an article proposed by <a href="https://arxiv.org/abs/2305.07895">Liu et al., 2023</a>, "On the Hidden Mystery of OCR in Large Multimodal Models" explored almost exactly the same topic but in a more comprehensive way. Their article presents an extensive survey of how well several Large <a href="https://en.wikipedia.org/wiki/Multimodal_learning">Multimodal</a> Models (LMMs) performed on "zero-shot" tasks related to visual input.</p>
-<p>Zero-shot refers to the act of requesting an output from an LLM or a, LMM without training it particularly for this task. It is very similar to Rockenberger's first attempt with GPT4, when she uploaded the image of a printed document and asked for its transcription. In such a case, she relied on the capacity of the model to <em>transfer</em> its knowledge to the specific tasks of Text Recognition, on a specific type of documents (historical printed text).</p>
+<p>Earlier this year, an article proposed by <a href="https://arxiv.org/abs/2305.07895">Liu et al., 2023</a>, "On the Hidden Mystery of OCR in Large Multimodal Models", explored almost exactly the same topic but in a more comprehensive way. Their article presents an extensive survey of how well several Large <a href="https://en.wikipedia.org/wiki/Multimodal_learning">Multimodal</a> Models (LMMs) performed on "zero-shot" tasks.</p>
+<p>Zero-shot refers to the act of requesting an output from an LLM or a LMM without training it for this task in particular. It is very similar to Rockenberger's first attempt with GPT4, when she uploaded the image of a printed document and asked for its transcription. In such a case, she relied on the capacity of the model to transfer its knowledge to the specific tasks of Text Recognition, on a specific type of documents (historical printed text).</p>
 <p>Other terms are often associated with "zero-shot:" "one-shot" and "few-shot". One-shot is equivalent to Rockenberger's second attempt: when she showed GPT4 an example of the output she expected on the 10 first lines of the documents, and requested that the model copied her strategy to generate the transcription of the 10 next lines. Few-shot would mean showing several pages and several expected output to the model before asking for the transcription of a new document<sup id="fnref:shot-definition"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:shot-definition">3</a></sup>.</p>
 <p>The paper focused on currently available LMMs representing five different approaches for training LMMs:</p>
 <ul>
@@ -88,36 +88,28 @@
 <a href="https://huggingface.co/spaces/MAGAer13/mPLUG-Owl">mPLUG-Owl</a>.</li>
 </ul>
 <p>They evaluated the models on 4 tasks: text recognition, text-based visual question answering, key information extraction and handwritten mathematical expression recognition. Here are a few examples of what these tasks entail, as illustrated in the original article:</p>
+<ol>
+<li><strong>Text Recognition</strong></li>
+</ol>
+<p><img alt="Examples of failed text recognition" src="https://alix-tz.github.io/phd/posts/016/images/LLM_text_recognition.png" title="Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'."></p>
+<ol>
+<li><strong>Visual Question Answering</strong></li>
+</ol>
+<p><img alt="Examples of failed Visual Question Answering" src="https://alix-tz.github.io/phd/posts/016/images/LLM_textVQA.png" title="Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32"></p>
+<ol>
+<li><strong>Key Information Extraction</strong></li>
+</ol>
+<p><img alt="Examples of failed Key Information Extraction" src="https://alix-tz.github.io/phd/posts/016/images/LLM_keyinfoextraction.png" title="Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'"></p>
+<ol>
+<li><strong>Handwritten Mathematical Expression Recognition</strong></li>
+</ol>
+<p><img alt="Examples of failed Handwritten Mathematical Expression Recognition" src="https://alix-tz.github.io/phd/posts/016/images/LLM_HMExpr.png" title="Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up"></p>
 <!-- "Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'.") | -->
 <!--  "Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32") | -->
 <!--  "Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'") | -->
 <!--  "Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up") | -->
 
-<table>
-<thead><tr>
-<th align="left">Task</th>
-<th align="center">Example</th>
-</tr></thead>
-<tbody>
-<tr>
-<td align="left">Text Recognition</td>
-<td align="center"><img alt="Examples of failed text recognition" src="https://alix-tz.github.io/phd/posts/016/images/LLM_text_recognition.png"></td>
-</tr>
-<tr>
-<td align="left">Visual Question Answering</td>
-<td align="center"><img alt="Examples of failed Visual Question Answering" src="https://alix-tz.github.io/phd/posts/016/images/LLM_textVQA.png"></td>
-</tr>
-<tr>
-<td align="left">Key Information Extraction</td>
-<td align="center"><img alt="Examples of failed Key Information Extraction" src="https://alix-tz.github.io/phd/posts/016/images/LLM_keyinfoextraction.png"></td>
-</tr>
-<tr>
-<td align="left">Handwritten Mathematical Expression Recognition</td>
-<td align="center"><img alt="Examples of failed Handwritten Mathematical Expression Recognition" src="https://alix-tz.github.io/phd/posts/016/images/LLM_HMExpr.png"></td>
-</tr>
-</tbody>
-</table>
-<p>For each task, they used several dataset presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the <a href="https://fki.tic.heia-fr.ch/databases/iam-handwriting-database">IAM dataset</a>, the sota method of AttentionHTR<sup id="fnref:attentionhtr_ref"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:attentionhtr_ref">4</a></sup> reaches a word accuracy of 91.24%<sup id="fnref:remark_wer"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:remark_wer">5</a></sup>. In comparison, Liu et al provide the following scores for the tested LMM on this dataset:</p>
+<p>For each task, they used several datasets presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the <a href="https://fki.tic.heia-fr.ch/databases/iam-handwriting-database">IAM dataset</a>, the sota method of AttentionHTR<sup id="fnref:attentionhtr_ref"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:attentionhtr_ref">4</a></sup> reaches a word accuracy of 91.24%<sup id="fnref:remark_wer"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:remark_wer">5</a></sup>. In comparison, Liu et al provide the following scores for the tested LMM on this dataset:</p>
 <table>
 <thead><tr>
 <th align="left">test LMM</th>
