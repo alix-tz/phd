@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2023-11-15T14:03:00Z</lastmod>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2023-07-28T21:03:00Z</lastmod>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -48,6 +48,10 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_paperworking/</loc>
   <lastmod>2022-07-29T09:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/cat_reading-notes/</loc>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_story-time/</loc>
@@ -94,12 +98,20 @@
   <lastmod>2023-07-28T21:03:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/large-language-models/</loc>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/manifesto/</loc>
   <lastmod>2022-03-09T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/metrics/</loc>
   <lastmod>2023-07-15T17:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/ocr/</loc>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/software-documentation/</loc>
@@ -127,7 +139,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-1.html</loc>
-  <lastmod>2023-11-15T14:03:00Z</lastmod>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -196,5 +208,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/015/</loc>
   <lastmod>2023-11-14T09:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/016/</loc>
+  <lastmod>2023-11-28T14:44:00Z</lastmod>
  </url>
 </urlset>

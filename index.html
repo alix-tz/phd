@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://alix-tz.github.io/phd/">
 <link rel="icon" href="https://alix-tz.github.io/phd/favicon.ico" sizes="32x32">
 <link rel="next" href="https://alix-tz.github.io/phd/index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/015/" type="text/html">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/016/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -44,7 +44,129 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/015/" class="u-url">015 - Block post and comprehensive Exam</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/016/" class="u-url">016 - </a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Alix Chagué
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/016/" rel="bookmark">
+            <time class="published dt-published" datetime="2023-11-28T05:28:15-05:00" itemprop="datePublished" title="2023-11-28">2023-11-28</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Since the boom around ChatGPT almost a year ago, I've heard several people wondering if "tools like ChatGPT" were more efficient than HTR models trained with <a href="https://kraken.re">Kraken</a> and the like. The glimmer of hope in their eyes was most likely lit by their own struggle to set successful and/or efficient HTR campaigns with more traditional tools. The capacity of Large Language Models (LLMs) to reformulate a text<sup id="fnref:spina"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:spina">1</a></sup> or, more specifically, of Large Multimodal Models (LMMs) to generate text based on a visual input may indeed lead people to believe that HTR technologies, based on <a href="https://poloclub.github.io/cnn-explainer/">CNNs</a>, are on the verge to be turned upside-down<sup id="fnref:multimodal_turn"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:multimodal_turn">2</a></sup>.</p>
+<p>Annika Rockenberger recently conducted a series of small experiments on the matter and wrote <a href="https://greflinger.hypotheses.org/739">an interesting blog post</a> about it. Let's summarize. She signed up for a premium subscription (25$/mo) to be able to chat with <a href="https://openai.com/gpt-4">GPT4</a>, which allows users to upload images. Then she submitted printed or handwritten documents she would normally transcribe with <a href="https://readcoop.eu/transkribus">Transkribus</a> and assessed the results. She found that GPT4 was fairly good on ancient print (German Fraktur) and that it was even able to follow transcription guidelines if provided with an example. However, on handwritten cursive, the model completely hallucinated the content and attempted a transcription in the wrong language. This didn't change when she provided with more context on the document. Rockenberger concludes that there is a potential for using ChatGPT for HTR but that the capacity of scaling-up is completely unsure and that learning how to provided good prompts to get the appropriate results is a future challenge. I would also add that in the end, Rockenberger paid 25$ to get 10 lines of raw text, whereas with software like Transkribus or eScriptorium, she would also get a standard structured output.</p>
+<p>So, in other words, after reading Rockenberger's post, one can conclude that GPT4 (or, better, similar free and open source models) does have a potential for "quick and dirty-ish" OCR. However, users tempted by this strategy might still miss an important point: even LLM-based tools will requires a little bit of organization and precision from the users, which I find often lacks in unsuccessful HTR campaigns. LLMs could generate a good output, but you will likely have to pay a counterpart one way or the other(s): with lower text recognition quality, with hallucinated text content, with impoverished non-structured output, with premium fees, etc.</p>
+<p>Earlier this year, an article proposed by <a href="https://arxiv.org/abs/2305.07895">Liu et al., 2023</a>,"On the Hidden Mystery of OCR in Large Multimodal Models" explored almost exactly the same topic but in a more comprehensive way. Their article presents an extensive survey of how well several Large <a href="https://en.wikipedia.org/wiki/Multimodal_learning">Multimodal</a> Models (LMMs) performed on "zero-shot" tasks related to visual input.</p>
+<p>Zero-shot refers to the act of requesting an output from an LLM or a, LMM without training it particularly for this task. It is very similar to Rockenberger's first attempt with GPT4, when she uploaded the image of a printed document and asked for its transcription. In such a case, she relied on the capacity of the model to <em>transfer</em> its knowledge to the specific tasks of Text Recognition, on a specific type of documents (historical printed text).</p>
+<p>Other terms are often associated with "zero-shot:" "one-shot" and "few-shot". One-shot is equivalent to Rockenberger's second attempt: when she showed GPT4 an example of the output she expected on the 10 first lines of the documents, and requested that the model copied her strategy to generate the transcription of the 10 next lines. Few-shot would mean showing several pages and several expected output to the model before asking for the transcription of a new document<sup id="fnref:shot-definition"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:shot-definition">3</a></sup>.</p>
+<p>The paper focused on currently available LMMs representing five different approaches for training LMMs:</p>
+<ul>
+<li>
+<a href="https://huggingface.co/docs/transformers/model_doc/blip-2">BLIP-2</a>,</li>
+<li>
+<a href="https://arxiv.org/abs/2204.14198">Flamingo</a>/<a href="https://laion.ai/blog/open-flamingo/">Open-Flamingo</a>,</li>
+<li>
+<a href="https://llava-vl.github.io/">LLaVa</a>,</li>
+<li>
+<a href="https://minigpt-4.github.io/">miniGPT4</a>, and</li>
+<li>
+<a href="https://huggingface.co/spaces/MAGAer13/mPLUG-Owl">mPLUG-Owl</a>.</li>
+</ul>
+<p>They evaluated the models on 4 tasks: text recognition, text-based visual question answering, key information extraction and handwritten mathematical expression recognition. Here are a few examples of what these tasks entail, as illustrated in the original article:</p>
+<table>
+<thead><tr>
+<th align="left">Task</th>
+<th align="center">Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left">Text Recognition</td>
+<td align="center"><img alt="Examples of failed text recognition" src="https://alix-tz.github.io/phd/posts/016/images/LLM_text_recognition.png" title="Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'."></td>
+</tr>
+<tr>
+<td align="left">Visual Question Answering</td>
+<td align="center"><img alt="Examples of failed Visual Question Answering" src="https://alix-tz.github.io/phd/posts/016/images/LLM_textVQA.png" title="Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32"></td>
+</tr>
+<tr>
+<td align="left">Key Information Extraction</td>
+<td align="center"><img alt="Examples of failed Key Information Extraction" src="https://alix-tz.github.io/phd/posts/016/images/LLM_keyinfoextraction.png" title="Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'"></td>
+</tr>
+<tr>
+<td align="left">Handwritten Mathematical Expression Recognition</td>
+<td align="center"><img alt="Examples of failed Handwritten Mathematical Expression Recognition" src="https://alix-tz.github.io/phd/posts/016/images/LLM_HMExpr.png" title="Four example of failed attempts from the LLM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up"></td>
+</tr>
+</tbody>
+</table>
+<p>For each task, they used several dataset presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the<a href="https://fki.tic.heia-fr.ch/databases/iam-handwriting-database">IAM dataset</a>, the sota method of AttentionHTR<sup id="fnref:attentionhtr_ref"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:attentionhtr_ref">4</a></sup> reaches a word accuracy of 91.24%<sup id="fnref:remark_wer"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:remark_wer">5</a></sup>. In comparison, Liu et al provide the following scores for the tested LMM on this dataset:</p>
+<table>
+<thead><tr>
+<th align="center">test LMM</th>
+<th align="center">Score on IAM</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="center">BLIP-2 OPT<sub>6.7b</sub>
+</td>
+<td align="center">38.00</td>
+</tr>
+<tr>
+<td align="center">BLIP-2 FlanT5<sub>XXL</sub>
+</td>
+<td align="center">40.50</td>
+</tr>
+<tr>
+<td align="center">OpenFlamingo</td>
+<td align="center">45.53</td>
+</tr>
+<tr>
+<td align="center">LLaVa</td>
+<td align="center"><em>50.40</em></td>
+</tr>
+<tr>
+<td align="center">MiniGPT4</td>
+<td align="center">28.90</td>
+</tr>
+<tr>
+<td align="center">mPLUG-Owl</td>
+<td align="center">42.53</td>
+</tr>
+<tr>
+<td align="center">---------------</td>
+<td align="center">-----</td>
+</tr>
+<tr>
+<td align="center">Supervised SOTA</td>
+<td align="center"><strong>91.24</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The illustrations provided by the article are all of failed attempts, but it corresponds to the overall impression conveyed by the results of the experiments. Indeed, compared to the state-of-the-art supervised methods, zero-shot tasks prompted to LMMs yield results largely outperformed, similar to what is visible in the case of text recognition on the IAM dataset. The only exception is BLIP-2 on a Text Recognition task on a dataset of artistic text (<a href="https://github.com/xdxie/WordArt#wordart-dataset">WordArt</a>) which is more challenging. The authors consider that this is a sign that LMMs have a promising potential for visually complex texts.</p>
+<p>A very important section of their paper is their remarks on the relationship between LLMs and semantics. Submitting non-word images to the LLMs, they find that the LMMs systematically over-correct the prediction and suggest real-words as an answer. Traditional text recognition approaches, on the other hand, are much less sensitive to the notion of likelihood for the words to recognize. Similarly, the need for semantics interferes with the LMMs' output, and they tend to more easily recognize common words and make up additional letters ("choco" is read as "chocolate"). Lastly, LLMs are insensitive to word length: they are unable to count how many letters are in the image of a word. These results are similar to what Rockenberger experienced with the handwritten letter: the model hallucinated words to compose a semantically plausible letter. But using the wrong date, the wrong names, and the wrong language.</p>
+<p>Liu et al conclude their paper reminding us that they experimented with the capacities of the models in the context of zero-shot prompts, whereas there are already successful attempts at fine-tuning LMMs and LLMs on specialized tasks, such as medical prediction. In fact, I think there already exist such attempts in the context of HTR as well: it seems to be the ambition of a model like Transkribus' Text Titan, released at the beginning of the Summer. It is based on a <a href="https://youtu.be/zxQyTK8quyY?feature=shared">Transformer</a> coupled with an LLM. Unfortunately, I wasn't able to find more information on this model, aside from the communication released by Transkribus on their website (<a href="https://readcoop.eu/introducing-transkribus-super-models-get-access-to-the-text-titan-i/">here</a> and <a href="https://help.transkribus.org/super-models">here</a>)</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:spina">
+<p>In stead of a multimodal approach, Salvatore Spina explored the possibility to use a LLM-based tool like ChatGPT3 to post-process the result of HTR and correct the text. See: Spina, S. (2023). <em>Artificial Intelligence in archival and historical scholarship workflow: HTS and ChatGPT</em> (arXiv:2308.02044). arXiv. <a href="https://doi.org/10.48550/arXiv.2308.02044">arXiv.2308.02044</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:spina" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:multimodal_turn">
+<p>Multimodality is presented by some researchers of the Digital Humanities community as a real epistemological turn for the field. See for example: Smits, T., &amp; Wevers, M. (2023). <em>A multimodal turn in Digital Humanities. Using contrastive machine learning models to explore, enrich, and analyze digital visual historical collections</em>. Digital Scholarship in the Humanities, fqad008. <a href="https://doi.org/10.1093/llc/fqad008">doi: 10.1093/llc/fqad008</a> ; or Impett, L., &amp; Offert, F. (2023). <em>There Is a Digital Art History</em> (arXiv:2308.07464). arXiv. <a href="https://doi.org/10.48550/arXiv.2308.07464">arXiv.2308.07464</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:multimodal_turn" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:shot-definition">
+<p>There are a few videos offering more or less detailed explanations on these expressions <a href="https://www.youtube.com/watch?v=E6X1Ufhxtf0">in the context of prompting an LLM</a>. However, this is not specific to LLM, it is often used in the context of <a href="https://huggingface.co/tasks/zero-shot-classification">classification</a> or <a href="https://joeddav.github.io/blog/2020/05/29/ZSL.html">NLP</a> tasks for example. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:shot-definition" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:attentionhtr_ref">
+<p>Kass, D., &amp; Vats, E. (2022). <em>AttentionHTR: Handwritten Text Recognition Based on Attention Encoder-Decoder Networks</em> (arXiv:2201.09390). arXiv. <a href="https://doi.org/10.48550/arXiv.2201.09390">arXiv.2201.09390</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:attentionhtr_ref" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:remark_wer">
+<p>In this case, the WER is used as a baseline to compare different approaches. However, in general, it is not a good idea to only take into account Word accuracy to understand a model's performance in real life. This is something I discussed in <a href="https://alix-tz.github.io/phd/posts/012/">this</a> post. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:remark_wer" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/015/" class="u-url">015 - Block post and comprehensive Exam</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Alix Chagué
@@ -508,49 +630,6 @@
 </li>
 </ol>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/006/" class="u-url">006 - Health Insurance from France to Canada</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Alix Chagué
-            </span></p>
-            <p class="dateline">
-            <a href="https://alix-tz.github.io/phd/posts/006/" rel="bookmark">
-            <time class="published dt-published" datetime="2022-07-28T11:52:15-04:00" itemprop="datePublished" title="2022-07-28">2022-07-28</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>In Canada, at least as a foreign student, health insurance is part of the tuition bill required each semester. At the University of Montreal, it costs 300$CA per semester (more details <a href="http://www.bei.umontreal.ca/bei/ass_couverture.htm">here</a>). There is also an additional plan specific to dental insurance. By default, students are signed up for these two plans, hence the fees included in the univeristy bill. </p>
-<p>However, it is possible to waive such fees if a student already has another insurance. A little warning here: saving on health insurance plans is cool on paper, but you should make sure you actually do have a working alternative before you cancel the one offered by the university. Medical fees in Canada can add up very quickly!</p>
-<p>French citizens covered by the French Health Insurance (<a href="https://www.ameli.fr/paris/assure">Assurance Maladie</a>) can benefit from an agreement between Québec and France in order to sign up, for free, for the <a href="https://www.ramq.gouv.qc.ca/fr">RAMQ</a>, the Québec Health Insurance (<em>Régie de l'Assurance Maladie du Québec</em>). This is not an automatic process: it is not because you are French that you can immediately revoke the Health Insurance fees from the university. You must first sign up for the RAMQ, then, providing a proof of affiliation to the RAMQ, you can ask for the fees to be removed. There are deadlines to do so and the process is slow because both the RAMQ and the Assurance Maladie are public services. During your very first semester in Canada, it can be hard to finish the process in time to avoid having to pay for the University's default health plan.</p>
-<p>Overall, the main steps are the following: you must get a form signed by the Health Insurance in France, then send it to the RAMQ along with a few other papers, and then, once you receive (by post mail!) the confirmation that the RAMQ accepted your application, you must submit such proof to the University in order to waive the health insurance fees. It takes a few days to receive the confirmation that your health plan is valid and for the fees to be removed from the bill.  </p>
-<p>Health insurance wise, several deadlines were applicable. For Winter 2022, mine were:</p>
-<ul>
-<li>by the 14th of February, I had to have fully paid my tuition;</li>
-<li>which meant I had until the 13th of February to remove any fee I did not want to pay;</li>
-<li>if not, I had to pay the full bill. Then I had until the 15th of March to finish the paperwork and request a refund.</li>
-</ul>
-<p>First things first, I may have mentioned it already, but there is a series of fees that are automatically added to a student's bill even if they are not mandatory. At the University of Montreal, they are called the "CANO" (<em>cotisations automatiques non obligatoires</em>). There is (<a href="https://ombudsman.umontreal.ca/foire-aux-questions/faq/news/detail/News/comment-me-desister-des-assurances-ou-dautres-frais-non-obligatoires/">here</a>) a rather complete documentation on which fees belong to this category, how much money they represent, what they pay for and the various processes to waive them. There are generally not related to health insurance, but the documentation also explains how to sign off from the dental and regular health insurance. Following these explanations, I got most of the CANO fees taken off my bill, as well as the fees related to the dental insurance.  </p>
-<p>At that point I was left with 600$CA to get rid off, corresponding to the main health insurance (in Winter, you pay the health insurance plan for both Winter and Summer).  </p>
-<p>I was difficult to get information about the agreement between France and Québec on the Assurance Maladie's website. They don't dedicate a lot of text to this situation on the corresponding page (<a href="https://www.ameli.fr/paris/assure/droits-demarches/europe-international/protection-sociale-etranger/etudes-etranger">"insurance and studies abroad"</a>) and it mixes studies inside Europe and outside of Europe, which are very different.  </p>
-<p>For studies in Québec, it is said that:</p>
-<ul>
-<li>students traveling to Québec within the frame of a university exchange should use the form <a href="https://www.ramq.gouv.qc.ca/fr/media/2516"><strong>SE Q-401-106</strong></a>;</li>
-<li>and that students enrolled in the Québec university should instead use the form <strong>SE Q-401-102</strong>.</li>
-</ul>
-<p>They say nothing about which situation applies to a PhD student in <em>cotutelle</em>: is it considered a university exchange since you are enrolled in a French university or is it considered to be like enrolling in a Québec university? For most of my paperwork with Canada, aside from the <em>convention de cotutelle</em>, my paperwork was essentially the same as someone enrolling only to a Canadian university. Additionally, SE 401-Q-106 required the French university to sign the form, whereas SE 401-Q-102 only required a signature from the Assurance Maladie. SE 401-Q-102 seemed applicable and faster, so I opted for it. Let's say it right away: it was a mistake. I should have opted for SE 401-Q-106 from the beginning.  </p>
-<p>In whichever situation you are in, you cannot simultaneously be enrolled in the French Assurance Maladie and the RAMQ. So both of the form will suspend your enrolling to the Assurance Maladie in order to get you into the RAMQ system. The main difference between the two forms is actually that:</p>
-<ul>
-<li>SE 401-Q-102 will have you struck off from the Assurance Maladie (and likely asked to destroy your Carte Vitale), until you come back to France and go through the process (and paperwork) to be reintegrated into the system,</li>
-<li>whereas SE 401-Q-106 will have your rights temporarily deactivated: with SE 401-Q-106 you must provide the precise dates of your travel to Québec. Upon your return, your rights are simply (and normally automatically) reactivated.  </li>
-</ul>
-<p>To make it short, both forms work for a <em>cotutelle</em>. But if you are going to Canada for only one semester, you should go for the SE 401-Q-106!</p>
-<p>I realized my mistake after arriving to Québec and talking with other French people having recently moved to Montreal. At the end of January, when it was clear I had made a mistake, I was still waiting for the Assurance Maladie to return the signed SE 401-Q-102 form. I decided to start over and sent the SE 401-Q-106 form to my university. They signed returned it within one day. I sent it to the Assurance Maladie explaining my mistake and asked to start over. Because of this error, I wasn't able to waive the 600$CA from my bill before the February deadline: I had to pay the tuition along with the 600$CA. Then I focused on finishing the paperwork on time to be able to ask for a refund. Luckily, it played out pretty well and I now have a 600$CA credit line with the University of Montreal, waiting to be deduced from my next tuition in September.  </p>
-<p>Now, the unfortunate news for me is that due to the fact that I will be traveling to Canada every other trimester, I'll have to do this process each time, since it is only applicable one trip at a time.  </p>
-<p>Before closing this rather long post, I want to mention another mistake I made. Form SE 401-Q-102 and SE 401-Q-106 are impossible to find on the Assurance Maladie's website. I found both forms via a Google search, but it is said that you can request the form to the Assurance Maladie's services. Unfortunately, the SE 401-Q-106 that I found was an old version: I only found out when I submitted it to the RAMQ. They refused it, even though the Assurance Maladie had signed it, and I had to go through the whole signature process one more time. Speak of unnecessary paperwork... </p>
-<p>I strongly recommend using the forms provided on the RAMQ website: they are common to both the French and the Québec administration and actually findable on the RAMQ's website.  </p>
-<p>A final warning: upon talking with some of my fellow French students at the University of Montreal, I realized that not every university will be quick when it comes to signing the SE 401-Q-106 form. Other universities may ask student to first finish the writing and signature of the <em>convention de cotutelle</em>. This is particularly unfair because completing this process can take a whole year and you may start traveling during this period, as is my case.</p>
-<p>Ok, so now you have your visa and a health insurance? Let's go look for a bank and a roof!</p>
     </div>
     </article>
 </div>
