@@ -39,14 +39,16 @@ They evaluated the models on 4 tasks: text recognition, text-based visual questi
  <!--  "Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'") | -->
  <!--  "Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up") | -->
 
+
+
 | Task | Example |
 | :--- | :-----: |
-| Text Recognition | ![Examples of failed text recognition](images/LLM_text_recognition.png) |
-| Visual Question Answering | ![Examples of failed Visual Question Answering](images/LLM_textVQA.png) |
-| Key Information Extraction | ![Examples of failed Key Information Extraction](images/LLM_keyinfoextraction.png) |
-| Handwritten Mathematical Expression Recognition | ![Examples of failed Handwritten Mathematical Expression Recognition](images/LLM_HMExpr.png) |
+| Text Recognition | ![Examples of failed text recognition](./images/LLM_text_recognition.png) |
+| Visual Question Answering | ![Examples of failed Visual Question Answering](./images/LLM_textVQA.png) |
+| Key Information Extraction | ![Examples of failed Key Information Extraction](./images/LLM_keyinfoextraction.png) |
+| Handwritten Mathematical Expression Recognition | ![Examples of failed Handwritten Mathematical Expression Recognition](./images/LLM_HMExpr.png) |
 
-For each task, they used several dataset presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the[IAM dataset](https://fki.tic.heia-fr.ch/databases/iam-handwriting-database), the sota method of AttentionHTR[^attentionhtr_ref] reaches a word accuracy of 91.24%[^remark_wer]. In comparison, Liu et al provide the following scores for the tested LMM on this dataset:
+For each task, they used several dataset presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the [IAM dataset](https://fki.tic.heia-fr.ch/databases/iam-handwriting-database), the sota method of AttentionHTR[^attentionhtr_ref] reaches a word accuracy of 91.24%[^remark_wer]. In comparison, Liu et al provide the following scores for the tested LMM on this dataset:
 
 | test LMM                    | Score on IAM |
 | :-------------------------- | :----------: |
