@@ -4,3 +4,5 @@ __pycache__
 output
 
 venv/
+venv_wsl/
+old_venv/
