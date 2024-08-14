@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://alix-tz.github.io/phd/">
 <link rel="icon" href="https://alix-tz.github.io/phd/favicon.ico" sizes="32x32">
 <link rel="next" href="https://alix-tz.github.io/phd/index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/017/" type="text/html">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/018/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -44,7 +44,33 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/017/" class="u-url">017 - Deploying eScriptorium online: notes on CREMMA's server specifications</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/018/" class="u-url">018 - The CATMuS Modern dataset #1</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/018/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-08-14T00:00:00-04:00" itemprop="datePublished" title="2024-08-14">2024-08-14</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Last week, I attended <a href="https://dh2024.adho.org/">ADHO's annual conference</a> in Washington DC. I presented a short paper, co-authored with Floriane Chiffoleau and Hugo Scheithauer, about the documentation we wrote for eScriptorium (I wrote <a href="https://alix-tz.github.io/phd/posts/018/010">a post</a> about it last year and you can also find our presentation <a href="https://inria.hal.science/hal-04594142">here</a>). I was also a co-author on a long paper presented by Ariane Pinche on the <a href="https://inria.hal.science/hal-04346939">CATMuS Medieval dataset</a>.</p>
+<p>CATMuS, which stands for "Consistent Approach to Transcribing ManuScripts", is a collective initiative and a framework to aggregate ground truth datasets using compatible <a href="https://catmus-guidelines.github.io/">transcription guidelines</a> for documents from different period written in romance languages. It started with <a href="https://huggingface.co/datasets/CATMuS/medieval">CATMuS Medieval</a>, but since January this year, I have been working on a version of CATMuS for the modern and contemporary period. </p>
+<p>While I should (and will) try to publish a data paper on CATMuS Modern &amp; Contemporary (I'll call it McCatmus from now on), I figured I could start with a series of blog posts here. I want to describe the various steps I followed in order to eventually release <a href="https://huggingface.co/datasets/CATMuS/modern">a dataset on HuggingFace</a> and hopefully soon the corresponding transcription model.</p>
+<p>I started working on McCatmus in January, but because of a major personal event (I moved to Canada!), it took seven month of stop-and-go before the release of the V1. This was particularly challenging due to the scale of the project and its technicality (it was hard to get back into McCatmus after several weeks of interruption, which I had to do several times).</p>
+<p>To add to this complexity, McCatmus was also a multi-front operation. Indeed, to create McCatmus, it was necessary to:</p>
+<ul>
+<li>define transcription guidelines in collaboration with other data producers,</li>
+<li>identify datasets compatible with the guidelines and set priorities,</li>
+<li>actually make all the dataset compatible with each other and clean some of the data,</li>
+<li>model and collect metadata that made sense for this dataset,</li>
+<li>release the dataset and fix the issues that came up.</li>
+</ul>
+<p>To this date, two tasks remain on my to-do list for McCatmus: train a transcription model corresponding to this dataset and compare it with other existing ones, and make sure to have a publication describing this dataset and its usefulness.</p>
+<p>My plan is to dedicate one post to the creation of the guidelines for the dataset, then a post about the identification and collection of the datasets used in McCatmus v1, and then I'll wrap up with a post about the process to create the dataset, the metadata and the release. Stay tuned!</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/017/" class="u-url">017 - Deploying eScriptorium online: notes on CREMMA's server specifications</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="https://alix-tz.github.io/phd/authors/alix-chague-and-thibault-clerice/">Alix Chagué and Thibault Clérice</a>
@@ -196,68 +222,68 @@ Full text of the specifications displayed on the image, for accessibility purpos
 <p>They evaluated the models on 4 tasks: text recognition, text-based visual question answering, key information extraction and handwritten mathematical expression recognition. Here are a few examples of what these tasks entail, as illustrated in the original article (on the images, P stands for Prediction and GT for Ground Truth):</p>
 <table>
 <thead><tr>
-<th align="left">Task</th>
-<th align="center">Example</th>
+<th style="text-align: left;">Task</th>
+<th style="text-align: center;">Example</th>
 </tr></thead>
 <tbody>
 <tr>
-<td align="left">Text Recognition</td>
-<td align="center"><img alt="Examples of failed Text Recognition" src="https://alix-tz.github.io/phd/images/LLM_text_recogntion.png" title="Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'"></td>
+<td style="text-align: left;">Text Recognition</td>
+<td style="text-align: center;"><img alt="Examples of failed Text Recognition" src="https://alix-tz.github.io/phd/images/LLM_text_recogntion.png" title="Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'"></td>
 </tr>
 <tr>
-<td align="left">Visual Question Answering</td>
-<td align="center"><img alt="Examples of failed Visual Question Answering" src="https://alix-tz.github.io/phd/images/LLM_textVQA.png" title="Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32"></td>
+<td style="text-align: left;">Visual Question Answering</td>
+<td style="text-align: center;"><img alt="Examples of failed Visual Question Answering" src="https://alix-tz.github.io/phd/images/LLM_textVQA.png" title="Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32"></td>
 </tr>
 <tr>
-<td align="left">*Key Information Extraction</td>
-<td align="center"><img alt="Examples of failed Key Information Extraction" src="https://alix-tz.github.io/phd/images/LLM_keyinfoextraction.png" title="Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'"></td>
+<td style="text-align: left;">*Key Information Extraction</td>
+<td style="text-align: center;"><img alt="Examples of failed Key Information Extraction" src="https://alix-tz.github.io/phd/images/LLM_keyinfoextraction.png" title="Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'"></td>
 </tr>
 <tr>
-<td align="left">Handwritten Mathematical Expression Recognition</td>
-<td align="center"><img alt="Examples of failed Handwritten Mathematical Expression Recognition" src="https://alix-tz.github.io/phd/images/LLM_HMExpr.png" title="Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up"></td>
+<td style="text-align: left;">Handwritten Mathematical Expression Recognition</td>
+<td style="text-align: center;"><img alt="Examples of failed Handwritten Mathematical Expression Recognition" src="https://alix-tz.github.io/phd/images/LLM_HMExpr.png" title="Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up"></td>
 </tr>
 </tbody>
 </table>
 <!-- "Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'.") | --><!--  "Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32") | --><!--  "Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'") | --><!--  "Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up") | --><p>For each task, they used several datasets presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the <a href="https://fki.tic.heia-fr.ch/databases/iam-handwriting-database">IAM dataset</a>, the sota method of AttentionHTR<sup id="fnref:attentionhtr_ref"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:attentionhtr_ref">4</a></sup> reaches a word accuracy of 91.24%.<sup id="fnref:remark_wer"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:remark_wer">5</a></sup> In comparison, Liu et al provide the following scores for the tested LMM on this dataset:</p>
 <table>
 <thead><tr>
-<th align="left">test LMM</th>
-<th align="center">Score on IAM</th>
+<th style="text-align: left;">test LMM</th>
+<th style="text-align: center;">Score on IAM</th>
 </tr></thead>
 <tbody>
 <tr>
-<td align="left">BLIP-2 OPT<sub>6.7b</sub>
+<td style="text-align: left;">BLIP-2 OPT<sub>6.7b</sub>
 </td>
-<td align="center">38.00</td>
+<td style="text-align: center;">38.00</td>
 </tr>
 <tr>
-<td align="left">BLIP-2 FlanT5<sub>XXL</sub>
+<td style="text-align: left;">BLIP-2 FlanT5<sub>XXL</sub>
 </td>
-<td align="center">40.50</td>
+<td style="text-align: center;">40.50</td>
 </tr>
 <tr>
-<td align="left">OpenFlamingo</td>
-<td align="center">45.53</td>
+<td style="text-align: left;">OpenFlamingo</td>
+<td style="text-align: center;">45.53</td>
 </tr>
 <tr>
-<td align="left">LLaVa</td>
-<td align="center"><em>50.40</em></td>
+<td style="text-align: left;">LLaVa</td>
+<td style="text-align: center;"><em>50.40</em></td>
 </tr>
 <tr>
-<td align="left">MiniGPT4</td>
-<td align="center">28.90</td>
+<td style="text-align: left;">MiniGPT4</td>
+<td style="text-align: center;">28.90</td>
 </tr>
 <tr>
-<td align="left">mPLUG-Owl</td>
-<td align="center">42.53</td>
+<td style="text-align: left;">mPLUG-Owl</td>
+<td style="text-align: center;">42.53</td>
 </tr>
 <tr>
-<td align="left">---------------</td>
-<td align="center">-----</td>
+<td style="text-align: left;">---------------</td>
+<td style="text-align: center;">-----</td>
 </tr>
 <tr>
-<td align="left">Supervised SOTA</td>
-<td align="center"><strong>91.24</strong></td>
+<td style="text-align: left;">Supervised SOTA</td>
+<td style="text-align: center;"><strong>91.24</strong></td>
 </tr>
 </tbody>
 </table>
@@ -641,77 +667,6 @@ Full text of the specifications displayed on the image, for accessibility purpos
 <p>I often thought about it during the year, looking for a way to solve this problem. It wasn't a question of narrowing down my topic or use-case, I think mine is/are already well defined. It is only at the occasion of a 20 minutes presentation assigned during the HNU7000 seminar that I sat at a table and put together my thoughts and the results of my discussions with my supervisors. I will soon dedicate a post to the current state of my research project, but what I think I was lacking the most was <strong>an angle</strong> to efficiently narrow down the scope of my project and justify future choices.  </p>
 <p>Even though I started focusing on how different 2022 looked compared to what I had imagined, I am actually very happy with this year. I met a ton of people who have broadened my horizons on research and academia in general. And I start 2023 full of ideas for my phD and this blog! Keep an eye out for them in future posts!</p>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/008/" class="u-url">008 - A Canadian Grail</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
-            </span></p>
-            <p class="dateline">
-            <a href="https://alix-tz.github.io/phd/posts/008/" rel="bookmark">
-            <time class="published dt-published" datetime="2022-11-09T16:20:50-05:00" itemprop="datePublished" title="2022-11-09">2022-11-09</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p><a href="https://starwalk.space/en/news/what-is-planet-parade">June 2022 witnessed a pretty cool planet alignment</a>, but it seems this omen wasn't about my <a href="https://alix-tz.github.io/phd/posts/006/">registration to the RAMQ</a> for my second semester in Canada. I didn't mean to post again about Health Insurance in Canada, but I can't resist telling this story.  </p>
-<p>Building from my experience (and mistakes) during Winter 2022, I thought that the process would be a piece of cake from then on. Uh-uh, not so fast. </p>
-<blockquote>
-<p>"At least, I started right from the beginning with the correct form!"<sup id="fnref:right"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/008/#fn:right">1</a></sup></p>
-</blockquote>
-<p>True. However, I got too confident in the speed of the process and forgot to take into account the French Summer vacations. I didn't send the signature request to my university before the 1st of August (a little over a month before my departure). The people in charge of signing were already on vacation. While this step had been very quick in Winter, this time it took almost a month: I only got the form with its signature back on the 30th of August, less than a week before my departure.</p>
-<p>I immediately printed the document and rushed to the Post office to send it to the <a href="https://www.ameli.fr/paris/assure">Assurance Maladie</a>. I still had one month and two weeks to finish the full process in order to remove some 300$CA fees from the bill at the University of Montréal. It seemed feasible. In December, my initial envoy to the Assurance Maladie had seemingly never made it to the Assurance Maladie, so this time I decided to play it safe: I printed the document myself<sup id="fnref:posting_online"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/008/#fn:posting_online">2</a></sup> and sent it as a registered letter, with a tracking number and a return receipt request.  </p>
-<p>How glad (and despairing) was I! Thanks to this tracking number, I was able to see that my letter... never left that Post office. After a week and a half, I sent a claim to La Poste, but since I couldn't wait for them to lead an investigation<sup id="fnref:investigation_outcome"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/008/#fn:investigation_outcome">3</a></sup>, my partner had to print the form a second time and send it again (I was already in Canada at that time).<sup id="fnref:second_failure"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/008/#fn:second_failure">4</a></sup></p>
-<p>Phew! The letter finally made it to the Assurance Maladie. But the time frame was narrowing down quickly! I had to contact the Assurance Maladie via the mobile app to try to politely urge then to send it back to me quickly. Eventually, I received it duly signed on September 27. I had two weeks left to send it to the <a href="https://www.ramq.gouv.qc.ca/fr">RAMQ</a> and get an acceptation letter to be able to reduce my bill.  </p>
-<p>Wasting no time, I praised the RAMQ for allowing me to <a href="https://www.ramq.gouv.qc.ca/fr/citoyens/assurance-medicaments/inscrire-desinscrire/r2">upload the file(s) on their website</a>, but cursed them when I received a confirmation notice telling me that they would take up to 60 days to process it. 60 days! I only had 17 left!</p>
-<p>At this point, as far as my bill was concerned, I had two options:</p>
-<ol>
-<li>
-<p>Pay the 300$CA and hope for the process to be over by the 15th of November (to have it refunded to me as a credit from UdeM on my next tuition<sup id="fnref:credit"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/008/#fn:credit">5</a></sup>);</p>
-</li>
-<li>
-<p>Or refuse to pay that part of the bill and begin having a debt of 300$CA towards the University, potentially pay interests on it and hope for the process to be over by the 15th of November (to have it retroacctively removed from the bill).</p>
-</li>
-</ol>
-<p>This semester, I was only finally getting my 600$CA from Winter, because in February I had chosen the first and safest option. This time, I took a gamble and went for the second scenario. I wasn't sure of the actual consequences of contracting a debt with the University, but I was holding on the hope that the RAMQ wouldn't take as long as they announced.</p>
-<p>October seemed to go by really slowly.</p>
-<p>The first sign of life from the RAMQ reached me on the 26th of October. Unfortunately, in a letter dated from the 14th, they listed all the items they expected to find in the form and rejected my request until I sent a complete form ASAP.  </p>
-<blockquote>
-<p>"Wait, what? My form, not complete?!" </p>
-</blockquote>
-<p>Was it possible I used the wrong form again? No, it wasn't that... Did I forget to check a box somewhere? No... Did the Assurance Maladie not correctly fill their part? No, still not that. What was wrong then? The only way to find out at that point was to call the RAMQ. I did so the following day.  </p>
-<p>I'll skip the hour-long wait on the phone with (or without) music and, boom! Here is the answer: somehow, they only received the last page of the PDF I uploaded on their website. But twice. Twice the last page. The first page, nowhere to be seen!  </p>
-<p>I refused to let a bug cost me 300$CA, so I begged the operator to let me have a way to send the missing page faster than the Post Office, and safer than their glitching upload platform. This is how I found myself (with my visiting partner) at the nearest Uniprix, playing with their public printer and sending my form... by fax!  </p>
-<p>The waiting resumed.</p>
-<p>I had no idea how long it would take. Did that fax even reach the operator?</p>
-<p>I was ready to give up on my 300$CA. I was losing hope that I would ever get an answer on time. I was cursing the University of Montréal for making it so stupidly complicated to remove an illegitimate amount from my bill, cursing the RAMQ and the Assurance Maladie for being so slow and not having automatized such a process with a shared plateform, cursing La Poste for being unreliable and losing my letters, cursing myself for not starting the process sooner, had I known! Raaaah!  </p>
-<p>But on November 4, suddenly, unexpectedly, there it was. My Canadian Grail. The letter of acceptation into the RAMQ.  </p>
-<p>With trembling hands, unable to erase a smile from my face, blinking once or twice, I captured it with my phone, and connected to the Task Manager on the University of Montréal website.  </p>
-<p>Upload</p>
-<p>Press "Confirm"</p>
-<p>And, a few days later poof! gone, my 300$CA debt.  </p>
-<p>Only remained, the 2,56$CA of interests generated during these three weeks, on a debt that should have never existed.  </p>
-<p>But I surrender, I won't fight any longer.  </p>
-<p>I'll pay this time.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:right">
-<p>Aka, I didn't use SE-401-Q-104, nor used the outdated version of SE-401-Q-106. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/008/#fnref:right" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:posting_online">
-<p>La Poste offers a service consisting in allowinf you to upoload a PDF which they will print and send for you. I used in December due to the difficulty to find a open Post office during the Christmas period. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/008/#fnref:posting_online" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:investigation_outcome">
-<p>The investigation took less than 2 weeks if I remember correctly. But I was right to make another envoy in parallel because they never found the letter and eventually sent me a refund. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/008/#fnref:investigation_outcome" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:second_failure">
-<p>Yes! It is the second time La Poste loses my SE-401-Q-106... How unlucky is that? <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/008/#fnref:second_failure" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:credit">
-<p>As I explained in my the post n°006, this amount is not directly refunded to you. It only appears as a debt to you from the University and will only be deducted from your next bill. It's unconvenient for two reasons: 1) it's a credit you end up giving the University and given the amount, you could really use that money for something else (like buying food for a month or paying rent), 2) when you don't pay tuition every semester (as is my case), you have to wait a really long time for that money to make it back to you! <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/008/#fnref:credit" title="Jump back to footnote 5 in the text">↩</a></p>
-</li>
-</ol>
-</div>
-    </div>
     </article>
 </div>
 
@@ -719,7 +674,7 @@ Full text of the specifications displayed on the image, for accessibility purpos
 <li class="next">
                 <a href="https://alix-tz.github.io/phd/index-1.html" rel="next">Older posts</a>
             </li>
-        </ul></nav></main><footer id="footer"><p>Contents © 2023         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
+        </ul></nav></main><footer id="footer"><p>Contents © 2024         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
 <div>
 <h3>Contact me</h3>
 <form name="contact" action="https://formspree.io/mdozpzwz" method="POST">

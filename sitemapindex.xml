@@ -7,138 +7,142 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alix-tz.github.io/phd/authors/alix-chague-and-thibault-clerice.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/authors/alix-chague.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/accuracy.xml</loc>
-  <lastmod>2023-07-17T12:37:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_dataset.xml</loc>
-  <lastmod>2023-08-04T21:04:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_genesis.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_infrastucture.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_milestone.xml</loc>
-  <lastmod>2023-11-14T09:36:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_mood.xml</loc>
-  <lastmod>2023-07-17T12:37:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_paperworking.xml</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_reading-notes.xml</loc>
-  <lastmod>2023-11-28T16:23:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_story-time.xml</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/catmus.xml</loc>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cotutelle.xml</loc>
-  <lastmod>2023-11-14T09:36:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/courses.xml</loc>
-  <lastmod>2023-11-14T09:36:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cremma.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/escriptorium.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/evaluation.xml</loc>
-  <lastmod>2023-07-17T12:37:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/experiment.xml</loc>
-  <lastmod>2023-08-04T21:04:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/health-insurance.xml</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/house-cleaning.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/htr.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
-  <lastmod>2022-09-30T03:12:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/kraken.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/large-language-models.xml</loc>
-  <lastmod>2023-11-28T16:23:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/manifesto.xml</loc>
-  <lastmod>2022-09-30T03:12:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/metrics.xml</loc>
-  <lastmod>2023-07-17T12:37:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/ocr.xml</loc>
-  <lastmod>2023-11-28T16:23:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/software-documentation.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/static-website.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/synthetic-data.xml</loc>
-  <lastmod>2023-05-21T23:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/tuition.xml</loc>
-  <lastmod>2023-07-17T13:11:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/visa.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/wikicremma.xml</loc>
-  <lastmod>2023-07-17T13:10:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2023-12-22T13:54:00Z</lastmod>
+  <lastmod>2024-08-14T19:54:00Z</lastmod>
  </sitemap>
 </sitemapindex>

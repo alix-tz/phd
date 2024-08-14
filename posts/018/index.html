@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>018 - The CATMuS Modern dataset #1 | A research (b)log</title>
+<link href="https://alix-tz.github.io/phd/assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="https://alix-tz.github.io/phd/assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="https://alix-tz.github.io/phd/assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<!-- custom font --><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Goldman&amp;family=JetBrains+Mono:wght@200&amp;family=Ubuntu+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&amp;family=Syne:wght@500&amp;display=swap" rel="stylesheet">
+<!-- end of custom font --><link href="https://alix-tz.github.io/phd/assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://alix-tz.github.io/phd/rss.xml">
+<link rel="canonical" href="https://alix-tz.github.io/phd/posts/018/">
+<link rel="icon" href="https://alix-tz.github.io/phd/posts/018/favicon.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><meta name="author" content="Alix Chagué">
+<link rel="prev" href="https://alix-tz.github.io/phd/posts/017/" title="017 - Deploying eScriptorium online: notes on CREMMA's server specifications" type="text/html">
+<meta property="og:site_name" content="A research (b)log">
+<meta property="og:title" content="018 - The CATMuS Modern dataset #1">
+<meta property="og:url" content="https://alix-tz.github.io/phd/posts/018/">
+<meta property="og:description" content="Last week, I attended ADHO's annual conference in Washington DC. I presented a short paper, co-authored with Floriane Chiffoleau and Hugo Scheithauer, about the documentation we wrote for eScriptorium">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-08-14T00:00:00-04:00">
+<meta property="article:tag" content="CATMuS">
+<meta property="article:tag" content="HTR">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+         
+    <header id="header"><h1 id="brand"><a href="https://alix-tz.github.io/phd/" title="A research (b)log" rel="home">
+
+        <span id="blog-title">A research (b)log</span>
+    </a></h1>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="https://alix-tz.github.io/phd/archive.html">Archive</a></li>
+                <li><a href="https://alix-tz.github.io/phd/categories/">Tags</a></li>
+                <li><a href="https://alix-tz.github.io/phd/rss.xml">RSS feed</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="https://alix-tz.github.io/phd/posts/018/" class="u-url">018 - The CATMuS Modern dataset #1</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    <a class="u-url" href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/018/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-08-14T00:00:00-04:00" itemprop="datePublished" title="2024-08-14">2024-08-14</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="https://alix-tz.github.io/phd/posts/018/index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Last week, I attended <a href="https://dh2024.adho.org/">ADHO's annual conference</a> in Washington DC. I presented a short paper, co-authored with Floriane Chiffoleau and Hugo Scheithauer, about the documentation we wrote for eScriptorium (I wrote <a href="https://alix-tz.github.io/phd/posts/018/010">a post</a> about it last year and you can also find our presentation <a href="https://inria.hal.science/hal-04594142">here</a>). I was also a co-author on a long paper presented by Ariane Pinche on the <a href="https://inria.hal.science/hal-04346939">CATMuS Medieval dataset</a>.</p>
+<p>CATMuS, which stands for "Consistent Approach to Transcribing ManuScripts", is a collective initiative and a framework to aggregate ground truth datasets using compatible <a href="https://catmus-guidelines.github.io/">transcription guidelines</a> for documents from different period written in romance languages. It started with <a href="https://huggingface.co/datasets/CATMuS/medieval">CATMuS Medieval</a>, but since January this year, I have been working on a version of CATMuS for the modern and contemporary period. </p>
+<p>While I should (and will) try to publish a data paper on CATMuS Modern &amp; Contemporary (I'll call it McCatmus from now on), I figured I could start with a series of blog posts here. I want to describe the various steps I followed in order to eventually release <a href="https://huggingface.co/datasets/CATMuS/modern">a dataset on HuggingFace</a> and hopefully soon the corresponding transcription model.</p>
+<p>I started working on McCatmus in January, but because of a major personal event (I moved to Canada!), it took seven month of stop-and-go before the release of the V1. This was particularly challenging due to the scale of the project and its technicality (it was hard to get back into McCatmus after several weeks of interruption, which I had to do several times).</p>
+<p>To add to this complexity, McCatmus was also a multi-front operation. Indeed, to create McCatmus, it was necessary to:</p>
+<ul>
+<li>define transcription guidelines in collaboration with other data producers,</li>
+<li>identify datasets compatible with the guidelines and set priorities,</li>
+<li>actually make all the dataset compatible with each other and clean some of the data,</li>
+<li>model and collect metadata that made sense for this dataset,</li>
+<li>release the dataset and fix the issues that came up.</li>
+</ul>
+<p>To this date, two tasks remain on my to-do list for McCatmus: train a transcription model corresponding to this dataset and compare it with other existing ones, and make sure to have a publication describing this dataset and its usefulness.</p>
+<p>My plan is to dedicate one post to the creation of the guidelines for the dataset, then a post about the identification and collection of the datasets used in McCatmus v1, and then I'll wrap up with a post about the process to create the dataset, the metadata and the release. Stay tuned!</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/catmus/" rel="tag">CATMuS</a></li>
+            <li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/htr/" rel="tag">HTR</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://alix-tz.github.io/phd/posts/017/" rel="prev" title="017 - Deploying eScriptorium online: notes on CREMMA's server specifications">Previous post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p>Contents © 2024         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
+<div>
+<h3>Contact me</h3>
+<form name="contact" action="https://formspree.io/mdozpzwz" method="POST">
+<div>
+<!--<label class="sr-only" for="inputName">Name</label>-->
+<input type="text" name="name" id="inputName" placeholder="Your name" required="" style="width: 150px;">
+   
+<!--<label class="sr-only" for="inputEmail">E-mail</label>-->
+<input type="email" name="email" id="inputEmail" placeholder="Your e-mail address" required="" style="width: 150px;">
+</div>
+<div>
+<!--<label class="sr-only" for="inputMessage">Message</label>-->
+<textarea name="message" id="inputMessage" rows="3" placeholder="Your message" required="" style="width: 50%;"></textarea>
+</div>
+<button type="submit" style="width: 60px;">Send</button>
+</form>
+</div>
+            
+        </footer>
+</div>
+    
+    
+
+    
+    
+    
+</body>
+</html>
