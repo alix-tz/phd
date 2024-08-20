@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://alix-tz.github.io/phd/">
 <link rel="icon" href="https://alix-tz.github.io/phd/favicon.ico" sizes="32x32">
 <link rel="next" href="https://alix-tz.github.io/phd/index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/018/" type="text/html">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/019/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -44,7 +44,39 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/018/" class="u-url">018 - The CATMuS Modern dataset #1</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/019/" class="u-url">019 - The CATMuS Modern dataset #2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/019/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-08-14T13:55:01-04:00" itemprop="datePublished" title="2024-08-14">2024-08-14</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><a href="https://x.com/JMFradeRue/status/1730191566508060883">Previous experiments</a> have shown that conflicting transcription guidelines in training datasets make it less likely that a model will learn to transcribe correctly. This is particularly relevant when it comes to abbreviations and it's something to keep in mind when merging existing datasets. We didn't really address this when we trained the <a href="https://inria.hal.science/hal-04094241">Manu McFrench model</a> because it's difficult to retroactively align datasets to follow the same transcription rules. Unless you can afford to manually check every line, of course. In the case of Manu McFrench however, we only merged datasets that didn't solve abbreviations, so we ensured a minimum of cohesion.</p>
+<p>CATMuS was built on the foundation laid by CREMMALab and the <a href="https://hal.science/hal-03716526">annotation guidelines</a> developed by Ariane Pinche at the end of a seminar organized in 2021. These guidelines are intended to be generic, meaning they should be compatible with most transcription situations and are not project-specific. Following these guidelines will help data producers create ground truth that is compatible with data from other projects. It will also help those projects save time by not having to create transcription rules from scratch. From my experience, it is indeed easy for the members of a project discovering HTR to get caught up in the specifics of one project and forget what is and is not relevant (or even complicating) in the transcription phase.</p>
+<blockquote>
+<p>It is important to note that a project can decide to partially reuse the CATMuS guidelines, while maintaining more specific rules for some cases. In such cases, the CATMuS guidelines can (should?) be used a reference point: ideally, the specific rules defined a project should be retro-compatible with CATMuS. For example, if it is decided, for a project, that a special character will be used to mark the end of each paragraph, then in order to create a CATMuS-compatible version of the dataset, I should only have to replace or remove that character. In such cases, the special character that was chosen should be unambiguous and the rule should be explicitly presented.</p>
+</blockquote>
+<p>As CREMMALab focused on the transcription of medieval manuscripts, so did the first CATMuS dataset and guidelines. As I said in my <a href="https://alix-tz.github.io/phd/posts/018/">previous post</a>, I focused on data covering the modern and contemporary periods, for which there was no equivalent to the CREMMALab guidelines. So, when extending CATMuS to these periods, I started with collecting existing guidelines and comparing them. I used the <a href="https://hal.science/hal-03697382">CREMMA Medieval guidelines</a>, the <a href="https://gist.github.com/alix-tz/6f89444521bf1cab0522da520f7e4ff4">CREMMA guidelines for modern and contemporary documents</a>, <a href="https://hal.science/hal-04281804">SETAF's guidelines</a> and <a href="https://hal.science/hal-04557457">CATMuS Print's guidelines</a> as a basis to elaborate the transcription rules for McCATMuS.</p>
+<p>For each rubric, I <a href="https://docs.google.com/spreadsheets/d/1bFE-rRk6ZwgIHqXAOgwPo1s1zwQ-UPTLPnzjaRmTMsk/edit?usp=sharing">compared</a> what each set of rules suggested, when they covered it. It was rare for all guidelines to align, but some cases were easy to solve. For example, all the guidelines recommended not to differentiate between regular s (<code>⟨s⟩</code>) and long s (<code>⟨ſ⟩</code>), except for the rules I had set for the modern and contemporary sources transcribed by CREMMA in 2021, before the CREMMALab seminar. It was thus decided that for McCATMuS there would be no distinction between all types of s's.</p>
+<p>Some rubrics needed to be discussed to figure out why the rule had been chosen in the first place by some of the projects, to decide which one to keep for McCATMuS. In February, I got together with Ariane Pinche and Simon Gabay to go over the rubrics that still needed to be set. One example of a rule we discussed is how hyphenations are handled. CATMuS Medieval and the two CREMMA guidelines say to always use the same symbol (<code>⟨-⟩</code>), whereas for the SETAF and CATMuS Print datasets, inline hyphenations (<code>⟨-⟩</code>) are differentiated from hyphenations at the end of a line (<code>⟨¬⟩</code>). Other symbols, like <code>⟨⸗⟩</code>, were unanimously rejected.</p>
+<p>Two elements weighed in some of the decisions: the feasibility of a retro-conversion for the existing datasets and the compatibility of the rule with a maximum of projects. In the case of hyphenations, I eventually decided to follow the same rule as CATMuS Medieval and CREMMA. On top of simplifying the compatibility of McCATMuS with CATMuS Medieval, I found that it was much easier to replace all <code>⟨¬⟩</code> with <code>⟨-⟩</code>, rather than retroactively place <code>⟨¬⟩</code> where there was indeed an hyphenation at the end of a line.<sup id="fnref:hyphen"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/019/#fn:hyphen">1</a></sup></p>
+<p>Once the set of rule was fixed, I used it to sort between the different datasets I had identified (I'll talk about it in the next post) and to decide which one would be retained for McCATMuS v1. The rules also defined the transformation scenarios necessary to turn each of these datasets in a CATMuS-compatible version. Then, once McCATMuS v1 was ready, I worked on integrating the modern and contemporary guidelines into the <a href="https://catmus-guidelines.github.io/">CATMuS website</a>, where the transcription guidelines for CATMuS medieval were already published.</p>
+<p>Now that I am done integrating the rules set for McCATMuS into the website, I am confident that we successfully designed rules that are overall compatible across the medieval, modern and contemporary periods, with some unavoidable exceptions. Two good examples of the impossibility to cover a whole millennium of document production with the same rule are the <a href="https://catmus-guidelines.github.io/html/guidelines/en/abbreviations.html">abbreviations</a> and the <a href="https://catmus-guidelines.github.io/html/guidelines/en/punctuation.html">punctuation signs</a>.</p>
+<p>So, now you know how the transcription guidelines were established for McCATMuS. Next, I'll cover how they were integrated into existing datasets to create the first version of the McCATMuS dataset!</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:hyphen">
+<p>You can't assume that every instance of <code>⟨-⟩</code> at the end of a line must be replaced with a <code>⟨¬⟩</code>. In many cases, this can be a simple typographic decoration marking the end of a paragraph or the end of a title. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/019/#fnref:hyphen" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/018/" class="u-url">018 - The CATMuS Modern dataset #1</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
@@ -623,49 +655,6 @@ Full text of the specifications displayed on the image, for accessibility purpos
 </li>
 </ol>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/009/" class="u-url">009 - Looking back to 2022</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
-            </span></p>
-            <p class="dateline">
-            <a href="https://alix-tz.github.io/phd/posts/009/" rel="bookmark">
-            <time class="published dt-published" datetime="2022-12-31T10:14:57-05:00" itemprop="datePublished" title="2022-12-31">2022-12-31</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>Over the past decade, I've started a tradition of taking a sort-of-day-long hike on the 1st of January. There is always a chance that the weather won't be on my side, but I like the idea of starting the year peacefully and embracing nature.  </p>
-<p>Before starting 2023 though, and without much originality, I wanted to dedicate a last post for 2022 to looking back to my first full year of phD and focus on its biggest highlights as far as my phD project is concerned.  </p>
-<p>Of course, the year sure didn't look like anything I had expected! I don't think I had envisioned any of what my trips to Montréal have brought me... but also how much they consume of the time available to actually work on my research project. As you will see, it is not necessarily a bad thing - I actually want to focus on the good parts - but it doesn't mean that it was easy to wrap my head around it.  </p>
-<p>I spent two thirds of the 2022 in Montréal: 8 months out of 12, with what looks right now like a super short 4 months of Summer in France in the middle. I specify that it was Summer because, you know, ... July and August, they're not usual months.</p>
-<p>Overall, 2022 passed in the blink of an eye.  </p>
-<p>I spent a lot of time in class or preparing for class or working on final projects. Indeed, I took 4 classes out of the 5 required by the Université de Montréal, and attended 1 as an auditor.  </p>
-<ul>
-<li>SCI6304 was a bibliometry class taught by Vincent Larivière;</li>
-<li>MSL6523 was a Digital Museology class conducted by Emmanuel Chateau-Dutier;</li>
-<li>LCO6525 was a Compared Chinese Literature class given by Victoria-Oana Lupascu;</li>
-<li>HNU7000 was a class focused on the Epistemology of the Digital Humanities lead by Michael E. Sinatra;</li>
-<li>and SCI6203, the extra class, was about AI and textual data, it was given by Dominic Forest.</li>
-</ul>
-<p>As you can see, they were very diverse but I think I learned quite a few things from them that I will be able to use more or less directly for my research.</p>
-<ol>
-<li>
-<p>In HNU7000, we often had to write or present critical summaries of articles or conferences and in LCO6525, we were asked to turn in a "annotated bibliography" (at least 400 words for 6 references related to the topic of our final paper) halfway through the semester. With these exercises, I think I found a better way to summarize articles or books I read. I can still improve the "critical" aspect of the exercise, but I think I got better at summarizing what was actually relevant to me when I read. Now, I hope to publish some of these future summaries here.</p>
-</li>
-<li>
-<p>In SCI6304, my final project consisted in a bibliometric investigation on the publications on HTR over the past 40 years. I would like to publish the result as an article, which is a project for 2023. But I can already see that doing so, I gained a much better understanding of the field(s) related to my research project, I found some keywords that I need to investigate and I added a bunch of references to my potentially-to-read list.  </p>
-</li>
-<li>
-<p>In MSL6523, the final poject consisted in a blog post for <a href="https://medium.com/museonum">Museonum</a>. <a href="https://medium.com/museonum/intelligence-artificielle-et-intelligence-collective-des-nouveaux-eldorados-pour-rendre-les-c8c4e214d4e6">Mine</a> was focused on the current use of automatic transcription and crowdsourcing by patrimonial institutions. I have already been able to reuse this post as a reading suggestion for a class where I was invited to present eScriptorium.  </p>
-</li>
-</ol>
-<p>I had a lot of other activities throughout the year (teaching, presenting at conferences, etc), but, as far as my thesis project is concerned, two of my biggest concerns were 1) reading and 2) refining my research project.  </p>
-<p>I tried different strategies to read more, but I am a slow reader and my schedule is often fragmented. I have started finding the beginning of a solution in keeping one day of the week totally without meetings, and by always keeping it the same day. I started implementing this during the past semester and it seemed to work: Wednesday was the day I was going to the library or simply dedicating to my homework. On Wednesday, I never scheduled meetings (unless absolutely necessary). Now that I am back in France for 4 months, I need to make sure I am able to keep this routine. On the other hand, I am trying to solve the speed problem by better sorting the references I end up reading in order not to waste time on a text that was actually not a priority.  </p>
-<p>One of the things I learned in 2022 and that affects my reading is the usefulness of expanding the types of publications I read. Let me explain. Working at ALMAnaCH, I saw most of my colleagues focus on reading articles and pre-prints. The main objective there is to keep up to date with a state of the art that evolves quickly and for a discipline that is fairly recent. On the other hand, at the Université de Montréal, more emphasis is placed on the conceptual frame of the research. Therefore, many more books and chapters, of disciplines that are not always the same as the envisioned project, make their way into the bibliographies. It might seem obvious to some of you, but it wasn't for me at the start of the year and this is exactly the type of enrichment I was looking for when I went for a <em>cotutelle</em>.  </p>
-<p>Now, as far as refining my research project is concerned, this is something that I didn't start solving before December. At the Université de Montréal, when I apply for a grant, I often have to introduce my research project, including my methodology and the conceptual frame. Writing these texts, it often made me feel like I was not progressing in terms of making my project more precise. I had a general idea of the topic I wanted to work on and which issues I wanted to address in general, but no clear strategy.  </p>
-<p>I often thought about it during the year, looking for a way to solve this problem. It wasn't a question of narrowing down my topic or use-case, I think mine is/are already well defined. It is only at the occasion of a 20 minutes presentation assigned during the HNU7000 seminar that I sat at a table and put together my thoughts and the results of my discussions with my supervisors. I will soon dedicate a post to the current state of my research project, but what I think I was lacking the most was <strong>an angle</strong> to efficiently narrow down the scope of my project and justify future choices.  </p>
-<p>Even though I started focusing on how different 2022 looked compared to what I had imagined, I am actually very happy with this year. I met a ton of people who have broadened my horizons on research and academia in general. And I start 2023 full of ideas for my phD and this blog! Keep an eye out for them in future posts!</p>
     </div>
     </article>
 </div>

@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2024-08-14T19:54:00Z</lastmod>
+  <lastmod>2024-08-20T20:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/authors/</loc>
@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2024-08-14T19:54:00Z</lastmod>
+  <lastmod>2024-08-20T20:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -106,6 +106,10 @@
   <lastmod>2024-08-14T19:54:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/guidelines/</loc>
+  <lastmod>2024-08-20T20:46:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/health-insurance/</loc>
   <lastmod>2024-08-14T19:54:00Z</lastmod>
  </url>
@@ -167,7 +171,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-1.html</loc>
-  <lastmod>2024-08-14T19:54:00Z</lastmod>
+  <lastmod>2024-08-20T20:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -248,5 +252,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/018/</loc>
   <lastmod>2024-08-14T19:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/019/</loc>
+  <lastmod>2024-08-20T20:46:00Z</lastmod>
  </url>
 </urlset>
