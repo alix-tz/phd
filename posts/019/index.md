@@ -1,7 +1,7 @@
 <!--
 .. title: 019 - The CATMuS Modern dataset #2
 .. slug: 019
-.. date: 2024-08-14 13:55:01 UTC-04:00
+.. date: 2024-08-20
 .. tags: CATMuS, HTR, guidelines
 .. category: dataset
 .. link: 
