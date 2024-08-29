@@ -99,7 +99,7 @@ I saved the output as a CSV and proceeded to go through each of the selected dat
 
 I assigned each dataset a priority number from 1 to 6. The lowest number was for dataset compatible with CATMuS without any modification and 6 for massive datasets that would require a nerve-racking script to be built correctly. My grading system is shown below.
 
-```txt
+```
 1=ready as is
 2=need to be chocomufin-ed
 3=require manual corrections but the dataset is very small, or the dataset is chocomufin/catmus compatible but requires a script to build it
@@ -114,6 +114,6 @@ I chose to focus on datasets with priority 2 for the *first* version of McCATMuS
 
 Identifying eligible datasets was not as time consuming as cleaning them and collecting additional metadata turned out to be. However, it gave me a good idea of the challenges I would face when trying to aggregate the datasets. I would have liked to be able to find a greater diversity of languages, but this is mainly due to the fact that many non-French datasets require more elaborate corrections than applying Chocomufin.  I'll cover this question of data cleaning in more detail in my next post!
 
-[images]: It was the case in "[Données vérité de terrain HTR+ Annuaire des propriétaires et des propriétés de Paris et du département de la Seine (1898-1923)](https://htr-united.github.io/share.html?uri=c326a6fee) where the ALTO XML files are not explicitly linked to their corresponding source images. I believe it can be fixed, but it would require creating a script just for this purpose and the dataset presented other incompatibilities with CATMuS' guidelines.
+[^images]: It was the case in "[Données vérité de terrain HTR+ Annuaire des propriétaires et des propriétés de Paris et du département de la Seine (1898-1923)](https://htr-united.github.io/share.html?uri=c326a6fee) where the ALTO XML files are not explicitly linked to their corresponding source images. I believe it can be fixed, but it would require creating a script just for this purpose and the dataset presented other incompatibilities with CATMuS' guidelines.
 
-[segmentation]: For example, "[Argus des Brevets](https://htr-united.github.io/share.html?uri=43d1c93c7)" contains some segmentation errors that will need to be corrected manually. 
+[^segmentation]: For example, "[Argus des Brevets](https://htr-united.github.io/share.html?uri=43d1c93c7)" contains some segmentation errors that will need to be corrected manually. 

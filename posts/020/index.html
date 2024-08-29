@@ -148,8 +148,10 @@
 <li>I made sure the datasets were available and easy to download. For example, I excluded those requiring manual image retrieval.</li>
 <li>I checked the format of the data because I decided to initially focus only on datasets available in ALTO XML and PAGE XML.</li>
 <li>I controlled the overall compatibility between the transcription guidelines used for the dataset and those designed by CATMuS.</li>
-<li>I also checked the conformity of the dataset when trying to import it into eScriptorium. This import allowed me to detect when there was a discrepancies between the names of the image files and the value for the source image in the XML file.[^images]</li>
-<li>Loading a sample of the dataset in eScriptorium also allowed me to visually control other incompatibilities with CATMuS that may not have been documented by the producers of the data.[^segmentation] </li>
+<li>I also checked the conformity of the dataset when trying to import it into eScriptorium. This import allowed me to detect when there was a discrepancies between the names of the image files and the value for the source image in the XML file.<sup id="fnref:images"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/020/#fn:images">1</a></sup>
+</li>
+<li>Loading a sample of the dataset in eScriptorium also allowed me to visually control other incompatibilities with CATMuS that may not have been documented by the producers of the data.<sup id="fnref:segmentation"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/020/#fn:segmentation">2</a></sup>
+</li>
 <li>Finally, I considered the structure of the repository and, when necessary, the facility to reorganize it into a single <code>data/</code> folder containing the images and the XML files, often distributed among sub-folders.</li>
 </ul>
 <p>I assigned each dataset a priority number from 1 to 6. The lowest number was for dataset compatible with CATMuS without any modification and 6 for massive datasets that would require a nerve-racking script to be built correctly. My grading system is shown below.</p>
@@ -164,8 +166,17 @@
 <p>For example, <a href="https://htr-united.github.io/share.html?uri=507bb514d">"Notaires de Paris - Bronod"</a> had to be modified to comply with CATMuS requirements. This included replacing <code>[[</code> with <code>⟦</code>, and also to ignore lines containing <code>¥</code>, a symbol used by LECTAUREP to transcribe signatures and paraphs. These were straightforward modifications. On the complete opposite, <a href="https://htr-united.github.io/share.html?uri=7a99090c5">"University of Denver Collections as Data - HTR Train and Validation Set JCRS_2020_5_27"</a> is a massive dataset (2660 XML files), but there are segmentation errors in this dataset and the annotation of the superscripted text is not compatible with CATMuS. This makes it necessary to control and correct each page one by one.</p>
 <p>I chose to focus on datasets with priority 2 for the <em>first</em> version of McCATMuS. Indeed, it's possible to add more datasets into CATMuS in later versions, so there was no need to spend too much time on manually cleaning datasets. I had 23 with priority 2 to go through.</p>
 <p>Identifying eligible datasets was not as time consuming as cleaning them and collecting additional metadata turned out to be. However, it gave me a good idea of the challenges I would face when trying to aggregate the datasets. I would have liked to be able to find a greater diversity of languages, but this is mainly due to the fact that many non-French datasets require more elaborate corrections than applying Chocomufin.  I'll cover this question of data cleaning in more detail in my next post!</p>
-<p>[images]: It was the case in "<a href="https://htr-united.github.io/share.html?uri=c326a6fee">Données vérité de terrain HTR+ Annuaire des propriétaires et des propriétés de Paris et du département de la Seine (1898-1923)</a> where the ALTO XML files are not explicitly linked to their corresponding source images. I believe it can be fixed, but it would require creating a script just for this purpose and the dataset presented other incompatibilities with CATMuS' guidelines.</p>
-<p>[segmentation]: For example, "<a href="https://htr-united.github.io/share.html?uri=43d1c93c7">Argus des Brevets</a>" contains some segmentation errors that will need to be corrected manually. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:images">
+<p>It was the case in "<a href="https://htr-united.github.io/share.html?uri=c326a6fee">Données vérité de terrain HTR+ Annuaire des propriétaires et des propriétés de Paris et du département de la Seine (1898-1923)</a> where the ALTO XML files are not explicitly linked to their corresponding source images. I believe it can be fixed, but it would require creating a script just for this purpose and the dataset presented other incompatibilities with CATMuS' guidelines. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/020/#fnref:images" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:segmentation">
+<p>For example, "<a href="https://htr-united.github.io/share.html?uri=43d1c93c7">Argus des Brevets</a>" contains some segmentation errors that will need to be corrected manually. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/020/#fnref:segmentation" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/catmus/" rel="tag">CATMuS</a></li>
