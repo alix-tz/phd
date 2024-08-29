@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/authors/alix-chague.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/accuracy.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_dataset.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_genesis.xml</loc>
@@ -51,7 +51,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/catmus.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cotutelle.xml</loc>
@@ -64,6 +64,10 @@
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cremma.xml</loc>
   <lastmod>2024-08-14T19:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/datasets.xml</loc>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/escriptorium.xml</loc>
@@ -79,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/guidelines.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-21T23:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/health-insurance.xml</loc>
@@ -91,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/htr.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
@@ -143,10 +147,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </sitemap>
 </sitemapindex>

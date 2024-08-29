@@ -19,8 +19,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="https://alix-tz.github.io/phd/rss.xml">
 <link rel="canonical" href="https://alix-tz.github.io/phd/">
 <link rel="icon" href="https://alix-tz.github.io/phd/favicon.ico" sizes="32x32">
-<link rel="next" href="https://alix-tz.github.io/phd/index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/019/" type="text/html">
+<link rel="next" href="https://alix-tz.github.io/phd/index-2.html" type="text/html">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/020/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -44,7 +44,117 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/019/" class="u-url">019 - The CATMuS Modern dataset #2</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/020/" class="u-url">020 - The CATMuS Modern dataset #3</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/020/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-08-29T00:00:00-04:00" itemprop="datePublished" title="2024-08-29">2024-08-29</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>HTR-United made identifying candidate datasets for McCATMuS a piece of cake. Once it was agreed with the rest of the CATMuS community  agreed on the period to be covered by a "modern and contemporary" dataset, I created a simple script to parse the content of the HTR-United catalog and make a list of existing datasets covering documents written in Latin alphabet and matching our time criteria. </p>
+<p>Actually, here is the script!</p>
+<div class="code"><pre class="code literal-block"><span class="n">url_latest_htrunited</span><span class="o">=</span><span class="s2">"https://raw.githubusercontent.com/HTR-United/htr-united/master/htr-united.yml"</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># get latest htr-united.yml from main repository</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_latest_htrunited</span><span class="p">)</span>
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">in_time_scope</span><span class="p">(</span><span class="n">dates</span><span class="p">):</span>
+    <span class="n">century_scope_min</span> <span class="o">=</span> <span class="mi">1600</span>
+    <span class="n">century_scope_max</span> <span class="o">=</span> <span class="mi">2100</span>
+    <span class="c1"># this means that we allow datasets that intersect with the period</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"notBefore"</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">century_scope_min</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"notAfter"</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">century_scope_min</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="nb">int</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"notBefore"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">century_scope_max</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"notAfter"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">century_scope_max</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="n">filtered_by_date</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">catalog</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">in_time_scope</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"time"</span><span class="p">,</span> <span class="p">{})):</span>
+        <span class="n">filtered_by_date</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_by_date</span><span class="p">)</span><span class="si">}</span><span class="s2"> entries matching the time scope."</span><span class="p">)</span>
+
+<span class="n">targeted_script</span> <span class="o">=</span> <span class="s2">"Latn"</span>
+<span class="n">filtered_by_script</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">filtered_by_date</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">targeted_script</span> <span class="ow">in</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"iso"</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"script"</span><span class="p">)]:</span>
+        <span class="n">filtered_by_script</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_by_script</span><span class="p">)</span><span class="si">}</span><span class="s2"> entries matching the script criteria."</span><span class="p">)</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Script Type"</span><span class="p">,</span> <span class="s2">"Time Span"</span><span class="p">,</span> <span class="s2">"Languages"</span><span class="p">,</span> <span class="s2">"Repository"</span><span class="p">,</span> <span class="s2">"Project Name"</span><span class="p">,</span> <span class="s2">"Dataset Name"</span><span class="p">]</span>
+
+<span class="n">metadata_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+
+<span class="n">selected_entries</span> <span class="o">=</span> <span class="n">filtered_by_script</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">selected_entries</span><span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="s2">""</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">}</span>
+    <span class="n">languages</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"language"</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Languages"</span><span class="p">]</span> <span class="o">=</span> <span class="n">languages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Languages"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Couldn't find a field for language in this repository"</span><span class="p">)</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Languages"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"no language"</span>
+    <span class="c1"># get centuries/y</span>
+    <span class="c1"># ideally we would automatically build the value, but I don't want to deal with that right now and it might cause undetected bugs</span>
+    <span class="n">row</span><span class="p">[</span><span class="s2">"Time Span"</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"notBefore"</span><span class="p">)</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"notAfter"</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span>
+    <span class="n">row</span><span class="p">[</span><span class="s2">"Project Name"</span><span class="p">]</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"project-name"</span><span class="p">,</span> <span class="s2">"no project name"</span><span class="p">)</span>
+    <span class="n">repository</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">,</span> <span class="s2">"no url found"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">repository</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"https://github.com/"</span><span class="p">):</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Repository"</span><span class="p">]</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"https://github.com/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">repository</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"https://zenodo.org/"</span><span class="p">):</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Repository"</span><span class="p">]</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"https://zenodo.org/"</span><span class="p">,</span> <span class="s2">"zenodo:"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Repository"</span><span class="p">]</span> <span class="o">=</span> <span class="n">repository</span>
+    <span class="n">row</span><span class="p">[</span><span class="s2">"Dataset Name"</span><span class="p">]</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"no title found"</span><span class="p">)</span>
+    <span class="n">script_type</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"script-type"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">script_type</span> <span class="o">==</span> <span class="s2">"only-typed"</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Script Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Print"</span>
+    <span class="k">elif</span> <span class="n">script_type</span> <span class="o">==</span> <span class="s2">"only-manuscript"</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Script Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Handwritten"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">"Script Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Mixed"</span>
+    <span class="n">metadata_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">metadata_df</span><span class="p">)]</span> <span class="o">=</span> <span class="n">row</span>
+
+<span class="n">metadata_df</span>
+</pre></div>
+
+<p>I saved the output as a CSV and proceeded to go through each of the selected datasets and its metadata. I checked several things, as follows:</p>
+<ul>
+<li>I made sure the datasets were available and easy to download. For example, I excluded those requiring manual image retrieval.</li>
+<li>I checked the format of the data because I decided to initially focus only on datasets available in ALTO XML and PAGE XML.</li>
+<li>I controlled the overall compatibility between the transcription guidelines used for the dataset and those designed by CATMuS.</li>
+<li>I also checked the conformity of the dataset when trying to import it into eScriptorium. This import allowed me to detect when there was a discrepancies between the names of the image files and the value for the source image in the XML file.[^images]</li>
+<li>Loading a sample of the dataset in eScriptorium also allowed me to visually control other incompatibilities with CATMuS that may not have been documented by the producers of the data.[^segmentation] </li>
+<li>Finally, I considered the structure of the repository and, when necessary, the facility to reorganize it into a single <code>data/</code> folder containing the images and the XML files, often distributed among sub-folders.</li>
+</ul>
+<p>I assigned each dataset a priority number from 1 to 6. The lowest number was for dataset compatible with CATMuS without any modification and 6 for massive datasets that would require a nerve-racking script to be built correctly. My grading system is shown below.</p>
+<div class="code"><pre class="code literal-block"><span class="mf">1</span><span class="o">=</span><span class="kr">read</span><span class="n">y</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">is</span>
+<span class="mf">2</span><span class="o">=</span><span class="n">need</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">chocomufin</span><span class="o">-</span><span class="n">ed</span>
+<span class="mf">3</span><span class="o">=</span><span class="n">require</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">corrections</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kd">data</span><span class="n">set</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">very</span><span class="w"> </span><span class="n">small</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kd">data</span><span class="n">set</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">chocomufin</span><span class="o">/</span><span class="n">catmus</span><span class="w"> </span><span class="n">compatible</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">requires</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">it</span>
+<span class="mf">4</span><span class="o">=</span><span class="n">require</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">corrections</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kd">data</span><span class="n">set</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">relatively</span><span class="w"> </span><span class="n">big</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">require</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">fixed</span>
+<span class="mf">5</span><span class="o">=</span><span class="n">require</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">corrections</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kd">data</span><span class="n">set</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">really</span><span class="w"> </span><span class="n">big</span>
+<span class="mf">6</span><span class="o">=</span><span class="n">require</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">corrections</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kd">data</span><span class="n">set</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">really</span><span class="w"> </span><span class="n">big</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">require</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personalized</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">built</span>
+</pre></div>
+
+<p>For example, <a href="https://htr-united.github.io/share.html?uri=507bb514d">"Notaires de Paris - Bronod"</a> had to be modified to comply with CATMuS requirements. This included replacing <code>[[</code> with <code>⟦</code>, and also to ignore lines containing <code>¥</code>, a symbol used by LECTAUREP to transcribe signatures and paraphs. These were straightforward modifications. On the complete opposite, <a href="https://htr-united.github.io/share.html?uri=7a99090c5">"University of Denver Collections as Data - HTR Train and Validation Set JCRS_2020_5_27"</a> is a massive dataset (2660 XML files), but there are segmentation errors in this dataset and the annotation of the superscripted text is not compatible with CATMuS. This makes it necessary to control and correct each page one by one.</p>
+<p>I chose to focus on datasets with priority 2 for the <em>first</em> version of McCATMuS. Indeed, it's possible to add more datasets into CATMuS in later versions, so there was no need to spend too much time on manually cleaning datasets. I had 23 with priority 2 to go through.</p>
+<p>Identifying eligible datasets was not as time consuming as cleaning them and collecting additional metadata turned out to be. However, it gave me a good idea of the challenges I would face when trying to aggregate the datasets. I would have liked to be able to find a greater diversity of languages, but this is mainly due to the fact that many non-French datasets require more elaborate corrections than applying Chocomufin.  I'll cover this question of data cleaning in more detail in my next post!</p>
+<p>[images]: It was the case in "<a href="https://htr-united.github.io/share.html?uri=c326a6fee">Données vérité de terrain HTR+ Annuaire des propriétaires et des propriétés de Paris et du département de la Seine (1898-1923)</a> where the ALTO XML files are not explicitly linked to their corresponding source images. I believe it can be fixed, but it would require creating a script just for this purpose and the dataset presented other incompatibilities with CATMuS' guidelines.</p>
+<p>[segmentation]: For example, "<a href="https://htr-united.github.io/share.html?uri=43d1c93c7">Argus des Brevets</a>" contains some segmentation errors that will need to be corrected manually. </p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/019/" class="u-url">019 - The CATMuS Modern dataset #2</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
@@ -615,53 +725,12 @@ Full text of the specifications displayed on the image, for accessibility purpos
 </ol>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/010/" class="u-url">010 - Make and Read the docs</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
-            </span></p>
-            <p class="dateline">
-            <a href="https://alix-tz.github.io/phd/posts/010/" rel="bookmark">
-            <time class="published dt-published" datetime="2023-02-28T05:41:40-05:00" itemprop="datePublished" title="2023-02-28">2023-02-28</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>During my last contract as a research engineer at Inria, I spent a lot of my time working on the project called <a href="https://lectaurep.hypotheses.org/">LECTAUREP</a>, in collaboration with the <a href="https://www.archives-nationales.culture.gouv.fr/">National Archives in France</a>. The goal of this project was to explore new ways to index the content of thousands of thousands of notary registries which, put together, form <a href="https://www.siv.archives-nationales.culture.gouv.fr/siv/cms/content/fonds.action?uuid=12b&amp;template=pog/pogLevel2&amp;preview=false">one of the most used collections</a> of the National Archives. I joined the project at the end of 2019, during its second phase, almost at the same time as <a href="https://gitlab.com/scripta/escriptorium">eScriptorium</a> was initiated. LECTAUREP had worked with <a href="https://readcoop.eu/transkribus/?sc=Transkribus">Transkribus</a> during the first phase (in 2018) but, given the connections between <a href="http://almanach.inria.fr/index-en.html">my research team</a> and the team behind eScriptorium, we quickly switched to the newer software and contributed to its development.  </p>
-<p>One of my most important contribution is the redaction of <a href="https://lectaurep.hypotheses.org/documentation/prendre-en-main-escriptorium">a tutorial for the software</a>, which was initially only intended as an internal resource for our team of annotators. This is the reason why the tutorial was published on LECTAUREP's blog. <a href="https://openiti.org/">OpenITI</a>, and in particular <a href="https://twitter.com/Mar_Musa">Jonathan Allen</a> rapidly offered <a href="https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en">an English translation</a> which, eventually, was also published on LECTAUREP's blog. Since the publication of this translation, it is listed on eScriptorium's home page as its official tutorial.  </p>
-<p>Unfortunately, the tutorial hasn't been updated in a long time whereas major updates and new features have been added on eScriptorium's side.  </p>
-<p>LECTAUREP's blog is not a good solution. It is built with <a href="https://wordpress.com/">Wordpress</a> and hosted by <a href="https://hypotheses.org/">Hypotheses</a> which is very convenient to allow a small, well defined, group of people to collaboratively work on a research blog, but it's too heavy and not adapted to publish the documentation of a software like eScriptorium. The documentation needs to be updated frequently to keep up with the software and, in general, a blog is not a place to publish the extensive documentation of a software. To top it all, it is not even that easy to update for me, so can you imagine someone outside of LECTAUREP trying to offer an update?  </p>
-<p>I have been thinking of finding a better solution since at least 2020, but it was never so urgent that I was able to put it at the top of my to-do lists. Last Summer, I took the advantage of a rather slow couple of weeks in August, when every one but me seemed to have gone on vacations, to put something different in place.  </p>
-<p><a href="https://readthedocs.org/">Readthedocs</a> quickly appeared to me as an ideal solution: the platform is designed for publishing software documentations, it handles software versions and multi-lingual contents. Last but not least, it uses static website generators. This is fundamental because it allows for the publication of the source code on a platforms like <a href="https://github.com/">Github</a> and will actually use this public source code to build the website.  </p>
-<p>Github is a platform designed for sharing and opening codes to external contributors. Relying on it solves a major issue with the current tutorial: if anyone can suggest the correction, edition or translation of eScriptorium's documentation, then it is more likely to keep up with the evolutions of the application!  </p>
-<p>In August, I created a new Github repository called <a href="https://github.com/alix-tz/escriptorium-documentation">escriptorium-documentation</a>. I <a href="https://docs.readthedocs.io/en/stable/tutorial/#getting-started">set a basic configuration and connected it to Readthedocs</a>. As soon as this was done, the website became available at <a href="https://escriptorium.readthedocs.io/">online</a> with a URL based on the following structure: <code>{gh_repo_name}.readthedocs.io</code>. Then, I started rewriting the content of the tutorial... following <a href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html">Sphinx' syntax</a>.  </p>
-<p>It was so painful that I never got back to it after I came back from my own vacations.  </p>
-<p>Why painful? Well, I had discovered Markdown in 2017 and I have used it since. It's so powerful and yet so light! In comparison, Sphinx felt like such a complicated and heavy syntax. Not as heavy as HTML, but less intuitive nonetheless. I had to go through the documentation every time I wanted to add something as simple as a hyperlink or an image!  </p>
-<p>In January, when I gathered enough motivation<sup id="fnref:1"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/010/#fn:1">1</a></sup> to go back to working on eScriptorium's tutorial, I decided to look for an alternative to <a href="https://www.sphinx-doc.org/en/master/usage/builders/index.html#sphinx.builders.html.DirectoryHTMLBuilder">Sphinx compilers</a>.  </p>
-<p>The only non-sphinx-based option available with readthedocs is <a href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-mkdocs.html">Mkdocs</a>. Like its name hints at, <a href="https://www.mkdocs.org/">Mkdocs</a> is a Markdown compiler, capable to quickly build websites. The set-up is really quick, it's well documented, fairly easy to customize and it's possible to add a lot of <a href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#emoji">cool extensions which are based on Python</a>. It was the bomb!</p>
-<blockquote>
-<p>I liked Mkdocs so much that I also used it to rebuild <a href="https://alix-tz.github.io/">my personal website</a>!<sup id="fnref:2"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/010/#fn:2">2</a></sup></p>
-</blockquote>
-<p>Over the past month, I have spent a lot of time working on this new tutorial for eScriptorium. I designed a basic structure, breaking down the features into different categories. Now the pages are progressively being filled and I am very happy to have been joined in my efforts by my colleagues Hugo Scheithauer and Floriane Chiffoleau. As we progressively merge the content of new pages to the main branch, the <a href="https://escriptorium.readthedocs.io/en/latest/">escriptorium-tutorial</a> website expands. It will be ready soon for an official release!  </p>
-<p>I really hope that the transparency and simplicity brought by Mkdocs and Markdown will allow many people to add their contributions to the documentation of eScriptorium! Who knows, maybe you will too!</p>
-<p><em>EDIT: we changed the name of the repository to escriptorium-documentation instead of escriptorium-tutorial (all links and mentions were changed in this post). The decision was motivated by the fact the "tutorial" felt like an inexact description of the actual scope/ambition of the project.</em></p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Also when I got more free time after <a href="https://alix-tz.github.io/phd/posts/009/">my classes were over</a>! <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/010/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:2">
-<p>It is not necessary to use readthedocs to deploy a website built with Mkdocs. In the case of the tutorial, it simply allows us to have a domain name more meaningful than ".github.io". <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/010/#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-</ol>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="https://alix-tz.github.io/phd/index-1.html" rel="next">Older posts</a>
+                <a href="https://alix-tz.github.io/phd/index-2.html" rel="next">Older posts</a>
             </li>
         </ul></nav></main><footer id="footer"><p>Contents © 2024         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
 <div>

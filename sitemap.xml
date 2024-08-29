@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://alix-tz.github.io/phd/</loc>
-  <lastmod>2024-08-14T19:54:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/2022/</loc>
@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/authors/</loc>
@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -92,6 +92,10 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cremma/</loc>
   <lastmod>2024-08-14T19:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/datasets/</loc>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/escriptorium/</loc>
@@ -171,7 +175,11 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-1.html</loc>
-  <lastmod>2024-08-20T20:46:00Z</lastmod>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/index-2.html</loc>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -256,5 +264,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/019/</loc>
   <lastmod>2024-08-20T20:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/020/</loc>
+  <lastmod>2024-08-29T21:38:00Z</lastmod>
  </url>
 </urlset>
