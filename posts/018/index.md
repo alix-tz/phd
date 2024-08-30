@@ -1,5 +1,5 @@
 <!--
-.. title: 018 - The CATMuS Modern dataset #1 - Overview
+.. title: 018 - McCATMuS #1 - Overview
 .. slug: 018
 .. date: 2024-08-14
 .. tags: CATMuS, HTR, 

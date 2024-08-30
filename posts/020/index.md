@@ -1,5 +1,5 @@
 <!--
-.. title: 020 - The CATMuS Modern dataset #3 - Datasets selection
+.. title: 020 - McCATMuS #3 - Datasets selection
 .. slug: 020
 .. date: 2024-08-29
 .. tags: CATMuS, HTR, datasets
