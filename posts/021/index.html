@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>021 - McCATMuS #4 - Cleaning data, collection metadata | A research (b)log</title>
+<link href="https://alix-tz.github.io/phd/assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="https://alix-tz.github.io/phd/assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="https://alix-tz.github.io/phd/assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<!-- custom font --><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Goldman&amp;family=JetBrains+Mono:wght@200&amp;family=Ubuntu+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&amp;family=Syne:wght@500&amp;display=swap" rel="stylesheet">
+<!-- end of custom font --><link href="https://alix-tz.github.io/phd/assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://alix-tz.github.io/phd/rss.xml">
+<link rel="canonical" href="https://alix-tz.github.io/phd/posts/021/">
+<link rel="icon" href="https://alix-tz.github.io/phd/posts/021/favicon.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><meta name="author" content="Alix Chagué">
+<link rel="prev" href="https://alix-tz.github.io/phd/posts/020/" title="020 - McCATMuS #3 - Datasets selection" type="text/html">
+<meta property="og:site_name" content="A research (b)log">
+<meta property="og:title" content="021 - McCATMuS #4 - Cleaning data, collection metadata">
+<meta property="og:url" content="https://alix-tz.github.io/phd/posts/021/">
+<meta property="og:description" content="Preparing the data for CATMuS would certainly have taken much more time had I not been able to benefit from Thibault Clérice's experience with CATMuS Medieval. Not only was I able to build on the work">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-08-30T00:00:00-04:00">
+<meta property="article:tag" content="CATMuS">
+<meta property="article:tag" content="datasets">
+<meta property="article:tag" content="HTR">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+         
+    <header id="header"><h1 id="brand"><a href="https://alix-tz.github.io/phd/" title="A research (b)log" rel="home">
+
+        <span id="blog-title">A research (b)log</span>
+    </a></h1>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="https://alix-tz.github.io/phd/archive.html">Archive</a></li>
+                <li><a href="https://alix-tz.github.io/phd/categories/">Tags</a></li>
+                <li><a href="https://alix-tz.github.io/phd/rss.xml">RSS feed</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="https://alix-tz.github.io/phd/posts/021/" class="u-url">021 - McCATMuS #4 - Cleaning data, collection metadata</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    <a class="u-url" href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/021/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-08-30T00:00:00-04:00" itemprop="datePublished" title="2024-08-30">2024-08-30</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="https://alix-tz.github.io/phd/posts/021/index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Preparing the data for CATMuS would certainly have taken much more time had I not been able to benefit from Thibault Clérice's experience with CATMuS Medieval. Not only was I able to build on the workflow he set up when he built it, but I also relied heavily on his scripts to parse and build the final dataset into <a href="https://parquet.apache.org/">PARQUET</a> files that were pushed to HuggingFace. Most of these steps are described in <a href="https://univ-paris8.hal.science/hal-04453952v1">Thibault Clérice, Ariane Pinche, Malamatenia Vlachou-Efstathiou, Alix Chagué, Jean-Baptiste Camps, et al.. CATMuS Medieval: A multilingual large-scale cross-century dataset in Latin script for handwritten text recognition and beyond. 2024 International Conference on Document Analysis and Recognition (ICDAR), 2024, Athens, Greece</a>, presented at the <a href="https://icdar2024.net/">ICDAR</a> conference in Athens in a few days.</p>
+<p>For McCATMuS, I started by downloading all the datasets (keeping track of the official releases) then I manually reorganized all the datasets so that the transcription and images were always under <code>{dataset_repo}/data/{sub_folder}</code>, which made later manipulation easier. Based on the notes I took while filtering the datasets, and after generating a character table for each dataset with <a href="https://github.com/PonteIneptique/choco-mufin">Chocomufin</a>, I created several conversion tables to harmonize the transcription. The conversions are a mix of single character or multiple character replacements (<code>[</code> and  <code>[[?]]</code>) and more or less sophisticated replacements based on regular expressions (<code>#r#«</code>).<sup id="fnref:chocomufin"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/021/#fn:chocomufin">1</a></sup></p>
+<p>Here is a sample of the Chocomufin conversion table used for the LECTAUREP datasets. If the character is replaced by itself, it remains unchanged in the dataset, while replacing it allows either to remove a character from the dataset (the <code>¥</code>) or to harmonize its transcription with the CATMuS guidelines (see <code>œ</code> and <code>°</code> for example).</p>
+<div class="code"><pre class="code literal-block"><span class="nc">char</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">replacement</span><span class="p">,</span><span class="n">codepoint</span><span class="p">,</span><span class="n">mufidecode</span><span class="p">,</span><span class="k">order</span>
+<span class="n">#r</span><span class="err">#«</span><span class="w"> </span><span class="p">,</span><span class="n">Repl</span><span class="w"> </span><span class="n">extra</span><span class="w"> </span><span class="nf">space</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="nf">LEFT</span><span class="o">-</span><span class="n">POINTING</span><span class="w"> </span><span class="k">DOUBLE</span><span class="w"> </span><span class="n">ANGLE</span><span class="w"> </span><span class="n">QUOTATION</span><span class="w"> </span><span class="n">MARK</span><span class="p">,</span><span class="ss">""""</span><span class="p">,</span><span class="mi">00</span><span class="n">AB</span><span class="p">,,</span><span class="mi">0</span>
+<span class="n">#r</span><span class="err">#</span><span class="w"> </span><span class="err">»</span><span class="p">,</span><span class="n">Repl</span><span class="w"> </span><span class="n">extra</span><span class="w"> </span><span class="nf">space</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="nf">RIGHT</span><span class="o">-</span><span class="n">POINTING</span><span class="w"> </span><span class="k">DOUBLE</span><span class="w"> </span><span class="n">ANGLE</span><span class="w"> </span><span class="n">QUOTATION</span><span class="w"> </span><span class="n">MARK</span><span class="p">,</span><span class="ss">""""</span><span class="p">,</span><span class="mi">00</span><span class="n">BB</span><span class="p">,,</span><span class="mi">0</span>
+<span class="o">[</span><span class="n">[?</span><span class="o">]</span><span class="err">]</span><span class="p">,</span><span class="nf">replace</span><span class="w"> </span><span class="o">[</span><span class="n">[?</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="err">⟦⟧</span><span class="p">,</span><span class="err">⟦⟧</span><span class="p">,,,</span><span class="mi">0</span>
+<span class="o">[</span><span class="n">?</span><span class="o">]</span><span class="p">,</span><span class="nf">replace</span><span class="w"> </span><span class="o">[</span><span class="n">?</span><span class="o">]</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="err">⟦⟧</span><span class="p">,</span><span class="err">⟦⟧</span><span class="p">,,,</span><span class="mi">0</span>
+<span class="p">),</span><span class="nf">RIGHT</span><span class="w"> </span><span class="n">PARENTHESIS</span><span class="p">,),</span><span class="mi">0029</span><span class="p">,),</span>
+<span class="n">m</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="mi">006</span><span class="n">D</span><span class="p">,</span><span class="n">m</span><span class="p">,</span>
+<span class="n">É</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">CAPITAL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">ACUTE</span><span class="p">,</span><span class="n">É</span><span class="p">,</span><span class="mi">00</span><span class="n">C9</span><span class="p">,</span><span class="n">E</span><span class="p">,</span>
+<span class="n">a</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">0061</span><span class="p">,</span><span class="n">a</span><span class="p">,</span>
+<span class="ss">","</span><span class="p">,</span><span class="n">COMMA</span><span class="p">,</span><span class="ss">","</span><span class="p">,</span><span class="mi">002</span><span class="n">C</span><span class="p">,</span><span class="ss">","</span><span class="p">,</span>
+<span class="n">e</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="mi">0065</span><span class="p">,</span><span class="n">e</span><span class="p">,</span>
+<span class="o">^</span><span class="p">,</span><span class="n">CIRCUMFLEX</span><span class="w"> </span><span class="n">ACCENT</span><span class="p">,</span><span class="o">^</span><span class="p">,</span><span class="mi">005</span><span class="n">E</span><span class="p">,</span><span class="o">^</span><span class="p">,</span>
+<span class="n">œ</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LIGATURE</span><span class="w"> </span><span class="n">OE</span><span class="p">,</span><span class="n">oe</span><span class="p">,</span><span class="mi">0153</span><span class="p">,</span><span class="n">oe</span><span class="p">,</span>
+<span class="err">̂</span><span class="p">,</span><span class="n">COMBINING</span><span class="w"> </span><span class="n">CIRCUMFLEX</span><span class="w"> </span><span class="n">ACCENT</span><span class="p">,</span><span class="err">̂</span><span class="p">,</span><span class="mi">0302</span><span class="p">,,</span>
+<span class="n">W</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">CAPITAL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">W</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="mi">0057</span><span class="p">,</span><span class="n">W</span><span class="p">,</span>
+<span class="err">°</span><span class="p">,</span><span class="n">DEGREE</span><span class="w"> </span><span class="nf">SIGN</span><span class="p">,</span><span class="o">^</span><span class="n">o</span><span class="p">,</span><span class="mi">00</span><span class="n">B0</span><span class="p">,</span><span class="o">*</span><span class="p">,</span>
+<span class="err">¥</span><span class="p">,</span><span class="n">YEN</span><span class="w"> </span><span class="nf">SIGN</span><span class="p">,,</span><span class="mi">00</span><span class="n">A5</span><span class="p">,,</span>
+<span class="n">½</span><span class="p">,</span><span class="n">VULGAR</span><span class="w"> </span><span class="n">FRACTION</span><span class="w"> </span><span class="n">ONE</span><span class="w"> </span><span class="n">HALF</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">00</span><span class="n">BD</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">h</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">H</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="mi">0068</span><span class="p">,</span><span class="n">h</span><span class="p">,</span>
+<span class="n">r</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0072</span><span class="p">,</span><span class="n">r</span><span class="p">,</span>
+<span class="n">æ</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">AE</span><span class="p">,</span><span class="n">ae</span><span class="p">,</span><span class="mf">00E6</span><span class="p">,</span><span class="n">ae</span><span class="p">,</span>
+<span class="n">ȼ</span><span class="p">,</span><span class="n">LATIN</span><span class="w"> </span><span class="n">SMALL</span><span class="w"> </span><span class="n">LETTER</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">STROKE</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="mi">023</span><span class="n">C</span><span class="p">,</span><span class="n">c</span><span class="p">,</span>
+<span class="err">∟</span><span class="p">,</span><span class="nf">RIGHT</span><span class="w"> </span><span class="n">ANGLE</span><span class="p">,,</span><span class="mi">221</span><span class="n">F</span><span class="p">,</span><span class="o">[</span><span class="n">UNKNOWN</span><span class="o">]</span><span class="p">,</span>
+</pre></div>
+
+<p>It wasn't possible to use a single conversion table for all the datasets because some had different transcription approaches. While replacing  <code>¬</code> with <code>-</code> could, in principle, be used for each dataset, normalizing the way corrections and uncertainties were transcribed was another story. For example, in some of the CREMMA datasets, <code>&gt;&lt;</code> is used to signal a crossed word, while in other datasets <code>&lt;&gt;</code> is used. So replacing <code>&gt;</code> with <code>⟦</code> and <code>&lt;</code> with <code>⟧</code> in <code>&gt;hello&lt;</code> meant that in some cases we would successfully get <code>⟦hello⟧</code>, while in other cases we would end up with <code>⟧hello⟦</code>. There are a few documents where I had to manually intervene in the XML file to fix the transcription. In such cases, I fork the dataset repository to keep track of the corrected version of the ground truth or I push the correction back into the original dataset to create a new, more consistent version.</p>
+<p>In general, the converted dataset is saved as <code>.catmus.xml</code> files, which allows us to keep track of the original ground truth and easily adjust the conversion table later if necessary afterwards.</p>
+<p>In the <a href="https://alix-tz.github.io/phd/posts/19/">second post</a> of this series, I mentioned that "<em>the CATMuS guidelines can (should?) be used as a reference point</em>" and that "<em>if a project decides to use a special character to mark the end of each paragraph, then in order to create a CATMuS-compatible version of the dataset, I should only have to replace or remove that character. In such cases, the special character that was chosen should be unambiguous and the rule should be explicitly presented</em>." Providing a Chocomufin conversion table along with a dataset that uses project-specific guidelines would be an excellent practice to ensure that the dataset is indeed compatible with CATMuS.</p>
+<p>Once all the <code>.catmus.xml</code> files were ready, I created a new metadata table for McCATMuS listing all the subdirectories under each dataset's "data" folder. This table was used as a basis to start collecting additional metadata at the document level rather than at dataset level, like the language used in the source or the type of writing (printed, handwritten or typewritten). Working at the document level is important because some dataset contain different types of writing and/or are multilingual. In some cases, when a document would mix different languages and/or different types of writing in the source, if the distinction could be made at the image level, I manually sorted them and created two different subfolders. This is what I did in the "Memorials for Jane Lathrop Stanford" dataset, for example: the subfolder "PageX-LettreX" mixed typewritten and handwritten letters, so I sorted them into "PageX-LettreX-handwritten" and "PageX-LettreX-typewritten" in order to have the most accurate metadata possible.</p>
+<p>Other metadata included the assignment of a call number (or shelf mark) for each source represented in the datasets. In some cases a call number may apply to multiple subfolders, but in most cases, each subfolder is de facto a different document. Retrieving the call number is useful for several reasons: it allows for an accurate assessment of the diversity of documents in McCATMuS, it allows for a document to be associated with additional metadata found in its institution's catalog, or the list of call numbers can be used during benchmarking or production to check whether a document is known to the models trained on that dataset, thus explaining potentially higher accuracy scores.</p>
+<p>In the few cases where the source used to build the ground truth did not have a corresponding call number, I simply made one up, keeping "nobs_" as a signal that it was a made-up call number. Thus, if "cph_paris_tissage_1858/" in "timeuscorpus" is now associated with its corresponding call number at the Paris archive center (Paris, AD75, D1U10 386), CREMMAWiki's "batch-04", which is composed of documents we created for the project, is associated with a made-up call number: "nobs_cremma-wikipedia_b04".</p>
+<p>In the end, when the PARQUET files are created, the metadata from the table I just presented is collected, along with information extracted from parsing the contents of the XML file. Each of the metadata is then represented at the text line level. If you compare <a href="https://huggingface.co/datasets/CATMuS/modern">McCATMuS</a> with <a href="https://huggingface.co/datasets/CATMuS/medieval">CATMuS Medieval</a> using HuggingFace's dataset viewer, you can see that they don't use exactly the same metadata.</p>
+<p>"Language", "region type" and "line type" (which are based on the segmOnto classification), "project" and "gen_split" are common to both datasets, along with "shelfmark" I just described above. They both have a "genre" column with similar values (treatise, epistolary, document of practice, etc.). In the case of CATMuS Medieval, "genre" is complemented by "verse" (prose, verse).</p>
+<p>Following Thibault's advice, I defined the creation date of a text line using two numbers ("not_before" and "not_after") instead of a single "century" value. This allows for a precise dating when it is possible or on the contrary, to spread the dating over several centuries when it cannot be avoided, which is more accurate in both cases.</p>
+<p>McCATMuS mixes printed, handwritten and typewritten documents, so it was important to have a "writing type" column to help filter the dataset based on this information, in cases where one does not want to mix them. This metadata also makes it possible to use McCATMuS to train a classifier capable of distinguishing between the different types of writing. CATMuS Medieval on the other hand presents only handwritten sources, so such a metadata would be useless and is able to rely on paleographic classifications to characterize each text line based on a "script type" metadata, that includes values such as "caroline", "textualis", "hybrida", etc.</p>
+<p>McCATMuS also has a "color" column that helps sort text lines based on whether the source image is colored (true) or in grayscale (false).</p>
+<p>Although I reused the scripts developed by Thibault to build this dataset, I had to make several modifications to include this new metadata in the PARQUET files and to add additional filtering to the text lines. This included updating the mapping to the segmOnto vocabulary to match what existed in my datasets, or filtering some types of lines such as those identified as signatures.<sup id="fnref:signatures"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/021/#fn:signatures">2</a></sup> I also included an update of "writing_type" at the line level whenever the value in "line_type" allowed it to be controlled. </p>
+<div class="code"><pre class="code literal-block"><span class="k">if</span> <span class="s2">":handwritten"</span> <span class="ow">in</span> <span class="n">line_type</span><span class="p">:</span>
+    <span class="n">writing_type</span> <span class="o">=</span> <span class="s2">"handwritten"</span>
+    <span class="n">line_type</span> <span class="o">=</span> <span class="n">line_type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">":handwritten"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s2">":print"</span> <span class="ow">in</span> <span class="n">line_type</span><span class="p">:</span>
+    <span class="n">writing_type</span> <span class="o">=</span> <span class="s2">"printed"</span>
+    <span class="n">line_type</span> <span class="o">=</span> <span class="n">line_type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">":print"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s2">":typewritten"</span> <span class="ow">in</span> <span class="n">line_type</span><span class="p">:</span>
+    <span class="n">writing_type</span> <span class="o">=</span> <span class="s2">"typewritten"</span>
+    <span class="n">line_type</span> <span class="o">=</span> <span class="n">line_type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">":typewritten"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">writing_type</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"writing_type"</span><span class="p">]</span>
+</pre></div>
+
+<p>In the end, having built such a dataset (the first version of McCATMuS contains 117 text lines!) with such a variety of metadata is very satisfying although there is room for improvement. I have already mentioned that it would be interesting to have a greater variety of languages in McCATMuS. I also know that some of the values in "writing_type" are not completely accurate so adding a control based on a classifier might be interesting. Finally, I've noticed that some transcriptions in the "FoNDUE_Wolfflin_Fotosammlung" dataset are not correct at all, probably due to an automatic transcription that wasn't corrected.</p>
+<p>However, before we dive into improving McCATMuS, it's important to first examine the accuracy of the models that can be built on top of it! This will be the topic of the next and last post in this series!</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:chocomufin">
+<p>To learn more about how <a href="https://github.com/PonteIneptique/choco-mufin?tab=readme-ov-file#commands"><code>chocomufin convert</code></a> works, just read the software's short documentation. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/021/#fnref:chocomufin" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:signatures">
+<p>I don't think it makes sense to include signatures in a dataset to train a generic model, since the transcription of such lines can be very context specific. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/021/#fnref:signatures" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/catmus/" rel="tag">CATMuS</a></li>
+            <li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/datasets/" rel="tag">datasets</a></li>
+            <li><a class="tag p-category" href="https://alix-tz.github.io/phd/categories/htr/" rel="tag">HTR</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://alix-tz.github.io/phd/posts/020/" rel="prev" title="020 - McCATMuS #3 - Datasets selection">Previous post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p>Contents © 2024         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
+<div>
+<h3>Contact me</h3>
+<form name="contact" action="https://formspree.io/mdozpzwz" method="POST">
+<div>
+<!--<label class="sr-only" for="inputName">Name</label>-->
+<input type="text" name="name" id="inputName" placeholder="Your name" required="" style="width: 150px;">
+   
+<!--<label class="sr-only" for="inputEmail">E-mail</label>-->
+<input type="email" name="email" id="inputEmail" placeholder="Your e-mail address" required="" style="width: 150px;">
+</div>
+<div>
+<!--<label class="sr-only" for="inputMessage">Message</label>-->
+<textarea name="message" id="inputMessage" rows="3" placeholder="Your message" required="" style="width: 50%;"></textarea>
+</div>
+<button type="submit" style="width: 60px;">Send</button>
+</form>
+</div>
+            
+        </footer>
+</div>
+    
+    
+
+    
+    
+    
+</body>
+</html>
