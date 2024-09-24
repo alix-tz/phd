@@ -19,13 +19,13 @@ I used Kraken 4.3.13 to train the models on Inria's computation server because I
 I trained a second model using the same parameters[^params] but without the `--fixed-splits` option, allowing Kraken to shuffle the train set and the validation set into a 90/10 split (the test set was left untouched however). This time, the training lasted 157 epochs before stopping, with the best model scoring with an accuracy of 92.8% on the validation set. When applied to the test set however, the model lost 7 points of accuracy (85.24%).
 
 <figure>
-    <img src="../images/mccatmus_v1_entraînement_fixedsplits.png"
+    <img src="/images/mccatmus_v1_entraînement_fixedsplits.png"
          alt="Learning curve for the model trained on the fixed split.">
     <figcaption>Learning curve (Character and Word Accuracies) for the model trained on the fixed "feature"-based split between train and validation.</figcaption>
 </figure>
 
 <figure>
-    <img src="../images/mccatmus_v1_entraînement.png"
+    <img src="/images/mccatmus_v1_entraînement.png"
          alt="Learning curve for the model trained on the non-fixed split.">
     <figcaption>Learning curve (Character and Word Accuracies) for the model trained on the random split between train and validation.</figcaption>
 </figure>
@@ -64,12 +64,14 @@ I was initially surprised by the consistent margin Manu McFrench had over McCATM
 
 Additionally, I detected an issue in one of the datasets used in the test set: `FoNDUE_Wolfflin_Fotosammlung` contains some lines of faulty transcriptions, resulting from automatic text recognition, which most certainly cause an inaccurate evaluation of all three models.
 
+<img src="/images/fotosammlung_error_example1.jpg" alt="text line images reading, in print, "COLLECTION HANFSTAENGL LONDON"" widht="200px">
+
 > A couple of examples of the faulty transcriptions:
 >  
 > | Line image | Faulty transcription | Correct transcription | Faulty CER would be |
 > |------------|----------------------|----------------------|---------------------|
-> | ![text line images reading, in print, "COLLECTION HANFSTAENGL LONDON"](../images/fotosammlung_error_example1.jpg) | "CSTITHER, KIESERMAEAER AogS." | "COLLECTION HANFSTAENGL LONDON" | 89.29 |
-> | ![text line image reading, in print, "NATIONAL GALLERY"](../images/fotosammlung_error_example2.jpg) | "PEcLioL." | "NATIONAL GALLERY" | 175.0 |
+> | ![text line images reading, in print, "COLLECTION HANFSTAENGL LONDON"](/images/fotosammlung_error_example1.jpg) | "CSTITHER, KIESERMAEAER AogS." | "COLLECTION HANFSTAENGL LONDON" | 89.29 |
+> | ![text line image reading, in print, "NATIONAL GALLERY"](/images/fotosammlung_error_example2.jpg) | "PEcLioL." | "NATIONAL GALLERY" | 175.0 |
 
 I have planned to manually control this dataset and update the McCATMuS dataset accordingly. I don't know yet how many lines are affected.
 
