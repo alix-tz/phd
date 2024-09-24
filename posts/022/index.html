@@ -176,7 +176,7 @@
 <!-- add plot? --><p>I was initially surprised by the consistent margin Manu McFrench had over McCATMuS, considering it was trained on less data (73.9K + 8.8K lines, against the 106K + 5.8K lines) which had not been harmonized to follow the same transcription rules. However, these scores are actually biased in favor of Manu McFrench because several of the documents included in the McCATMuS test set were also used in Manu McFrench's train set. Even though this is not true for all documents, it concerns almost half of the test set. It might also be the case for McFonddue, but this model scores higher than McCATMuS in only one instance (handwritten documents from the 17th century). Creating a new test set, with documents that are not present in any of the train sets but follow the CATMuS guidelines, would be a good way to confirm this bias.</p>
 <p>Additionally, I detected an issue in one of the datasets used in the test set: <code>FoNDUE_Wolfflin_Fotosammlung</code> contains some lines of faulty transcriptions, resulting from automatic text recognition, which most certainly cause an inaccurate evaluation of all three models.</p>
 <blockquote>
-<p>A couple of examples of the faulty transcriptions:</p>
+<p><em>A couple of examples of the faulty transcriptions, along with their CER they generate when compared to what would be a correct transcription (the CER is generated with <a href="https://github.com/WHaverals/CERberus">CERberus</a>):</em></p>
 <table>
 <thead><tr>
 <th>Line image</th>
@@ -210,7 +210,7 @@
 <hr>
 <ol>
 <li id="fn:compile">
-<p>The command looks like this: <code>cat "./list_of_paths.txt" | xargs -d "\n" ketos compile -o "./binary_dataset.arrow" --random-split .0 .0 1.0 -f alto</code>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/022/#fnref:compile" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>The command looks like this: cat "./list_of_paths.txt" | xargs -d "\n" ketos compile -o "./binary_dataset.arrow" --random-split .0 .0 1.0 -f alto. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/022/#fnref:compile" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:params">
 <p>The configuration of Kraken for training these two model relies on the default network architecture, on a NFD Unicode normalization, a learning rate of 0.0001 (1e<sup>-4</sup>), batch size of 32, padding of 16 (default value), and applies augmentation (<code>--augment</code>). The <code>--fixed-splits</code> option is used for the first model. Following Kraken's default behavior, the training stops when the validation loss does not decrease for 10 epochs (early stops); this prevents the model from overfitting, which is confirmed when looking at the accuracy score of the intermediary models on the test set (orange line on the graphs). The training is done on a GPU. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/022/#fnref:params" title="Jump back to footnote 2 in the text">↩</a></p>

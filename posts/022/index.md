@@ -64,7 +64,7 @@ I was initially surprised by the consistent margin Manu McFrench had over McCATM
 
 Additionally, I detected an issue in one of the datasets used in the test set: `FoNDUE_Wolfflin_Fotosammlung` contains some lines of faulty transcriptions, resulting from automatic text recognition, which most certainly cause an inaccurate evaluation of all three models.
 
-> A couple of examples of the faulty transcriptions:
+> *A couple of examples of the faulty transcriptions, along with their CER they generate when compared to what would be a correct transcription (the CER is generated with [CERberus](https://github.com/WHaverals/CERberus)):*
 >  
 > | Line image | Faulty transcription | Correct transcription | Faulty CER would be |
 > |------------|----------------------|----------------------|---------------------|
@@ -81,6 +81,6 @@ As said at the beginning of this post, these results are preliminary, so I hope 
 
 <!-- footnotes -->
 
-[^compile]: The command looks like this: `cat "./list_of_paths.txt" | xargs -d "\n" ketos compile -o "./binary_dataset.arrow" --random-split .0 .0 1.0 -f alto`.
+[^compile]: The command looks like this: cat "./list_of_paths.txt" | xargs -d "\n" ketos compile -o "./binary_dataset.arrow" --random-split .0 .0 1.0 -f alto.
 
 [^params]: The configuration of Kraken for training these two model relies on the default network architecture, on a NFD Unicode normalization, a learning rate of 0.0001 (1e<sup>-4</sup>), batch size of 32, padding of 16 (default value), and applies augmentation (`--augment`). The `--fixed-splits` option is used for the first model. Following Kraken's default behavior, the training stops when the validation loss does not decrease for 10 epochs (early stops); this prevents the model from overfitting, which is confirmed when looking at the accuracy score of the intermediary models on the test set (orange line on the graphs). The training is done on a GPU.
