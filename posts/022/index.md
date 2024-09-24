@@ -41,22 +41,22 @@ The test set contains transcriptions of printed, typewritten and handwritten tex
 
 I only used the McCATMuS trained on the random split for these tests, because the accuracy of the other one was too low for the results to be meaningful. Instead of only testing McCATMuS, I also ran the Manu McFrench V3 and McFondue on the McCATMuS test set. They are two generic models trained on similar data (although with no or different normalization approaches).
 
-| Test set         | McCATMuS | ManuMcFrench V3 | McFondue   |
-|------------------|----------|-----------------|------------|
-| All              | 85.24    | **91.17**       | 76.12      |
-| Handwritten      | 78.72    | **89.4**        | 75.17      |
-| Print            | **96.37**| 94.15           | 78.3       |
-| Typewritten      | 90.93    | **92.69**       | 58.13      |
-| 17th cent.       | **87.27**| 86.39           | 72.81      |
-| 18th cent.       | 88.65    | **94.21**       | 81.64      |
-| 19th cent.       | 79.81    | **93.7**        | 75.46      |
-| 20th cent.       | 74.92    | **86.52**       | 56.74      |
-| 21st cent.       | 73.86    | **90.2**        | 68.04      |
-| (HW) 17th cent.  | 58.69    | **64.83**       | *64.26*    |
-| (HW) 18th cent.  | 85.38    | **93.35**       | 80.47      |
-| (HW) 19th cent.  | 79.81    | **93.7**        | 75.46      |
-| (HW) 20th cent.  | 63.02    | **82.23**       | 55.89      |
-| (HW) 21st cent.  | 73.86    | **90.2**        | 68.04      |
+| Test set.............. | ...McCATMuS     | ...ManuMcFrench V3    | ...McFondue   |
+| :--------------------- | :-------------: | :-------------------: | :-----------: |
+| All................... | ...85.24        | ...**91.17**          | ...76.12      |
+| Handwritten........... | ...78.72        | ...**89.4**           | ...75.17      |
+| Print................. | ...**96.37**    | ...94.15              | ...78.3       |
+| Typewritten........... | ...90.93        | ...**92.69**          | ...58.13      |
+| 17th cent............. | ...**87.27**    | ...86.39              | ...72.81      |
+| 18th cent............. | ...88.65        | ...**94.21**          | ...81.64      |
+| 19th cent............. | ...79.81        | ...**93.7**           | ...75.46      |
+| 20th cent............. | ...74.92        | ...**86.52**          | ...56.74      |
+| 21st cent............. | ...73.86        | ...**90.2**           | ...68.04      |
+| (HW) 17th cent........ | ...58.69        | ...**64.83**          | ...*64.26*    |
+| (HW) 18th cent........ | ...85.38        | ...**93.35**          | ...80.47      |
+| (HW) 19th cent........ | ...79.81        | ...**93.7**           | ...75.46      |
+| (HW) 20th cent........ | ...63.02        | ...**82.23**          | ...55.89      |
+| (HW) 21st cent........ | ...73.86        | ...**90.2**           | ...68.04      |
 
 <!-- add plot? -->
 
@@ -67,7 +67,7 @@ Additionally, I detected an issue in one of the datasets used in the test set: `
 > *A couple of examples of the faulty transcriptions, along with their CER they generate when compared to what would be a correct transcription (the CER is generated with [CERberus](https://github.com/WHaverals/CERberus)):*
 >  
 > | Line image | Faulty transcription | Correct transcription | Faulty CER would be |
-> |------------|----------------------|----------------------|---------------------|
+> | :--------- | -------------------: | --------------------: | :-----------------: |
 > | ![text line images reading, in print, "COLLECTION HANFSTAENGL LONDON"](/images/fotosammlung_error_example1.jpg) | "CSTITHER, KIESERMAEAER AogS." | "COLLECTION HANFSTAENGL LONDON" | 89.29 |
 > | ![text line image reading, in print, "NATIONAL GALLERY"](/images/fotosammlung_error_example2.jpg) | "PEcLioL." | "NATIONAL GALLERY" | 175.0 |
 
