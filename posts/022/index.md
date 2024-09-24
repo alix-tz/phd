@@ -64,8 +64,6 @@ I was initially surprised by the consistent margin Manu McFrench had over McCATM
 
 Additionally, I detected an issue in one of the datasets used in the test set: `FoNDUE_Wolfflin_Fotosammlung` contains some lines of faulty transcriptions, resulting from automatic text recognition, which most certainly cause an inaccurate evaluation of all three models.
 
-<img src="/images/fotosammlung_error_example1.jpg" alt="text line images reading, in print, "COLLECTION HANFSTAENGL LONDON"" widht="200px">
-
 > A couple of examples of the faulty transcriptions:
 >  
 > | Line image | Faulty transcription | Correct transcription | Faulty CER would be |

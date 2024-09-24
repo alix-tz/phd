@@ -175,7 +175,6 @@
 </table>
 <!-- add plot? --><p>I was initially surprised by the consistent margin Manu McFrench had over McCATMuS, considering it was trained on less data (73.9K + 8.8K lines, against the 106K + 5.8K lines) which had not been harmonized to follow the same transcription rules. However, these scores are actually biased in favor of Manu McFrench because several of the documents included in the McCATMuS test set were also used in Manu McFrench's train set. Even though this is not true for all documents, it concerns almost half of the test set. It might also be the case for McFonddue, but this model scores higher than McCATMuS in only one instance (handwritten documents from the 17th century). Creating a new test set, with documents that are not present in any of the train sets but follow the CATMuS guidelines, would be a good way to confirm this bias.</p>
 <p>Additionally, I detected an issue in one of the datasets used in the test set: <code>FoNDUE_Wolfflin_Fotosammlung</code> contains some lines of faulty transcriptions, resulting from automatic text recognition, which most certainly cause an inaccurate evaluation of all three models.</p>
-<p><img src="https://alix-tz.github.io/phd/images/fotosammlung_error_example1.jpg" alt="text line images reading, in print, " collection hanfstaengl london widht="200px"></p>
 <blockquote>
 <p>A couple of examples of the faulty transcriptions:</p>
 <table>
