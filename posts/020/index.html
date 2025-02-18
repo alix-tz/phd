@@ -73,16 +73,16 @@
 <p>Actually, here is the script!</p>
 <div class="code"><pre class="code literal-block"><span class="n">url_latest_htrunited</span><span class="o">=</span><span class="s2">"https://raw.githubusercontent.com/HTR-United/htr-united/master/htr-united.yml"</span>
 
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># get latest htr-united.yml from main repository</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_latest_htrunited</span><span class="p">)</span>
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">in_time_scope</span><span class="p">(</span><span class="n">dates</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">in_time_scope</span><span class="p">(</span><span class="n">dates</span><span class="p">):</span>
     <span class="n">century_scope_min</span> <span class="o">=</span> <span class="mi">1600</span>
     <span class="n">century_scope_max</span> <span class="o">=</span> <span class="mi">2100</span>
     <span class="c1"># this means that we allow datasets that intersect with the period</span>
@@ -191,7 +191,7 @@
             <li class="next">
                 <a href="https://alix-tz.github.io/phd/posts/021/" rel="next" title="021 - McCATMuS #4 - Cleaning data, collection metadata">Next post</a>
             </li>
-        </ul></nav></aside></article></main><footer id="footer"><p>Contents © 2024         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
+        </ul></nav></aside></article></main><footer id="footer"><p>Contents © 2025         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
 <div>
 <h3>Contact me</h3>
 <form name="contact" action="https://formspree.io/mdozpzwz" method="POST">

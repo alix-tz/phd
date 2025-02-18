@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://alix-tz.github.io/phd/">
 <link rel="icon" href="https://alix-tz.github.io/phd/favicon.ico" sizes="32x32">
 <link rel="next" href="https://alix-tz.github.io/phd/index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/022/" type="text/html">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/023/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -44,7 +44,34 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/022/" class="u-url">022 - McCATMuS #5 - Training models</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/023/" class="u-url">023 - Writing a PhD manuscript with Markdown and Quarto</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/023/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-02-18T00:00:00-05:00" itemprop="datePublished" title="2025-02-18">2025-02-18</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>The deadline for finishing the dissertation is approaching. And there is still so much to do! This is one of the main reasons why this research blog has been quiet for the last few months, even though there are many topics I would like to write about. </p>
+<p>But I guess I can take a short break from time to time and go with the flow of writing a blog post in one sitting. Who knows, maybe I'll do a few more before it's time to turn in my dissertation. I want to talk about my writing setup because it is something I have thought about a lot, trying to find the best compromise. </p>
+<p>Writing my dissertation in Microsoft Word has never been an option, although I do use Google Docs from time to time to get quick feedback from my supervisors. </p>
+<p><a href="https://www.latex-project.org/">LaTeX</a> may seem like an obvious choice to some of my fellow PhD writers, but I usually limit my use of LaTeX to <a href="https://www.overleaf.com">Overleaf</a>, an online LaTeX editor. On the one hand, I didn't necessarily want to install LaTeX locally for the time being, and on the other hand, I couldn't imagine writing a whole dissertation using Overleaf, because working in my browser can be distracting, and because it would require that I always have access to the Internet to work. To be honest, I mostly didn't want to use LaTeX in the first place because I find the syntax too distracting when I'm writing. It's super useful for getting good control over the layout of the document for the final version of the manuscript, but it's not convenient to work with while I'm formulating ideas and arguments.</p>
+<p>I will probably use LaTeX to prepare the final version of the manuscript, but I wanted to use something lighter to structure my document, but easily convertible to LaTeX down the road. </p>
+<p>And I am a big fan of Markdown.</p>
+<p>Markdown has a syntax that is light enough not to be too distracting - I use it all the time when taking notes anyway, so it is fully part of my writing reflexes. Also, in the context of writing my dissertation, I think of Markdown as text that I can easily copy and paste into a Google document when I need feedback, without losing formatting and without compromising readability in Google Docs. I've seen some LaTeX copy-pasted into Google Docs for supervisor feedback, and I don't think it would work for me. </p>
+<p>In addition to Markdown, I wanted to be able to use a modular approach to building my manuscript. A modular approach means having several smaller text files that are eventually merged into a single master document. LaTeX also relies on modularity with commands like <code>\include{}</code>. Modularity is important because in a very long text document it is easy to get lost between inline comments, draft passages, and finished paragraphs. There's also the risk of accidentally deleting passages. With a modular structure, it will also be easier to move paragraphs around as I progress. Also, my manuscript is versioned with Git and synchronized with a private GitHub repository, and modularity makes versioning much easier.</p>
+<p>Instead of programming my own manuscript builder - yes, that was my first impulse - I took a closer look at the documentation for <a href="https://quarto.org/">Quarto</a>, which I've been using for a little over a year to create slides and websites for the courses I teach. Quarto offered me a solution on a silver platter, because it supports building <a href="https://quarto.org/docs/reference/projects/books.html">books</a> with Markdown, which is close enough to a phD thesis. </p>
+<p>Quarto implements a single-source publishing paradigm and acts as a shell around <a href="https://pandoc.org/">pandoc</a>, which allows for swift conversion from one format to another, including from Markdown to LaTeX. I can split the document into multiple smaller Markdown files, and use my book's config file to specify the order in which the Markdown files are aggregated. Quarto's Markdown implementation includes some cool stuff from pandocs, including citation and cross-reference management. It's really worth taking a look at the documentation.</p>
+<p>So with Quarto, I can write my dissertation as a series of smaller Markdown files, and end up with a master .md file, a .tex file ready to import into Overleaf, or even an already parsed PDF file generated with <a href="https://quarto.org/docs/output-formats/pdf-engine.html">tinytex</a>. </p>
+<p>Quarto is not a text editor, it is simply a processor that starts with a set of markdown files and a config file, and then builds one or more outputs. To write, I use Visual Studio Code and have a <code>quarto preview</code> command running in the background. For now, it just produces an HTML preview that I see in my browser. When I'm closer to a stable version of the manuscript, I'll start working with PDF output.</p>
+<p>The syntax for some of the more specific Markdown features in Quarto is more complex than I am used to, so I still have to look at the documentation from time to time. But I am getting the hang of it, and I use a cheat sheet for the features I use more often. </p>
+<p>Pandoc's Markdown support lets you apply classes to entire paragraphs or inline portions of text. This is useful because it has allowed me to create some CSS transformations with classes like "draft" or "missing-information" to keep track of passages I need to rewrite, or blocks where I need to get away from my text editor and go back to my notes (usually in <a href="https://www.zotero.org/">Zotero</a>). I find it super useful to avoid (at least as much as possible) falling into loopholes that distract me from actually writing. It's more efficient for my time management to divide my time between actual writing sessions and other sessions where I work on improving the drafty passages or doing the research I'm missing to illustrate an argument. </p>
+<p>Another use of inline classes is to keep track of concepts or specific terms that I could include in a glossary or at least a list of acronyms. By keeping track of them directly in the text, I can automate the generation of these sections. Some might say that this is the kind of thing I could do with <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI XML</a>- I agree, since this is semantic annotation. But as I said, I wanted a lightweight syntax, and I really like Markdown.  </p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/022/" class="u-url">022 - McCATMuS #5 - Training models</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
@@ -299,16 +326,16 @@
 <p>Actually, here is the script!</p>
 <div class="code"><pre class="code literal-block"><span class="n">url_latest_htrunited</span><span class="o">=</span><span class="s2">"https://raw.githubusercontent.com/HTR-United/htr-united/master/htr-united.yml"</span>
 
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># get latest htr-united.yml from main repository</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_latest_htrunited</span><span class="p">)</span>
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">in_time_scope</span><span class="p">(</span><span class="n">dates</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">in_time_scope</span><span class="p">(</span><span class="n">dates</span><span class="p">):</span>
     <span class="n">century_scope_min</span> <span class="o">=</span> <span class="mi">1600</span>
     <span class="n">century_scope_max</span> <span class="o">=</span> <span class="mi">2100</span>
     <span class="c1"># this means that we allow datasets that intersect with the period</span>
@@ -811,74 +838,6 @@ Full text of the specifications displayed on the image, for accessibility purpos
 <p>My understanding is that keeping the output layer from the base model with <strong>add</strong> (or <strong>union</strong>) probably drowns the specificity of the pencil-written documents into a base knowledge tailored to handle documents with a high contrast (like the ones in the D series <em>and</em> in <strong>Manu McFrench</strong>'s training set). Or, to put it differently, when we use <strong>both</strong> (or <strong>new</strong>), more attention is given to the pencil written documents, meaning that the model actually gets better at handling this category of data.</p>
 <p>I am extremely curious to see how I can investigate this further, or if any of you, readers, would understand these results differently!</p>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/013/" class="u-url">013 - The Peraire experiment</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
-            </span></p>
-            <p class="dateline">
-            <a href="https://alix-tz.github.io/phd/posts/013/" rel="bookmark">
-            <time class="published dt-published" datetime="2023-07-28T11:39:18-04:00" itemprop="datePublished" title="2023-07-28">2023-07-28</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p><em>WARNING: in my <a href="https://alix-tz.github.io/phd/posts/014/">next post</a>, I nuance the conclusions drawn in this post, because of a parameter I didn't correctly set during the training of the models described below. You should really read it after reading this post, to get the full picture!</em></p>
-<p>As a small side project during my phD, I have been sharing my expertise (and a bit of my workforce) with the members of the <a href="https://www.pamir.fr/projets-soutenus/spe-vlp/">DIM SPE-VLP</a> project. The acronym stands for "Sauver le patrimoine espérantiste : le voyage de Lucien Péraire (1928-1932)." The project revolves around the digitization, transcription and edition/valorization of <a href="https://fr.wikipedia.org/wiki/Lucien_P%C3%A9raire">Lucien Peraire</a>'s archives. He was a French citizen who, in the late 1920s, travelled across the European and the Asian continents, mostly by bike and using <a href="https://en.wikipedia.org/wiki/Esperanto">Esperanto</a> to communicate. He kept a diary during his journey (and later published a book about his adventures). His notes are written both in French and in Esperanto and in some documents, he also used <a href="https://en.wikipedia.org/wiki/Shorthand">stenography</a>.</p>
-<p>My contribution to the project has mostly consisted in helping developing transcription models for the French diaries (although I'm also interested in the shorthand and the esperanto). This meant both helping with the production of ground truth and training <a href="https://kraken.re/">Kraken</a> models. This post will briefly explain how the ground truth was created and published, as well as present the models that were trained with it.</p>
-<p>Peraire's notebooks are organized in different series, and each series is divided in ensembles regrouping the pages of a notebook. Each ensemble is named after the countries visited while the notebook was used. For example, notebook 11 in the B series forms one ensemble and covers a part of Peraire's travels in Japan. There are 31 notebooks in the B series. The notebooks of this series are written with a blue pencil on (low quality) school papers. On some pages, the pencil is very faded which makes it hard to read the text, let alone to run a successful segmentation task on the image. On the other hand, the D series gathers notes and comments on the diaries, written at the end of the 1960s. This time the handwriting is much easier to read because Peraire mostly used a blue or black ball-point pen. There are 9 ensembles in this series.</p>
-<p><img src="https://alix-tz.github.io/phd/images/peraire_handwriting.png" alt="two extracts of Peraire's notebooks side by side, on the left the image is taken from the B series, on the right the image is taken from the D series." widht="600px"></p>
-<p>One aspect that I find particularly interesting with this dataset is that we have a case where the handwriting is similar but the writing tool is different. It means that it is possible to explore how the writing tools and/or writing supports affect the efficiency of a transcription model. On top of that, all the documents were digitized under the same (good) conditions and by the same people.</p>
-<h3>Segmenting, transcribing, aligning and publishing</h3>
-<p>The first version of the dataset was solely focused on the B series. I selected 1 random page from each ensemble (avoiding to take the first page each time) to compose a train set of 33 files<sup id="fnref:1"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/013/#fn:1">1</a></sup>. On top of that, I selected 4 additional pages from B3, B5, B12 and B18 to compose a fixed test set which would never be used as training data.</p>
-<p>I pre-segmented the images with Kraken's default model before correcting the result manually. At this point, I also applied the <a href="https://segmonto.github.io/">segmOnto</a> ontology for the lines and regions<sup id="fnref:2"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/013/#fn:2">2</a></sup>. Because of the <a href="https://raw.githubusercontent.com/alix-tz/peraire-ground-truth/master/data/train/B.2.europe-orientale_0007.jpg">fading ink</a>, some words could not be transcribed. In order to avoid complicating the transcription rules, I decided to simply segment out the passages that couldn't be read. On the one hand it simplifies the transcription, but on the other hand, it means that a small portion of my segmented documents cannot be re-used by others to train a segmentation model. Since we were not training a segmentation model, it was an easy decision.</p>
-<p><img src="https://alix-tz.github.io/phd/images/peraire_faded.png" alt="screenshot showing the segmentation and the transcription panels from eScriptorium where we can see that some lines are broken down into several segments and that some segments were left blank" widht="400px"></p>
-<p>More recently, it was decided to augment the dataset with examples from the D series because the model trained on the B series was not good enough. This time, Gilles Pérez, a member of the project, took charge of the transcription. I recommended to create a new sample of 30 to 40 images, so he randomly selected series of 4 continuous pages from each ensemble. The transcription of the corresponding 36 pages was sent to me as a Word document. Therefore, on top of taking care of the segmentation of the images, I also went through an alignment phase during which I verified the order of the lines and copy-pasted the transcription. It took longer than I expected but it allowed me to align the transcription with the rules I had followed when creating the first set. I also picked 4 of the 36 pages to add to the test set.</p>
-<p>The dataset is versioned and published applying the principles and tools we developed withing the frame of <a href="https://htr-united.github.io/">HTR-United</a>. I also added illustrated segmentation and transcription guidelines.</p>
-<h3>Testing different dataset configurations to train transcription models</h3>
-<p>As I mentioned before, the goal of these datasets was to create transcription models. Taking the opportunity of the recent update of the dataset, I tried different scenarios.</p>
-<p>I never trained the model from scratch because the dataset is too small to get any sort of usable model. Instead, I used <a href="https://zenodo.org/record/6657809"><strong>Manu McFrench</strong></a> as a base model, fine-tuned with the Peraire dataset. (We were actually able to use Peraire as an example during the <a href="https://www.conftool.pro/dh2023/index.php?page=browseSessions&amp;form_session=76#paperID690">DH2023</a> conference<sup id="fnref:3"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/013/#fn:3">3</a></sup> earlier this month to show the usefulness of having this kind of base model). I tested fine-tuning only on the B series, only on the D series or on both the B and the D series. Then I used a B-series-only test set, a D-series-only test set and the full test set to see how the models performed.</p>
-<p>Since I wanted to try it after discovering it during DH2023, I used <a href="https://github.com/WHaverals/CERberus">CERberus 🐶🐶🐶</a> (I talked about it in my <a href="https://alix-tz.github.io/phd/posts/012/">last post</a>) to measure the accuracy of the models on the test sets listed above.</p>
-<p>Like <a href="https://huggingface.co/spaces/lterriel/kami-app">KaMI</a>, CERberus takes 2 categories of text input: the reference (aka the ground truth) and the prediction (or the hypothesis made by the model). In order to get the prediction, I loaded my models on eScriptorium, as well as the images and transcription of the test set before applying each model to the documents. This way, all the transcription are predicted with the same segmentation, which comes from the ground truth.</p>
-<p>Here are the results:</p>
-<ul>
-<li>
-<strong>Manu McFrench</strong>, before fine-tuning, gets a CER of 26.16% when tested on the whole test set, and a score of 27.19% on the documents from the B series, 25.29% on the D series.</li>
-<li>
-<strong>peraire_both</strong>, trained on the B and the D series, gets a CER of 4.63% when tested on the whole test set, but a score of 6.41% on the documents from the B series and 3.54% on the D series.</li>
-<li>
-<strong>peraire_B</strong>, trained only on the B series, gets a CER of 8.72% on the whole test set, but a score of 7.12% on test-B and 9.67% on test-D.</li>
-<li>
-<strong>peraire_D</strong>, trained only on the D series, gets an CER of 16.38% on the whole test set, but this is because of the enormous descripancy between its score on each sub test set. It skyrockets to a CER of 38,53% on test-B while going as low as 3.65% on test-D.</li>
-</ul>
-<p>All of this makes sense, though.</p>
-<ol>
-<li>
-<strong>ManuMcFrench</strong> could not be used without fine-tuning, its error rate on both documents is too high.</li>
-<li>
-<strong>peraire_both</strong> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to <strong>peraire_B</strong>.</li>
-<li>
-<strong>peraire_B</strong> which was trained on the more difficult dataset seems to use the knowledge inherited from <strong>Manu McFrench</strong> and to have learned some formal features from Peraire's handwriting since it is able to maintain a fairly low CER on the D series (it gains 16 points of accuracy compared to <strong>Manu McFrench</strong>).</li>
-<li>
-<strong>peraire_D</strong> on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train <strong>Manu McFrench</strong> and in the D series. <strong>peraire_D</strong> even loses 11 points of accuracy to <strong>Manu McFrench</strong>!</li>
-</ol>
-<p>What happens with <strong>peraire_D</strong> is very interesting because it confirms that it is useful to compose a train set with examples of more difficult documents instead of only showing the ones that are easy to read! Now, the nice thing is that I will soon be working on a little experiment with my colleague Hugo Scheithauer where we will be able to measure the impact of the contrast between the ink and the paper. Stay tuned!</p>
-<p><em>EDIT #1: I added the scores obtained by Manu McFrench alone.</em></p>
-<p><em>EDIT #2: I added a disclaimer at the beginning of the post.</em></p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:1">
-<p>I used 2 images from B2 because one of them was extremely faded and I wanted to include some of these extreme cases in the dataset, and 2 images from B30 because it consisted of shorter lines (table of contents) which I found was interesting to include. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:2">
-<p>As described in the documents, I only used the "InterlinearLine" and "DefaultLine" for the lines, and the "MainZone" and "NumberingZone" for the regions. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:3">
-<p>See the submission and the slides on HAL: <a href="https://inria.hal.science/hal-04094241">https://inria.hal.science/hal-04094241</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/013/#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-</ol>
-</div>
-    </div>
     </article>
 </div>
 
@@ -886,7 +845,7 @@ Full text of the specifications displayed on the image, for accessibility purpos
 <li class="next">
                 <a href="https://alix-tz.github.io/phd/index-2.html" rel="next">Older posts</a>
             </li>
-        </ul></nav></main><footer id="footer"><p>Contents © 2024         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
+        </ul></nav></main><footer id="footer"><p>Contents © 2025         <a href="https://alix-tz.github.io/phd/">Alix Chagué</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> -        CC-BY<br></p>
 <div>
 <h3>Contact me</h3>
 <form name="contact" action="https://formspree.io/mdozpzwz" method="POST">
