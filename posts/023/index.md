@@ -2,8 +2,8 @@
 .. title: 023 - Writing a PhD manuscript with Markdown and Quarto
 .. slug: 023
 .. date: 2025-02-18
-.. tags: 
-.. category: 
+.. tags: quarto, markdown
+.. category: writing
 .. link: 
 .. description: 
 .. type: text
