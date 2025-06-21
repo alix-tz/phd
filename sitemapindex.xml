@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/authors/alix-chague.xml</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/accuracy.xml</loc>
@@ -50,8 +50,12 @@
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/cat_tools-methods.xml</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/cat_writing.xml</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T00:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/catmus.xml</loc>
@@ -99,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/htr.xml</loc>
-  <lastmod>2025-02-18T18:20:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/init.xml</loc>
@@ -114,12 +118,16 @@
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/literature-review.xml</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/manifesto.xml</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/markdown.xml</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T00:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/metrics.xml</loc>
@@ -127,11 +135,11 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/ocr.xml</loc>
-  <lastmod>2025-02-18T18:20:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/quarto.xml</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T00:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/software-documentation.xml</loc>
@@ -140,6 +148,10 @@
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/static-website.xml</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alix-tz.github.io/phd/categories/survey.xml</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/categories/synthetic-data.xml</loc>
@@ -159,10 +171,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/rss.xml</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alix-tz.github.io/phd/sitemap.xml</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </sitemap>
 </sitemapindex>

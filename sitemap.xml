@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2025-02-18T18:20:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/authors/</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2025-02-18T18:22:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -80,6 +80,10 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_story-time/</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/cat_tools-methods/</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/cat_writing/</loc>
@@ -146,6 +150,10 @@
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/literature-review/</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/manifesto/</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </url>
@@ -174,6 +182,10 @@
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/survey/</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/synthetic-data/</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </url>
@@ -195,7 +207,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-2.html</loc>
-  <lastmod>2025-02-18T18:20:00Z</lastmod>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -296,5 +308,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/023/</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/024/</loc>
+  <lastmod>2025-06-21T20:10:00Z</lastmod>
  </url>
 </urlset>

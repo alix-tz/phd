@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://alix-tz.github.io/phd/">
 <link rel="icon" href="https://alix-tz.github.io/phd/favicon.ico" sizes="32x32">
 <link rel="next" href="https://alix-tz.github.io/phd/index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/023/" type="text/html">
+<!--[if lt IE 9]><script src="https://alix-tz.github.io/phd/assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="https://alix-tz.github.io/phd/posts/024/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -44,7 +44,142 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/023/" class="u-url">023 - Writing a PhD manuscript with Markdown and Quarto</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/024/" class="u-url">024 - The messy backstage of a literature review</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/024/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-06-21T15:15:27-04:00" itemprop="datePublished" title="2025-06-21">2025-06-21</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>A few weeks ago, I began a thorough review of articles published in four digital humanities venues to track mentions of automatic text recognition and understand how, where, and why scholars use it. Although I wish I had started sooner in my doctoral journey, I stay positive holding on to the idea that "it's never too late." I learn a lot about Digital Humanities as a field of research and gain a better understanding of ATR's presence in the field.</p>
+<p>While catching up on our dissertation progress, I was telling Roch Delanney about the survey I'm conducting, my goals for it, and how I selected and sorted the articles. Roch suggested that I share my method more widely. It seems a little clumsy at times, but I am also able to use many different skills I have learned and sharpened over the years so I think it is indeed interesting to share a bit of my <em>cuisine</em>.</p>
+<h3>Perimeter of the literature review</h3>
+<p>My literature review focuses on four publication venues. I think they are, collectively, representative of research in the Digital Humanities: </p>
+<ul>
+<li>
+<p><a href="https://academic.oup.com/dsh"><em>Digital Scholarship in the Humanities</em></a> (DSH), which is presented by the Alliance of Digital Humanities Organizations (ADHO) as an international, peer-reviewed journal published by Oxford University Press on behalf of ADHO and the European Association for Digital Humanities (EADH). It was published under the title <em>Literary and Linguistic Computing: The Journal of Digital Scholarship in the Humanities</em> until 2014. I counted a total of 174 volumes for a total of 1741 articles (excluding retracted articles, book reviews, editorials and committee reports) published since 1985 until the first half of 2025.</p>
+</li>
+<li>
+<p><a href="https://dhq.digitalhumanities.org/"><em>Digital Humanities Quarterly</em></a> (DHQ) is an open-access peer-reviewed journal, probably more representative of research in North America. It is published by the Association for Computers and the Humanities (ACH). I counted a total of 790 articles published since its first issue in 2007. Most articles are in English.</p>
+</li>
+<li>
+<p>The <a href="https://jdmdh.episciences.org/"><em>Journal of Data Mining and Digital Humanities</em></a> (JDMDH), is published by Episciences since 2017. Contrary to DHQ, its focus is more European-centric, and it has a special volume dedicated specifically to automatic text recognition (directed by Ariane Pinche and Peter Stokes). I found a total of 162 articles published in JDMDH, including the special volume on ATR.</p>
+</li>
+<li>
+<p>Lastly, the proceedings from the more recent <em>Computational Humanities Research</em> (CHR) conferences (see the <a href="https://2024.computational-humanities-research.org/">2024 conference proceedings</a> for example) offer a perspective on research focused on more intensively computational methods in the Humanities. The conference is held annually since 2021. I found a total of 214 articles in the proceedings.</p>
+</li>
+</ul>
+<p>Aside from DSH, that I can access thanks to the library of the University of Montréal, all the other journals are in open access. </p>
+<h3>Collecting the articles and their metadata</h3>
+<p>For JDMDH, articles are not centralized on the journal website but rather published on platforms like <a href="https://hal.archives-ouvertes.fr/">HAL</a> or <a href="https://arxiv.org/">arXiv</a> and sometimes <a href="https://zenodo.org/">Zenodo</a>. Getting an overview of the articles published in JDMDH is not straightforward, but it is possible to browse the articles per <a href="https://jdmdh.episciences.org/browse/volumes">volumes</a>. I opened and downloaded each article in each volume, as well as collected the article entries in Zotero using the Zotero connector. The process was cumbersome and required many clicks, but the variety of publishing platforms deterred me from writing a script to automate the downloading process.  </p>
+<p>CHR, on the other hand, was very easy to scrape, partly because there are only four volumes of proceedings so far. For each series of proceeding, the index of all articles is compatible with the batch import scenario of the Zotero connector. To collect the PDFs, I used a section of the HTML page and regular expressions to identify the links to the PDF files, creating a list of URLs. Finally, I used a Python script to download the PDFs to my computer.  </p>
+<p>For example, in <a href="https://ceur-ws.org/Vol-2989/">https://ceur-ws.org/Vol-2989/</a>, the <code>ul</code> contains simple HTML elements pointing to the PDF files, such as: </p>
+<div class="code"><pre class="code literal-block"><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"CEURSESSION"</span><span class="p">&gt;</span>Presented papers<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">"long_paper5"</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"long_paper5.pdf"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"CEURTITLE"</span><span class="p">&gt;</span>Entity Matching in Digital Humanities Knowledge
+      Graphs<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"CEURPAGES"</span><span class="p">&gt;</span>1-15<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"CEURAUTHOR"</span><span class="p">&gt;</span>Juriaan Baas<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"CEURAUTHOR"</span><span class="p">&gt;</span>Mehdi M. Dastani<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"CEURAUTHOR"</span><span class="p">&gt;</span>Ad J. Feelders<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+...
+</pre></div>
+
+<p>All I had to do was copy and paste this entire list into a text editor (I like to use <a href="https://www.sublimetext.com/">Sublime Text</a> in such a situation). Then, I used a simple regular expression like <code>href=".+?"</code> to select the value in the <code>a</code> element, which contains the links to the PDF files. I kept only the selected text and then rebuilt the complete URL with a couple of replacements such as <code>href="</code> -&gt; <code>"https://ceur-ws.org/Vol-2989/</code> and <code>"\n</code> -&gt; <code>",\n</code>. At this point I just added square brackets around the selection, et voilà! I had a Python list ready to be passed to a script like the one below to download the files:</p>
+<div class="code"><pre class="code literal-block"><span class="n">list_of_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"https://ceur-ws.org/Vol-2723/short8.pdf"</span><span class="p">,</span>
+                <span class="s2">"https://ceur-ws.org/Vol-2723/long35.pdf"</span><span class="p">,</span>
+                <span class="s2">"https://ceur-ws.org/Vol-2723/long44.pdf"</span><span class="p">,</span>
+                <span class="c1">#...</span>
+                <span class="p">]</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span> <span class="c1"># it makes  progress bar so I know how long I can take to make a tea while the script runs</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">list_of_urls</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+        <span class="c1">#print(filename)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Failed to download: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This cool down is to be polite to the server</span>
+</pre></div>
+
+<p>I used a similar approach for downloading the articles from DHQ because the <a href="https://dhq.digitalhumanities.org/index/title.html">Index of Titles</a> lists all of the published articles on a single page. I first downloaded the HTML pages of the articles (DHQ publishes articles in HTML format as well as PDF). I also used regular expressions to extract the list of links and used a Python script to download the files.  </p>
+<p>Unfortunately, the Zotero connector only works on each article page individually, but not for batch-import on the index page. I investigated a bit to understand why it was so, and found that in the source code of each article page, there is a <code>span</code> element identified with the class <code>Z3988</code> that the Zotero connector uses to extract the metadata and create an entry in Zotero. In DHQ, these spans look like this:</p>
+<div class="code"><pre class="code literal-block"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"Z3988"</span> <span class="na">title</span><span class="o">=</span><span class="s">"url_ver=Z39.88-2004&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;amp;rft.genre=article&amp;amp;rft.atitle=Academics%20Retire%20and%20Servers%20Die%3A%20Adventures%20in%20the%20Hosting%20and%20Storage%20of%20Digital%20Humanities%20Projects&amp;amp;rft.jtitle=Digital%20Humanities%20Quarterly&amp;amp;rft.stitle=DHQ&amp;amp;rft.issn=1938-4122&amp;amp;rft.date=2023-05-26&amp;amp;rft.volume=017&amp;amp;rft.issue=1&amp;amp;rft.aulast=Cummings&amp;amp;rft.aufirst=James&amp;amp;rft.au=James%20Cummings"</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>I understood recently, while discussing with Margot Mellet, that Z3988 is a reference to the <a href="https://groups.niso.org/higherlogic/ws/public/download/14833/z39_88_2004_r2010.pdf">OpenURL Framework Standard (ISO Z 39.88-2004)</a>, which is used by the Zotero connector. Also, I should note that such spans are not systematically used in online journals. JDMDH for example doesn't use them, and serves the metadata in a different way.  </p>
+<p>Since I had already downloaded all the articles from DHQ as HTML files, I wrote a simple Python script that found all of such spans for each downloaded article and aggregated them in a single, very simple HTML file. Then, I simply opened this page in my browser after emulating a local server<sup id="fnref:python_server"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/024/#fn:python_server">1</a></sup> (with a command like <code>python -m http.server</code>), and I was able to use the Zotero connector to import all the articles in a single click. It was very satisfying! The only downside is that I couldn't collect the articles' abstracts because there weren't included in the spans.  </p>
+<p>DSH was different from the rest of the journals. Because of the longevity of the journal and the amount of articles it published, it was quite overwhelming. Unfortunately, it is a paywalled journal and I couldn't figure out how to make the proxy of the University of Montreal library work with my Python scripts and the command line. As a result, I had to manually download the articles,<sup id="fnref:proxy_dsh"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/024/#fn:proxy_dsh">2</a></sup> but only when they were relevant! Since DSH has a fairly good search engine that allows to do multi-keyword searches, I only downloaded articles matching my search criteria (143 in total).</p>
+<p>Additionally, I went through each of the 174 issues of DSH to batch-import the article references in Zotero. It was tedious but I figured I might be able to use these metadata for other projects in the future.  </p>
+<h3>Filtering the articles</h3>
+<p>For DHQ, JDMDH and CHR, I ran a keyword surch using the command <a href="https://www.man7.org/linux/man-pages/man1/grep.1.html"><code>grep</code></a> on the content of the articles. I didn't want to limit my search to the titles, abstract or keywords because I really wanted to include anecdotal mentions of automatic text recognition in my results.  </p>
+<p>To use grep, I created a file (pattern.txt) with the keywords I was looking for:  </p>
+<div class="code"><pre class="code literal-block">HTR
+OCR
+text recognition
+ATR
+Transkribus
+eScriptorium
+automatic transcription
+</pre></div>
+
+<p>Then I converted the PDFs into text files using the command <a href="https://man.archlinux.org/man/pdftotext.1.en">pdftotext</a>. This was necessary because grep cannot search inside a PDF directly. I didn't need to do this conversion for DHQ, since I had download HTML files from that journal. </p>
+<p>The commands to search inside the PDFs of one of the journals would look like this:</p>
+<div class="code"><pre class="code literal-block">ls<span class="w"> </span>*.pdf<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n1<span class="w"> </span>pdftotext<span class="w"> </span><span class="c1"># to convert PDFs to text files</span>
+grep<span class="w"> </span>-i<span class="w"> </span>-w<span class="w"> </span>-m5<span class="w"> </span>-H<span class="w"> </span>-f<span class="w"> </span>../pattern.txt<span class="w"> </span>*.txt<span class="w"> </span><span class="c1"># to search for the keywords in the text files and display the first 5 matches</span>
+</pre></div>
+
+<p>After controlling how grep matched the keywords, I used <code>grep -l -f ../pattern.txt *.txt</code> to list the files that matched the keywords. This list was used to sort the documents into two folders, according to whether or not they matched my research.</p>
+<p>In the case of DSH, I directly used the search engine to combine the keywords, using the "OR" operator. I set the full text of the articles as the scope of my research: <a href="https://academic.oup.com/dsh/search-results?allJournals=1&amp;f_ContentType=Journal+Article&amp;fl_SiteID=5447&amp;cqb=[{%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22automatic%20transcription%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22transkribus%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22text%20recognition%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22escriptorium%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22OCR%22}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22HTR%22}]}]&amp;qb={%22_text_1-exact%22:%22automatic%20transcription%22,%22qOp2%22:%22OR%22,%22_text_2-exact%22:%22transkribus%22,%22qOp3%22:%22OR%22,%22_text_3-exact%22:%22text%20recognition%22,%22qOp4%22:%22OR%22,%22_text_4-exact%22:%22escriptorium%22,%22qOp5%22:%22OR%22,%22_text_5%22:%22OCR%22,%22qOp6%22:%22OR%22,%22_text_6%22:%22HTR%22}&amp;page=1">https://academic.oup.com/dsh/search-results?allJournals=1&amp;f_ContentType=Journal+Article&amp;fl_SiteID=5447&amp;cqb=[{%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22automatic%20transcription%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22transkribus%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22text%20recognition%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22escriptorium%22,%22exactMatch%22:true}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22OCR%22}]},{%22condition%22:%22OR%22,%22terms%22:[{%22filter%22:%22_text_%22,%22input%22:%22HTR%22}]}]&amp;qb={%22_text_1-exact%22:%22automatic%20transcription%22,%22qOp2%22:%22OR%22,%22_text_2-exact%22:%22transkribus%22,%22qOp3%22:%22OR%22,%22_text_3-exact%22:%22text%20recognition%22,%22qOp4%22:%22OR%22,%22_text_4-exact%22:%22escriptorium%22,%22qOp5%22:%22OR%22,%22_text_5%22:%22OCR%22,%22qOp6%22:%22OR%22,%22_text_6%22:%22HTR%22}&amp;page=1</a></p>
+<p>In both cases, the search was not case sensitive, in order to catch a maximum of occurrences of keywords like "automatic text recognition" or "Text Recognition" or "text recognition", etc. However, it meant that sometimes I found false positives: "democracy" often matches with "ocr", so does "theatre" with "atr". Since DSH's search engine returns the match in context, I was able to ignore these false positives. For the other journals, I had to manually check where the matches were. Usually, I combined this control with the next step of my investigation.  </p>
+<h4>Hits per journal</h4>
+<ul>
+<li>JDMDH: 47 hits (out of 162 articles)</li>
+<li>DHQ: 93 hits (out of 790 articles)</li>
+<li>DSH: 143 relevant hits (out of 1741 articles)</li>
+<li>CHR: 65 hits (out of 214 articles)</li>
+</ul>
+<h3>
+<em>Dépouillement</em> and analysis</h3>
+<p>To this date, I am still in the process of reading the articles and taking notes on the occurrences of my keywords. </p>
+<p>I use Zotero to keep track of the articles I read and to confirm whether they are false positives. Sometimes, I leave out articles that are irrelevant, even if they mention a keyword I was looking for. For example, <a href="https://doi.org/10.1093/llc/fqac089">Liu &amp; Zhu (2023)</a><sup id="fnref:liu_zhu_2023"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/024/#fn:liu_zhu_2023">3</a></sup> contains the string "OCR" but it only appears in a title in their bibliography, for work they refer to in a context where OCR is not relevant to their argument. With tags in Zotero, I clearly identify such articles as "to be left out" from my analysis, but I don't remove them from the collection.  </p>
+<p>I use different tags to identify the various occurrences of the technology in the articles. For example, I distinguish between firsthand applications of ATR and the reuse of data produced by ATR before the experimentation presented by the authors. Typically, there are many mentions of documents that were OCRed by libraries and used by scholars to conduct their research. Overall, with this analysis, I am trying to add more depth to the observations made by <a href="https://doi.org/10.48550/arXiv.2304.13530">Tarride et al (2023)</a><sup id="fnref:tarride_et_al_2023"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/024/#fn:tarride_et_al_2023">4</a></sup> in which they pragmatically considered three situations leading to the use of ATR: 1) for the production of digital editions; 2) for the production of large searchable text corpora; and 3) for the production of non-comprehensive transcriptions to feed knowledge bases. However, it is difficult to elaborate definitive categories before I am done processing all the collected articles.  </p>
+<p>Due to the large number of articles to be analyzed, I have continued to use the grep command to quickly review the content of articles and speed up my sorting process. For example, I am more interested in firsthand usages of ATR, want to be able to quickly identify non relevant mentions of my keywords as was the case in Liu &amp; Zhu (2023). The command <code>grep -i -w -C 5 -H -f ../pattern.txt *.txt &gt; grep_out</code> allows me to generate a file, grep_out, in which, for each time a keyword is matched in a document, five lines of context are displayed before and after the match, as well as the name of the file. I still have to read the abstracts and parts of the articles to clearly understand in which contexts the automatic text recognition technologies are used. However, this is an effective method for quickly sorting through the articles.</p>
+<p>I'm looking forward to sharing the results of this analysis in my dissertation! </p>
+<!-- FOOTNOTES --->
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:python_server">
+<p>This emulation is necessary to allow the Zotero connector to work properly. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/024/#fnref:python_server" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:proxy_dsh">
+<p>I want to specify here that it was not by lack of reading documentations on proxies and requests. Unable to find a straightforward solution, unsure if it was even something that the UdeM proxy allowed, and because I would have still needed to write additional scripts afterwards, I decided that it would take just as long to do it manually (about 2-3 hours). <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/024/#fnref:proxy_dsh" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:liu_zhu_2023">
+<p>Liu, Lei, and Min Zhu. "Bertalign: Improved Word Embedding-Based Sentence Alignment for Chinese–English Parallel Corpora of Literary Texts." <em>Digital Scholarship in the Humanities</em> 38, no. 2 (June 1, 2023): 621–34. <a href="https://doi.org/10.1093/llc/fqac089">https://doi.org/10.1093/llc/fqac089</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/024/#fnref:liu_zhu_2023" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:tarride_et_al_2023">
+<p>Tarride, Solène, Mélodie Boillet, and Christopher Kermorvant. "Key-Value Information Extraction from Full Handwritten Pages." arXiv, April 26, 2023. <a href="https://doi.org/10.48550/arXiv.2304.13530">https://doi.org/10.48550/arXiv.2304.13530</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/024/#fnref:tarride_et_al_2023" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/023/" class="u-url">023 - Writing a PhD manuscript with Markdown and Quarto</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
@@ -781,66 +916,6 @@ Full text of the specifications displayed on the image, for accessibility purpos
 </li>
 </ol>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/014/" class="u-url">014 - RT(F)M for the Peraire Experiment</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
-            </span></p>
-            <p class="dateline">
-            <a href="https://alix-tz.github.io/phd/posts/014/" rel="bookmark">
-            <time class="published dt-published" datetime="2023-08-04T13:51:14-04:00" itemprop="datePublished" title="2023-08-04">2023-08-04</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>Turns out, there is more to say on last week's <a href="https://alix-tz.github.io/phd/posts/013/">experiments on the Peraire dataset</a>! And I found out while I was working on a completely different dataset. Let me explain!</p>
-<p>This morning, I helped my colleague train a Kraken transcription model for <a href="https://ecrituresnumeriques.ca/fr/Activites/Projets/2016/1/19/Anthologie-grecque">Greek manuscripts</a>. They gave me the ground truth and I set and executed the training from the command line. It gave me an opportunity to try fine-tuning a model like <a href="https://zenodo.org/record/7234166">CREMMA Medieval</a>, in stead of only training from scratch. <strong>CREMMA Medieval</strong> was trained on manuscripts written in Latin, whereas the Greek manuscripts were written only, well, in Ancient Greek. I didn't want the resulting model to add Latin letters in the transcription when applied to other Greek documents, so I used Kraken's option to allow the model to forget previously learned characters and to force it to only remember the characters contained in the new training data. This option is called <strong><code>--resize</code></strong> (check the documentation <a href="https://github.com/mittagessen/kraken/blob/4.3.7/docs/ketos.rst#fine-tuning">here</a>).</p>
-<p>When I fine-tune a model, I usually follow Kraken's recommendations and keep both the previously learned characters and the new ones coming from the new set of ground truth. When this morning I checked what is the keyword to use to keep only the characters from the new dataset, I realized that I didn't correctly set the training on Peraire last week. I had set it to only keep the new characters!</p>
-<p>Up until Kraken v. 4.3.10, <strong><code>--resize</code></strong> can take the keywords <strong><code>both</code></strong> or <strong><code>add</code></strong>. The ambiguity of these keywords <a href="https://github.com/mittagessen/kraken/issues/478">has been discussed</a> in the past, which is the reason why starting from Kraken v. 4.3.10, the keywords respectively become <strong><code>new</code></strong> or <strong><code>union</code></strong>.</p>
-<p>Let's quote the manual:</p>
-<blockquote>
-<p>There are two modes dealing with mismatching alphabets, <strong>add</strong> and <strong>both</strong>. <strong>add</strong> resizes the output layer and codec of the loaded model to include all characters in the new training set without removing any characters. <strong>both</strong> will make the resulting model an exact match with the new training set by both removing unused characters from the model and adding new ones.</p>
-</blockquote>
-<p>I fell for this trap of ambiguity and used <strong>both</strong> instead of <strong>add</strong>, thinking <strong>both</strong> meant I was keep <em>both</em> character sets. (Again this is the very reason why the keywords were recently changed).</p>
-<p><em>Side note: you should really read <a href="https://alix-tz.github.io/phd/posts/013/">last week's post</a> to fully understand the rest of this post!</em></p>
-<p>At the end of my post last week, I wrote:</p>
-<blockquote>
-<p><strong>peraire_D</strong> on the other hand seems to lose it completely on the B series. This is most likely due to the fact that the contrast between the page and the "ink" is too low in the pencil-written series compared to the data used to train <strong>Manu McFrench</strong> and in the D series. <strong>peraire_D</strong> even loses 11 points of accuracy to <strong>Manu McFrench</strong>!</p>
-</blockquote>
-<p>But how could I be sure that it was not actually due to the fact that the model had unlearned some precious characters?</p>
-<p>The only way to know, I thought, was to re-train the models! I used this opportunity to also train the models from scratch because I was curious to see how much noise/improvement was brought by the base model.</p>
-<p>I tried 4 types of models and, like last week, used <a href="https://github.com/WHaverals/CERberus">CERberus 🐶🐶🐶</a> to measure the character error rates on the predictions made on the test sets:</p>
-<ol>
-<li>Models trained "from scratch"</li>
-<li>A model not trained on any data coming from the Peraire dataset (aka <a href="https://zenodo.org/record/6657809"><strong>Manu McFrench</strong></a>)</li>
-<li>Models obtained from finetuning <strong>Manu McFrench</strong> using the <strong>add</strong> resize mode</li>
-<li>Models obtained from finetuning <strong>Manu McFrench</strong> using the <strong>both</strong> resize mode</li>
-</ol>
-<p>For each model trained on the Peraire dataset, I used 3 compositions:</p>
-<ol>
-<li>the full dataset ("ALL")</li>
-<li>only data coming from the B series ("B")</li>
-<li>only data coming from the D series ("D")</li>
-</ol>
-<p>I used the same composition system for the test sets.</p>
-<p>Here are my results in the form of a table:</p>
-<p><img src="https://alix-tz.github.io/phd/images/peraire_scores.png" alt="a table of the scored obtained on the different train set, test set and resize configurations" widht="400px"></p>
-<p>Fortunately, it seems that my previous interpretation is not fully contradicted by the results I obtain with this second series of training. Let's focus on two observations:</p>
-<ol>
-<li>
-<p>Whenever a model is trained only on the D series, and tested only on the B series, it appears to be completely incapable of predicting anything but gibberish, losing between 32 and 35 points of accuracy. It confirms that the aspect of the documents from the two series are too different. On the other hand, when the model is fine-tuned on the B series only, it maintains a fairly good accuracy when applied to the D series, whichever resize mode is used. I think it confirms that the B series is enough for the model to learn some sort of formal features from Peraire's handwriting, which the models can transfer to documents written with a different writing instrument.</p>
-</li>
-<li>
-<p>What is very interesting is the difference between the models trained on the whole datasets and tested on the B series: when we use the <strong>both</strong> resize mode (meaning we only keep the characters from the new dataset), the model is very good. On the contrary, the performance of the model trained with the <strong>add</strong> resize mode (meaning we keep the output layer and the codec from the base model and add the new characters) is as bad as with a model trained only on the D series.</p>
-</li>
-</ol>
-<p>In my previous post, I wrote:</p>
-<blockquote>
-<p><strong>peraire_both</strong> is able to generalize from seeing both datasets and even benefits from seeing more data thanks to the D series, since it performs better on the B series compared to <strong>peraire_B</strong>.</p>
-</blockquote>
-<p>However, in the light of my experiment with the <strong>resize</strong> option, I think this is not correct. Instead, it appears that resetting the output layer by using <strong>both</strong> (or <strong>new</strong>) on accident, allowed the model to better take into account the data from the B series (pencil). Contrary to what I observed last week, the model trained on the whole dataset but this time with the <strong>add</strong> resize mode (or <strong>union</strong>) doesn't benefit from seeing more data compared to the model trained only on the B series.</p>
-<p>My understanding is that keeping the output layer from the base model with <strong>add</strong> (or <strong>union</strong>) probably drowns the specificity of the pencil-written documents into a base knowledge tailored to handle documents with a high contrast (like the ones in the D series <em>and</em> in <strong>Manu McFrench</strong>'s training set). Or, to put it differently, when we use <strong>both</strong> (or <strong>new</strong>), more attention is given to the pencil written documents, meaning that the model actually gets better at handling this category of data.</p>
-<p>I am extremely curious to see how I can investigate this further, or if any of you, readers, would understand these results differently!</p>
     </div>
     </article>
 </div>
