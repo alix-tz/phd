@@ -2,3 +2,5 @@ Commands to update blog:
 
 - `nikola new_post -t {\d\d\d}` then modify the file title to add the longer title
 - use `.. status: draft` in the md file header to keep as a draft
+- `nikola github_deploy` to push to GitHub main branch
+- otherwise commit + push on src branch to update the source files
