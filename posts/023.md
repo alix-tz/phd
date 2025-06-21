@@ -39,3 +39,11 @@ Pandoc's Markdown support lets you apply classes to entire paragraphs or inline 
 
 Another use of inline classes is to keep track of concepts or specific terms that I could include in a glossary or at least a list of acronyms. By keeping track of them directly in the text, I can automate the generation of these sections. Some might say that this is the kind of thing I could do with [TEI XML](https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html)- I agree, since this is semantic annotation. But as I said, I wanted a lightweight syntax, and I really like Markdown.  
 
+
+***EDIT from June 20, 2025:** I feel the need to add a precision a few months after this original post: while I did like my set up with Markdown and Quarto to get started on writing my dissertation, I eventually switched to the good old LaTeX. Quarto/Markdown simply lacked too many features for what I wanted to do.* 
+
+*Part of the problem came from the fact that custom annotations that turn into spans with custom classes during a Markdown-to-HTML transformation scenario were not converted into anything in LaTeX and were therefor lost. For example, I would have needed to manage the glossary and acronym handler afterwards, only once I was done with Markdown and fully switched to LaTeX. Rather than writing my own preprocessing script to find a solution to this problem (as far as I could see, pandoc does not offer any option to map markdown spans to custom LaTeX commands), I figured swithing to writing in LaTeX directly made more sense: there was no point in pushing too far the complications.*
+
+*Also, I really wanted to be able to use the `todo` package from LaTeX to keep track of feedback, side notes and questions I had for myself while writing. With this package, they are visible in the PDF output, which is useful also when I share my text with other people.*
+
+*Lastly, Roch Delanney greatly facilitated this switch by sharing his LaTeX template with me. It was easy to start from the setup he created with Robert Alessi and to add my own configuration and customization. Their template was much more pure than templates that can be found on Overleaf, on top of being very well documented. It was great to keep things simple: I don't import any package that I don't actually need.*
