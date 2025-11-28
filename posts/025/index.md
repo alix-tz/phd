@@ -1,5 +1,5 @@
 <!--
-.. title: 025 - Critically reading "The Writing Is on the Wall for Handwriting Recognition"
+.. title: 025 - A Perfect Job is the New Very Good Job
 .. slug: 025
 .. date: 2025-11-28 16:50:54 UTC-05:00
 .. tags: Large Language Models, literature review, evaluation, HTR, Generative AI, French blog posts
