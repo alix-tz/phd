@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2025-06-21T20:10:00Z</lastmod>
+  <lastmod>2025-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/authors/</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2025-06-21T20:10:00Z</lastmod>
+  <lastmod>2025-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -120,6 +120,14 @@
  <url>
   <loc>https://alix-tz.github.io/phd/categories/experiment/</loc>
   <lastmod>2025-02-18T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/french-blog-posts/</loc>
+  <lastmod>2025-11-28T21:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/categories/generative-ai/</loc>
+  <lastmod>2025-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/guidelines/</loc>
@@ -207,7 +215,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-2.html</loc>
-  <lastmod>2025-06-21T20:10:00Z</lastmod>
+  <lastmod>2025-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -312,5 +320,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/024/</loc>
   <lastmod>2025-06-21T20:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/025/</loc>
+  <lastmod>2025-11-28T21:59:00Z</lastmod>
  </url>
 </urlset>
