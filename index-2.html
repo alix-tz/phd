@@ -45,7 +45,130 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/015/" class="u-url">015 - Block post and comprehensive Exam</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/016/" class="u-url">016 - Text Recognition, Large Models and Expectations</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
+            </span></p>
+            <p class="dateline">
+            <a href="https://alix-tz.github.io/phd/posts/016/" rel="bookmark">
+            <time class="published dt-published" datetime="2023-11-28T05:28:15-05:00" itemprop="datePublished" title="2023-11-28">2023-11-28</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Since the boom around ChatGPT almost a year ago, I've heard several people wondering if "tools like ChatGPT" were more efficient than HTR models trained with <a href="https://kraken.re">Kraken</a> and the like. The glimmer of hope in their eyes was most likely lit by their own struggle to set successful and/or efficient HTR campaigns with more traditional tools. The capacity of Large Language Models (LLMs) to reformulate a text<sup id="fnref:spina"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:spina">1</a></sup> or, more specifically, of Large Multimodal Models (LMMs) to generate text based on a visual input may indeed lead people to believe that HTR technologies built on <a href="https://poloclub.github.io/cnn-explainer/">CNNs</a> are on the verge of being flipped upside-down.<sup id="fnref:multimodal_turn"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:multimodal_turn">2</a></sup></p>
+<p>Annika Rockenberger recently conducted a series of small experiments on the matter and wrote <a href="https://greflinger.hypotheses.org/739">an interesting blog post</a> about it. Let's summarize it!</p>
+<p>She signed up for a premium subscription (25$/mo) to be able to chat with <a href="https://openai.com/gpt-4">GPT4</a>, which allows users to upload images. Then she submitted printed or handwritten documents she would normally transcribe with <a href="https://readcoop.eu/transkribus">Transkribus</a> and assessed the results. She found that GPT4 was fairly good on ancient print (German Fraktur) and that it was even able to follow transcription guidelines if provided with an example. However on a letter bearing handwritten cursive, the model completely hallucinated the content and attempted a transcription in the wrong language. This didn't change when she provided more context on the document. Rockenberger concludes that there is a potential for using ChatGPT for HTR but that the capacity of scaling it up is completely unsure and that learning how to provide good prompts to get the appropriate results is a challenge. I would also add that in the end, Rockenberger paid 25$ to get 10 lines of raw text, whereas with software like Transkribus or eScriptorium, she would also get a standard structured output.</p>
+<p>So, in other words, after reading Rockenberger's post, one can conclude that GPT4 (or, better, similar free and open source models) does have a potential for "quick and dirty-ish" OCR. However, I would argue that users tempted by this strategy might still miss an important point: even LMM-based tools will requires a little bit of organization and precision from the users. This, I find, often lacks in unsuccessful HTR campaigns. LMMs could generate a good output, but you will likely have to pay a counterpart one way or the other(s): with lower text recognition quality, with hallucinated text content, with impoverished non-structured output, with premium fees, etc.</p>
+<p>Earlier this year, an article proposed by <a href="https://arxiv.org/abs/2305.07895">Liu et al. (2023)</a>, "On the Hidden Mystery of OCR in Large Multimodal Models", explored almost exactly the same topic but in a more comprehensive way. Their article presents an extensive survey of how well several Large <a href="https://en.wikipedia.org/wiki/Multimodal_learning">Multimodal</a> Models (LMMs) performed on "zero-shot" tasks.</p>
+<p>Zero-shot refers to the act of requesting an output from an LLM or a LMM without training it for this task in particular. It is very similar to Rockenberger's first attempt with GPT4, when she uploaded the image of a printed document and asked for its transcription. In such a case, she relied on the capacity of the model to transfer its knowledge to the specific tasks of Text Recognition, on a specific type of documents (historical printed text).</p>
+<p>Other terms are often associated with "zero-shot:" "one-shot" and "few-shot". One-shot is equivalent to Rockenberger's second attempt: when she showed GPT4 an example of the output she expected on the 10 first lines of the documents, and requested that the model copied her strategy to generate the transcription of the 10 next lines. Few-shot would mean showing several pages and several expected output to the model before asking for the transcription of a new document.<sup id="fnref:shot-definition"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:shot-definition">3</a></sup></p>
+<p>The paper focused on currently available LMMs representing five different approaches for training LMMs:</p>
+<ul>
+<li>
+<a href="https://huggingface.co/docs/transformers/model_doc/blip-2">BLIP-2</a>,</li>
+<li>
+<a href="https://arxiv.org/abs/2204.14198">Flamingo</a>/<a href="https://laion.ai/blog/open-flamingo/">Open-Flamingo</a>,</li>
+<li>
+<a href="https://llava-vl.github.io/">LLaVa</a>,</li>
+<li>
+<a href="https://minigpt-4.github.io/">miniGPT4</a>, and</li>
+<li>
+<a href="https://huggingface.co/spaces/MAGAer13/mPLUG-Owl">mPLUG-Owl</a>.</li>
+</ul>
+<p>They evaluated the models on 4 tasks: text recognition, text-based visual question answering, key information extraction and handwritten mathematical expression recognition. Here are a few examples of what these tasks entail, as illustrated in the original article (on the images, P stands for Prediction and GT for Ground Truth):</p>
+<table>
+<thead><tr>
+<th style="text-align: left;">Task</th>
+<th style="text-align: center;">Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Text Recognition</td>
+<td style="text-align: center;"><img alt="Examples of failed Text Recognition" src="https://alix-tz.github.io/phd/images/LLM_text_recogntion.png" title="Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Visual Question Answering</td>
+<td style="text-align: center;"><img alt="Examples of failed Visual Question Answering" src="https://alix-tz.github.io/phd/images/LLM_textVQA.png" title="Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*Key Information Extraction</td>
+<td style="text-align: center;"><img alt="Examples of failed Key Information Extraction" src="https://alix-tz.github.io/phd/images/LLM_keyinfoextraction.png" title="Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Handwritten Mathematical Expression Recognition</td>
+<td style="text-align: center;"><img alt="Examples of failed Handwritten Mathematical Expression Recognition" src="https://alix-tz.github.io/phd/images/LLM_HMExpr.png" title="Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up"></td>
+</tr>
+</tbody>
+</table>
+<!-- "Four images contained printed of handwritten words along with the ground truth (expected transcription) and the prediction generated by the models. For example, the model predicted 'chocolate' when the expected transcription was 'choco'.") | --><!--  "Two images of real-life views along with a question used as a prompt, the expected answer and the predicted answer. For example, when asked 'What is the yellow number?' on the image of an airport luggage retrieval conveyor belt showing a clear '7' in yellow in the background, the model provided the following answer: 'The yellow number on the luggage trolley is 32") | --><!--  "Three images of real-life documents or textual information, along side with a question used as a prompt for the model, the expected answer and the predicted answer. For example, when asked 'what is the Sample No information in the input?', the model is expected to answer '1194-90' but answers 'The sample number is 33340'") | --><!--  "Four example of failed attempts from the LMM to predict a LaTeX representation of handwritten mathematical expression: the numbers are wrong and/or the mathematical structure of the equations is made up") | --><p>For each task, they used several datasets presenting different challenges. For each of these datasets and tasks, they retrieved the scores of the state-of-the-art (sota) for supervised methods and used them as a baseline. For example, for text recognition on the <a href="https://fki.tic.heia-fr.ch/databases/iam-handwriting-database">IAM dataset</a>, the sota method of AttentionHTR<sup id="fnref:attentionhtr_ref"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:attentionhtr_ref">4</a></sup> reaches a word accuracy of 91.24%.<sup id="fnref:remark_wer"><a class="footnote-ref" href="https://alix-tz.github.io/phd/posts/016/#fn:remark_wer">5</a></sup> In comparison, Liu et al provide the following scores for the tested LMM on this dataset:</p>
+<table>
+<thead><tr>
+<th style="text-align: left;">test LMM</th>
+<th style="text-align: center;">Score on IAM</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BLIP-2 OPT<sub>6.7b</sub>
+</td>
+<td style="text-align: center;">38.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP-2 FlanT5<sub>XXL</sub>
+</td>
+<td style="text-align: center;">40.50</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpenFlamingo</td>
+<td style="text-align: center;">45.53</td>
+</tr>
+<tr>
+<td style="text-align: left;">LLaVa</td>
+<td style="text-align: center;"><em>50.40</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">MiniGPT4</td>
+<td style="text-align: center;">28.90</td>
+</tr>
+<tr>
+<td style="text-align: left;">mPLUG-Owl</td>
+<td style="text-align: center;">42.53</td>
+</tr>
+<tr>
+<td style="text-align: left;">---------------</td>
+<td style="text-align: center;">-----</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervised SOTA</td>
+<td style="text-align: center;"><strong>91.24</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The illustrations provided by the article are all of failed attempts, but it corresponds to the overall impression conveyed by the results of the experiments. Indeed, compared to the state-of-the-art supervised methods, zero-shot tasks prompted to LMMs yield results largely outperformed, similar to what is visible in the case of text recognition on the IAM dataset. The only exception is BLIP-2 on a Text Recognition task on a dataset of artistic text (<a href="https://github.com/xdxie/WordArt#wordart-dataset">WordArt</a>) which is more challenging. The authors consider that this is a sign that LMMs have a promising potential for visually complex texts.</p>
+<p>A very important section of their paper is their remarks on the relationship between LMMs and semantics. Submitting non-word images to the LMMs, they find that the LMMs systematically over-correct the prediction and suggest real-words as an answer. Traditional text recognition approaches, on the other hand, are much less sensitive to the notion of likelihood for the words to recognize. Similarly, the need for semantics interferes with the LMMs' output, and they tend to more easily recognize common words and make up additional letters ("choco" is read as "chocolate"). Lastly, LMMs are insensitive to word length: they are unable to count how many letters are in the image of a word. These results are similar to what Rockenberger experienced with the handwritten letter: the model hallucinated words to compose a semantically plausible letter. But using the wrong date, the wrong names, and the wrong language.</p>
+<p>Liu et al conclude their paper reminding us that they experimented with the capacities of the models in the context of zero-shot prompts, whereas there are already successful attempts at fine-tuning LLMs and LMMs on specialized tasks, such as medical prediction. In fact, I think there already exist such attempts in the context of HTR as well: it seems to be the ambition of a model like Transkribus' Text Titan, released at the beginning of the Summer. It is based on a <a href="https://youtu.be/zxQyTK8quyY?feature=shared">Transformer</a> coupled with an LLM. Unfortunately, I wasn't able to find more information on this model, aside from the community-oriented communications released by Transkribus on their website (<a href="https://readcoop.eu/introducing-transkribus-super-models-get-access-to-the-text-titan-i/">here</a> and <a href="https://help.transkribus.org/super-models">here</a>).</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:spina">
+<p>In stead of a multimodal approach, Salvatore Spina explored the possibility to use a LLM-based tool like ChatGPT3 to post-process the result of HTR and correct the text. See: Spina, S. (2023). <em>Artificial Intelligence in archival and historical scholarship workflow: HTS and ChatGPT</em> (arXiv:2308.02044). arXiv. <a href="https://doi.org/10.48550/arXiv.2308.02044">arXiv.2308.02044</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:spina" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:multimodal_turn">
+<p>Multimodality is presented by some researchers of the Digital Humanities community as a real epistemological turn for the field. See for example: Smits, T., &amp; Wevers, M. (2023). <em>A multimodal turn in Digital Humanities. Using contrastive machine learning models to explore, enrich, and analyze digital visual historical collections</em>. Digital Scholarship in the Humanities, fqad008. <a href="https://doi.org/10.1093/llc/fqad008">doi: 10.1093/llc/fqad008</a> ; or Impett, L., &amp; Offert, F. (2023). <em>There Is a Digital Art History</em> (arXiv:2308.07464). arXiv. <a href="https://doi.org/10.48550/arXiv.2308.07464">arXiv.2308.07464</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:multimodal_turn" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:shot-definition">
+<p>There are a few videos offering more or less detailed explanations on these expressions <a href="https://www.youtube.com/watch?v=E6X1Ufhxtf0">in the context of prompting an LLM</a>. However, this is not specific to LLM, it is often used in the context of <a href="https://huggingface.co/tasks/zero-shot-classification">classification</a> or <a href="https://joeddav.github.io/blog/2020/05/29/ZSL.html">NLP</a> tasks for example. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:shot-definition" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:attentionhtr_ref">
+<p>Kass, D., &amp; Vats, E. (2022). <em>AttentionHTR: Handwritten Text Recognition Based on Attention Encoder-Decoder Networks</em> (arXiv:2201.09390). arXiv. <a href="https://doi.org/10.48550/arXiv.2201.09390">arXiv.2201.09390</a>. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:attentionhtr_ref" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:remark_wer">
+<p>In this case, the WER is used as a baseline to compare different approaches. However, in general, it is not a good idea to only take into account Word accuracy to understand a model's performance in real life. This is something I discussed in <a href="https://alix-tz.github.io/phd/posts/012/">this</a> post. <a class="footnote-backref" href="https://alix-tz.github.io/phd/posts/016/#fnref:remark_wer" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="https://alix-tz.github.io/phd/posts/015/" class="u-url">015 - Block post and comprehensive Exam</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="https://alix-tz.github.io/phd/authors/alix-chague/">Alix Chagué</a>
