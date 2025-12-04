@@ -11,7 +11,7 @@
 
 > A little disclaimer for once, because I usually prefer to praise if I name people. I do not know Dan Cohen nor his work, my criticism of his article is not directed against him personally, but rather it takes his text as one example among many of the kind, that develop the same type of discourse and contain the same type of flaws.
 
-> A second disclaimer: I move the original French version of this post here: [posts/025-fr.md](https://alix-tz.github.io/phd/posts/025-fr).
+> A second disclaimer: I moved the original French version of this post here: [posts/025-fr.md](https://alix-tz.github.io/phd/posts/025-fr).
 
 Earlier this week, my colleague Louis-Olivier Brassard asked me for my opinion on the [latest post](https://newsletter.dancohen.org/archive/the-writing-is-on-the-wall-for-handwriting-recognition/) by Dan Cohen, which he titled "*The Writing Is on the Wall for Handwriting Recognition*", adding a subtitle that sets the tone: "*One of the hardest problems in digital humanities has finally been solved*". I wanted to make my critical reading a bit more public, so I'm turning it into a blog post<!--, in French for once-->.
 
