@@ -11,6 +11,8 @@
 
 > A little disclaimer for once, because I usually prefer to praise if I name people. I do not know Dan Cohen nor his work, my criticism of his article is not directed against him personally, but rather it takes his text as one example among many of the kind, that develop the same type of discourse and contain the same type of flaws.
 
+> A second disclaimer: I move the original French version of this post here: [posts/025-fr.md](https://alix-tz.github.io/phd/posts/025-fr).
+
 Earlier this week, my colleague Louis-Olivier Brassard asked me for my opinion on the [latest post](https://newsletter.dancohen.org/archive/the-writing-is-on-the-wall-for-handwriting-recognition/) by Dan Cohen, which he titled "*The Writing Is on the Wall for Handwriting Recognition*", adding a subtitle that sets the tone: "*One of the hardest problems in digital humanities has finally been solved*". I wanted to make my critical reading a bit more public, so I'm turning it into a blog post<!--, in French for once-->.
 
 I carefully read this article because the subject is of interest to me (obviously), but I must admit that I usually start this kind of reading with a negative *a priori*. This is the treatment I save for all those posts, whether on blogs or social media, that announce left and right that generative AI has revolutionized this or that -- this and that generally being problems that have occupied researchers and engineers for years, and which gave rise to sometimes heated or even unsolvable debates. All these posts contribute to fueling the hype around generative AI and undermining our already quite worn collective ability to develop critical thinking about it.
