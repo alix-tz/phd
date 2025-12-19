@@ -438,7 +438,7 @@
 'scale_images:output/images/spinnerbait_moonshines.png', (1280512, 245)
 'render_taxonomies:output/categories/cat_dataset.xml', (1462272, 2989)
 'copy_assets:output/assets/css/rst_base.css', (1604096, 611)
-'sitemap:output/sitemap.xml', (2189312, 17459)
+'sitemap:output/sitemap.xml', (2189312, 17457)
 'scale_images:output/images/peraire_d_series.png', (1297408, 235)
 'render_taxonomies:output/categories/guidelines.xml', (1330688, 458)
 'render_taxonomies:output/categories/guidelines/index.html', (1618944, 3756)
