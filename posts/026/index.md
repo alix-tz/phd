@@ -1,5 +1,5 @@
 <!--
-.. title: 026 -- The Haunting of Reviewer 3
+.. title: 026 -- The Haunting of Reviewer 3 (FR)
 .. slug: 026
 .. date: 2026-01-28 10:46:54 UTC-05:00
 .. tags: Generative AI, French blog posts, peer reviewing
