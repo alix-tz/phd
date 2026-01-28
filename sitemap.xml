@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://alix-tz.github.io/phd/</loc>
-  <lastmod>2025-02-18T18:20:00Z</lastmod>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/2022/</loc>
@@ -26,8 +26,12 @@
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/2026/</loc>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/archive.html</loc>
-  <lastmod>2025-12-04T17:42:00Z</lastmod>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/authors/</loc>
@@ -43,7 +47,7 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/</loc>
-  <lastmod>2025-11-28T21:59:00Z</lastmod>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/categories/accuracy/</loc>
@@ -178,6 +182,10 @@
   <lastmod>2025-02-18T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alix-tz.github.io/phd/categories/peer-reviewing/</loc>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alix-tz.github.io/phd/categories/quarto/</loc>
   <lastmod>2025-02-18T18:22:00Z</lastmod>
  </url>
@@ -211,11 +219,11 @@
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-1.html</loc>
-  <lastmod>2025-02-18T18:20:00Z</lastmod>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/index-2.html</loc>
-  <lastmod>2025-12-04T17:42:00Z</lastmod>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://alix-tz.github.io/phd/pages/glossary/</loc>
@@ -328,5 +336,9 @@
  <url>
   <loc>https://alix-tz.github.io/phd/posts/025/</loc>
   <lastmod>2025-11-28T21:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alix-tz.github.io/phd/posts/026/</loc>
+  <lastmod>2026-01-28T19:34:00Z</lastmod>
  </url>
 </urlset>
