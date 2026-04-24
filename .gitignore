@@ -6,3 +6,5 @@ output
 venv/
 venv_wsl/
 old_venv/
+
+uncommitted_posts/
